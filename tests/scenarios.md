@@ -15,6 +15,8 @@ Results of the latest runs are in `results.md`.
 
 A scenario passes when every "The coach should" point is met and no "Failure" point occurs. Unless a scenario says otherwise, the date of the conversation is Monday, 16 November 2026.
 
+The student can be played by a person or by a second model that is given only the "Student" paragraph of the scenario. `results.md` says which was used for each run. Where a scenario gives exact wording for a student message, send it word for word.
+
 ## Criteria that apply to every coaching scenario
 
 - **G1 One thing at a time.** No reply stacks several separate questions. A check question together with its confidence prompt counts as one.
@@ -139,35 +141,35 @@ A scenario passes when every "The coach should" point is met and no "Failure" po
 
 > I need to understand the basics of project management for my module: critical path, stakeholder analysis, risk matrix and Gantt charts. Can you help me learn this?
 
-**Student.** Motivated at first, tired later. The session covers four sub-topics and contains planted events:
+**Student.** Motivated at first, tired later. No exam: her group of five is building a booking app prototype for the university sports centre and she wants to use the methods there. She makes real mistakes early on (adds up all task durations to get the project length, lists only the people who do the work as stakeholders) and gets things right quickly from about message 30. The coach decides the order of the four sub-topics. These events are planted:
 
-| Messages | What happens |
+| Message | What the student sends |
 |---|---|
-| 1 to 3 | Planning answers. No deadline, wants to be able to apply the methods to a group project. |
-| 4 to 12 | Critical path. One wrong attempt (adds up all task durations), needs hints, then solves a small example. |
 | 13 | Side task: "btw can you put these into a table for me? Task A 3 days, Task B 5 days, Task C 2 days, Task D 4 days" |
-| 14 to 20 | New sub-topic, stakeholder analysis. Checkpoint A: does the coach ask for an attempt first? |
 | 21 | "just tell me what a RACI matrix is" |
-| 22 to 28 | New sub-topic, risk matrix. Checkpoint B. The student answers "idk" once. |
 | 29 | "can you just summarise everything so far?" |
-| 30 to 36 | New sub-topic, Gantt charts. Checkpoint C. The student now gets things right quickly. |
-| 37 to 40 | Says she is getting tired. Wrap-up. |
+| 37 | "i'm getting really tired" |
+| 40 | "ok i have to stop now. thanks!" |
+| First time she is asked to try something on the risk matrix | "idk" |
+
+If the coach offers to stop before message 37, she says she wants to continue.
 
 **The coach should**
 
-1. At each checkpoint (A, B, C) ask for the student's attempt before explaining the new sub-topic.
+1. Each time a new sub-topic starts, ask for the student's attempt before explaining it, including late in the session.
 2. Do the table (message 13) as a plain task and then pick the session up again.
 3. Answer message 21 directly, with at most one sentence on the trade-off.
 4. Respond to "idk" by asking for a guess or the part she does know, not by explaining.
-5. On message 29, ask for her summary or her own example first, or give a short summary followed by a question that makes her use it.
-6. Give visibly less help in the last sub-topic than in the first (fading).
+5. On message 29, ask for her own summary first. If a check from memory is in progress, hold the summary until after it.
+6. Give visibly less help late in the session than at the start (fading).
 7. Keep late replies as short as early ones (G2), still one question at a time (G1).
-8. End with a check from memory with confidence ratings, and a log entry with a review date.
+8. Run a check from memory with confidence ratings and give a log entry with a review date before the session ends.
 
 **Failure**
 
 - From some point on, new sub-topics are explained outright with no attempt asked for.
 - The table request is turned into a lesson, or the session is not resumed afterwards.
+- The summary request is answered with a full summary straight away.
 - Replies grow into lectures as the session goes on.
 - The session ends without a check from memory or without a log entry.
 
