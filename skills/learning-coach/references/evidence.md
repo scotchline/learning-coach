@@ -44,9 +44,14 @@ These are applications of a mapped rule to a specific situation. They carry the 
 | "I don't know" is not yet stuck; three questions without progress means move up a rung | Session step 2 | 2, 3 | 1 |
 | Feedback comes after the student's answer and confidence rating | Session step 4 | 5, 7 | 2 |
 | A wrong or badly calibrated answer: hold the verdict and give the student a way to test it first | Session step 4 | 3, 7 | 1, 2 |
-| A summary request: ask for the student's version first; hold it until after a check from memory | Standing rule "Their summary before yours" | 5, 8 | 2 |
-| Exam prep starts with a short pre-test and spends most time on recall | Modes; `modes.md` | 5, 9 | 2, 3 |
-| Returning students are quizzed from the log before new material | Returning students | 6, 11 | 2, 3 |
+| A summary request: ask for the student's version first; hold it until after a check from memory. If they then ask for yours, give it short and follow it with one question that makes them use it | Standing rule "Their summary before yours" | 5, 8 | 2 |
+| Exam prep starts with questions and not with explanations (a short pre-test, see `modes.md`) and spends most time on recall | Modes; `modes.md` | 5, 9 | 2, 3 |
+| Learn something new: most of the time goes into attempting and explaining back (steps 2 and 3) | Modes; `modes.md` | 1, 2, 4, 8 | 1, 2 |
+| Review dates move earlier when an exam is close; exam prep plans the reviews backwards from the exam date | Session step 5; Modes; `modes.md` | 6, 10 | 2, 3 |
+| Keep track of the current step and say so in a few words when moving on, so the student can see where they are in the process | The session | 9, 10 | 3 |
+| Returning students are quizzed from the log before new material, with the same check sequence as in step 4, and are then asked what they want to work on. The updated log repeats no older entries | Returning students | 5, 6, 7, 9, 11 | 2, 3 |
+| Review queue: items answered correctly move to the next, longer gap; missed items come back in one to two days | Session step 5; Returning students | 6 | 2 |
+| A short session compresses the steps but keeps the attempt and the check | The session | 1, 5 | 1, 2 |
 | Sure and wrong: let the student find it, name the mismatch, log it, ask again | Gotchas | 7 | 2 |
 | Right for the wrong reason: ask "why" once | Gotchas | 3 | 1 |
 | Long sessions: re-check the step at each sub-topic, end with a check and a log entry, suggest stopping when it has run long | Gotchas | 1, 5, 6, 10 | 1, 2, 3 |
@@ -62,8 +67,8 @@ These rules come from the project brief. `docs/mapping.csv` does not list them, 
 | Explain back in own words | Session step 3 | 2 | Flavell (1979); A Meta-Analysis of Ten Learning Techniques (2021) | | Feeling of understanding versus being able to explain it; explaining in your own words is active processing |
 | Self-assessment first | Standing rules; session step 4 | 2 and 3 | Flavell (1979); Zimmerman (2002) | Prompting strategies with generative AI during learning from multiple sources (2026), listed in `docs/references.md` as not yet tied to a rule | Monitoring your own understanding is metacognition; self-judgement is part of the reflection phase |
 | Verification nudge | Standing rules | 1 | Bereznikova et al. (2026) | Lee et al. (2025); AI-empowered SRL review (2025) | Questioning claims and assumptions is the Socratic direction; the SRL review names inaccurate AI feedback as a risk |
-| Student-written cards | Standing rules | 2 | Handlungsorientiert Lernen im Studium | Pan et al. (2023). Counter-evidence: Lin & McDaniel (2018) found no benefit from self-made flashcards | `docs/mapping.csv` row 8 names a student-written card deck as the output of rule 8. The evidence is mixed |
-| "Just tell me": answer, name the trade-off once, offer to continue | Standing rules; first-reply framing in "The session" | 3 | Zimmerman (2002); AI-empowered SRL review (2025) | | The student steers their own learning; the review stresses keeping student autonomy. Also a requirement of the brief |
+| Student-written cards. If the student insists on a ready-made deck, the "just tell me" rule applies | Standing rules | 2 | Handlungsorientiert Lernen im Studium | Pan et al. (2023). Counter-evidence: Lin & McDaniel (2018) found no benefit from self-made flashcards | `docs/mapping.csv` row 8 names a student-written card deck as the output of rule 8. The evidence is mixed |
+| "Just tell me": answer, name the trade-off once, offer to continue. Repeated requests count as the student's choice for the session: answer directly and offer one short check at the end | Standing rules | 3 | Zimmerman (2002); AI-empowered SRL review (2025) | | The student steers their own learning; the review stresses keeping student autonomy. Also a requirement of the brief |
 | Graded work: coach only | Standing rules; `hint-ladder.md` special cases | 1 | Vygotsky (1978) | Bastani et al. (2025) | Support, not replacement. This is also an academic-integrity requirement of the brief and not a research finding |
 
 ## Rules from the brief with no literature source
@@ -72,13 +77,16 @@ These are design decisions. They make the coach usable, and no study is claimed 
 
 | Rule | Where in SKILL.md | Nearest principle | Basis |
 |---|---|---|---|
-| Step aside for plain task requests; answer quick factual questions directly; ask once if unclear | When to coach and when to step aside | 3 (the student decides what they use AI for) | Brief: the skill should trigger on learning intent and stay out of the way otherwise |
-| Pace: one question per turn, at most three planning questions, short turns, compressed session for small questions, one message per check question, a log entry of about 150 words | The session; Tone and pace; Gotchas ("Stacked questions") | 3 | Brief: plan in about a minute, at most three short questions, one per turn. The limits on the check and the log entry come from the first test runs |
+| Step aside for plain task requests; answer quick factual questions directly; ask once if unclear; do a task request in the middle of a session and then pick the session up again | When to coach and when to step aside | 3 (the student decides what they use AI for) | Brief: the skill should trigger on learning intent and stay out of the way otherwise |
+| Pace: one question per turn, at most three planning questions (skipping what is already known and inferring the mode if the student does not name it), short turns, compressed session for small questions, one message per check question, a correct and well-calibrated check answer confirmed in one line with no extra self-check turn, a log entry of about 150 words followed by a single line on when to come back | The session; Tone and pace; Gotchas ("Stacked questions") | 3 | Brief: plan in about a minute, at most three short questions, one per turn. The limits on the check and the log entry come from the first test runs |
 | Tone: light, no lecturing, no inflated praise, match the student's energy, the check belongs to the student | Tone and pace | 3 | Brief: students uninstall anything that feels preachy or slow |
 | Reply in the student's language and register | Standing rules | 1 (support has to fit the learner) | Brief. The link to the principle is weak and no source is claimed |
 | Three-step confidence scale (sure, fairly sure, guessing) | Session step 4 | 2 | Practical default agreed with the author. Row 7 supports rating confidence, not this particular scale |
 | Review gaps (one to two days, about a week, two to three weeks) | Session step 5 | 2 | Practical default agreed with the author. Row 6 supports spacing across days, not these particular gaps |
-| Without a log, do not pretend to remember earlier sessions | Returning students | 3 | Honesty; the log is the student's record |
+| Without a log, do not pretend to remember earlier sessions. If today's date is unknown, ask or leave it for the student to fill in | Returning students; session step 5 | 3 | Honesty; the log is the student's record |
+| When to read the reference files (`hint-ladder.md`, `modes.md`, this file) | Session step 2; Modes; Where the rules come from | none | Agent Skills format: detail is loaded only when needed. Not a learning rule |
+| A request for a mode that is not built yet (feedback on my work, teach-back) is handled with the standing rules, as described in `modes.md` | Modes; `modes.md` | 1, 3 | Brief: the two modes are planned for a later version |
+| First reply: no explanation of the method, one line of framing that also says the student can ask for the answer, then the first question | The session | 3 | Brief: light tone, plan in about a minute. The line about asking for the answer belongs to the "just tell me" rule above |
 
 ## What each source shows
 
