@@ -29,7 +29,7 @@ These eleven rows follow `docs/mapping.csv` in the repository, which is the auth
 | 5 | Check without AI (retrieval) | Session step 4 | 2 | A Meta-Analysis of Ten Learning Techniques (2021) | | |
 | 6 | Spaced review across days | Session step 5; Returning students | 2 | A Meta-Analysis of Ten Learning Techniques (2021) | Rawson & Dunlosky (2022) | |
 | 7 | Confidence rating before feedback | Session step 4 | 2 | Flavell (1979) | | |
-| 8 | Linking and own examples instead of summaries | Session step 3; standing rule "Their links and examples before your summary" | 2 | Handlungsorientiert Lernen im Studium | Pan et al. (2023) | |
+| 8 | Linking and own examples instead of summaries | Session step 3; standing rule "Their summary before yours" | 2 | Handlungsorientiert Lernen im Studium | Pan et al. (2023) | |
 | 9 | Plan at the start: goal, prior knowledge, mode | Session step 1 | 3 | Zimmerman (2002); AI-empowered SRL review (2025); GenAI and SRL review (2025) | | |
 | 10 | Reflect and schedule at the end | Session step 5 | 3 | Zimmerman (2002); AI-empowered SRL review (2025); GenAI and SRL review (2025) | | |
 | 11 | Learning log across sessions | Session step 5; Returning students; `assets/learning-log.md` | 3 | Zimmerman (2002); AI-empowered SRL review (2025); GenAI and SRL review (2025) | | |
@@ -43,6 +43,8 @@ These are applications of a mapped rule to a specific situation. They carry the 
 | Worked example followed by a similar problem the student solves alone | Session step 2, rung 4 | 2 | 1 |
 | "I don't know" is not yet stuck; three questions without progress means move up a rung | Session step 2 | 2, 3 | 1 |
 | Feedback comes after the student's answer and confidence rating | Session step 4 | 5, 7 | 2 |
+| A wrong or badly calibrated answer: hold the verdict and give the student a way to test it first | Session step 4 | 3, 7 | 1, 2 |
+| A summary request: ask for the student's version first; hold it until after a check from memory | Standing rule "Their summary before yours" | 5, 8 | 2 |
 | Exam prep starts with a short pre-test and spends most time on recall | Modes; `modes.md` | 5, 9 | 2, 3 |
 | Returning students are quizzed from the log before new material | Returning students | 6, 11 | 2, 3 |
 | Sure and wrong: let the student find it, name the mismatch, log it, ask again | Gotchas | 7 | 2 |
@@ -71,7 +73,7 @@ These are design decisions. They make the coach usable, and no study is claimed 
 | Rule | Where in SKILL.md | Nearest principle | Basis |
 |---|---|---|---|
 | Step aside for plain task requests; answer quick factual questions directly; ask once if unclear | When to coach and when to step aside | 3 (the student decides what they use AI for) | Brief: the skill should trigger on learning intent and stay out of the way otherwise |
-| Pace: one question per turn, at most three planning questions, short turns, compressed session for small questions | The session; Tone and pace; Gotchas ("Stacked questions") | 3 | Brief: plan in about a minute, at most three short questions, one per turn |
+| Pace: one question per turn, at most three planning questions, short turns, compressed session for small questions, one message per check question, a log entry of about 150 words | The session; Tone and pace; Gotchas ("Stacked questions") | 3 | Brief: plan in about a minute, at most three short questions, one per turn. The limits on the check and the log entry come from the first test runs |
 | Tone: light, no lecturing, no inflated praise, match the student's energy, the check belongs to the student | Tone and pace | 3 | Brief: students uninstall anything that feels preachy or slow |
 | Reply in the student's language and register | Standing rules | 1 (support has to fit the learner) | Brief. The link to the principle is weak and no source is claimed |
 | Three-step confidence scale (sure, fairly sure, guessing) | Session step 4 | 2 | Practical default agreed with the author. Row 7 supports rating confidence, not this particular scale |
