@@ -32,17 +32,14 @@ Three things to know before you start:
 
 You need a Claude account. Skills also work on the free plan.
 
-1. On this page, click **Code**, then **Download ZIP**, and unpack the download.
-2. Open the unpacked folder, then the folder `skills`. Inside it is a folder called `learning-coach`. Compress **that** folder into a ZIP file:
-   - Windows: right-click the folder and choose *Compress to ZIP file* (or *Send to > Compressed (zipped) folder*).
-   - macOS: right-click the folder and choose *Compress "learning-coach"*.
-3. In Claude, open **Settings > Capabilities** and switch on **Code execution and file creation** (in the newer layout it is called *Create and edit files*). Skills need this.
-4. Go to **Customize > Skills**, click **+**, then **Create skill**, then **Upload a skill**, and choose your `learning-coach.zip`.
-5. Check that the skill is switched on in the list.
+1. Download **`learning-coach.zip`** from the [latest release](https://github.com/scotchline/learning-coach/releases/latest). Do not unpack it.
+2. In Claude, open **Settings > Capabilities** and switch on **Code execution and file creation** (in the newer layout it is called *Create and edit files*). Skills need this.
+3. Go to **Customize > Skills**, click **+**, then **Create skill**, then **Upload a skill**, and choose `learning-coach.zip`.
+4. Check that the skill is switched on in the list.
 
 Then start a new chat and ask something you want to learn, for example "Help me understand net present value". The skill loads on its own when you ask to learn, understand, revise or be quizzed.
 
-If the upload fails, the usual cause is that the whole repository was zipped. The ZIP must contain the folder `learning-coach` with `SKILL.md` directly inside it.
+If you would rather build the ZIP yourself, for example after changing the skill: download this repository (**Code > Download ZIP**), unpack it, and compress the folder `skills/learning-coach` on its own. If the upload fails, the usual cause is that the whole repository was zipped. The ZIP must contain the folder `learning-coach` with `SKILL.md` directly inside it.
 
 Menu names in Claude change from time to time. The steps above follow Anthropic's help article "Use skills in Claude" as of November 2026.
 
@@ -150,7 +147,7 @@ Planned for later versions: the modes "feedback on my work" and "teach-back", an
 
 **Gut zu wissen:** Mit «sag es mir einfach» bekommst du die Antwort, ohne Vortrag. Bei benoteten Arbeiten erklärt der Coach Methoden und gibt Rückmeldung zu deinem Entwurf, schreibt die Arbeit aber nicht. Gewöhnliche Aufträge wie eine E-Mail oder eine Tabelle erledigt er einfach.
 
-**Installation in Claude:** Repository als ZIP herunterladen und entpacken. Den Ordner `skills/learning-coach` als ZIP komprimieren. In Claude unter *Settings > Capabilities* die Code-Ausführung einschalten, dann unter *Customize > Skills* auf *+*, *Create skill*, *Upload a skill* klicken und das ZIP hochladen. Details stehen oben unter [Install](#install).
+**Installation in Claude:** Die Datei `learning-coach.zip` beim [neusten Release](https://github.com/scotchline/learning-coach/releases/latest) herunterladen, nicht entpacken. In Claude unter *Settings > Capabilities* die Code-Ausführung einschalten, dann unter *Customize > Skills* auf *+*, *Create skill*, *Upload a skill* klicken und das ZIP hochladen. Details stehen oben unter [Install](#install).
 
 **ChatGPT und andere:** Den Text aus [`portable/prompt.md`](portable/prompt.md) als erste Nachricht in einen neuen Chat einfügen oder in ChatGPT bei den *Custom instructions* hinterlegen.
 
