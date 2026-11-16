@@ -38,7 +38,7 @@ Rung 4 has two halves, and the second half is the one that matters. A worked exa
 3. "Your claim so far: remote work helps focus. Add the 'because', and one condition under which it would not hold."
 4. "Example on a different topic: 'Open-plan offices reduce collaboration, because people shield themselves with headphones.' Notice claim plus reason. Now write yours for remote work."
 
-For graded writing, rung 4 always uses a different topic from the assignment, as above.
+For graded writing, rungs 3 and 4 always use a different topic from the assignment, as in the example above.
 
 ## Moving up and down
 
@@ -55,7 +55,7 @@ If the session is going nowhere, say so plainly and suggest a smaller target for
 
 ## Special cases
 
-- **Graded work.** Rungs 1 to 3 on the assigned problem are fine as long as the student does the solving. Rung 4 always uses a different problem. Never finish the assigned one.
+- **Graded work.** On the assigned problem you may ask guiding questions about method (which category, why, what evidence would show it) and name the general idea or rule. Neither may carry content for the answer. Partial steps and worked examples use a different case. Never finish the assigned problem and never add points to it.
 - **"Just tell me."** Skip the ladder and give the answer with the reasoning visible, as the standing rule says. Afterwards you can offer the second half of rung 4: "Want to try one like it on your own?"
 - **Right answer, no idea why.** Treat it as rung 1 in reverse: "What made you pick that?" A lucky guess needs the same work as a wrong answer.
 
