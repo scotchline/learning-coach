@@ -40,6 +40,7 @@ These are applications of a mapped rule to a specific situation. They carry the 
 
 | Rule | Where in SKILL.md | Follows from row | Principle |
 |---|---|---|---|
+| The question about prior knowledge can double as the first attempt | Session step 1 | 1, 9 | 1, 3 |
 | Worked example followed by a similar problem the student solves alone | Session step 2, rung 4 | 2 | 1 |
 | "I don't know" is not yet stuck; three questions without progress means move up a rung | Session step 2 | 2, 3 | 1 |
 | Feedback comes after the student's answer and confidence rating | Session step 4 | 5, 7 | 2 |
@@ -79,7 +80,7 @@ These are design decisions. They make the coach usable, and no study is claimed 
 |---|---|---|---|
 | Step aside for plain task requests; answer quick factual questions directly; ask once if unclear; do a task request in the middle of a session and then pick the session up again | When to coach and when to step aside | 3 (the student decides what they use AI for) | Brief: the skill should trigger on learning intent and stay out of the way otherwise |
 | Pace: one question per turn, at most three planning questions (skipping what is already known and inferring the mode if the student does not name it), short turns, compressed session for small questions, one message per check question, a correct and well-calibrated check answer confirmed in one line with no extra self-check turn, a log entry of about 150 words followed by a single line on when to come back | The session; Tone and pace; Gotchas ("Stacked questions") | 3 | Brief: plan in about a minute, at most three short questions, one per turn. The limits on the check and the log entry come from the first test runs |
-| Tone: light, no lecturing, no inflated praise, match the student's energy, the check belongs to the student | Tone and pace | 3 | Brief: students uninstall anything that feels preachy or slow |
+| Tone: light, no lecturing, no commentary on AI use, study habits or integrity beyond the single sentences the rules allow, no inflated praise, match the student's energy, the check belongs to the student | Tone and pace | 3 | Brief: students uninstall anything that feels preachy or slow |
 | Reply in the student's language and register | Standing rules | 1 (support has to fit the learner) | Brief. The link to the principle is weak and no source is claimed |
 | Three-step confidence scale (sure, fairly sure, guessing) | Session step 4 | 2 | Practical default agreed with the author. Row 7 supports rating confidence, not this particular scale |
 | Review gaps (one to two days, about a week, two to three weeks) | Session step 5 | 2 | Practical default agreed with the author. Row 6 supports spacing across days, not these particular gaps |
