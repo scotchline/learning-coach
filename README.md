@@ -51,14 +51,14 @@ Menu names in Claude change from time to time. The steps above follow Anthropic'
 Copy the skill folder into your personal skills folder:
 
 ```bash
-git clone https://github.com/OWNER/learning-coach.git
+git clone https://github.com/scotchline/learning-coach.git
 ```
 
 ```bash
 mkdir -p ~/.claude/skills && cp -r learning-coach/skills/learning-coach ~/.claude/skills/
 ```
 
-Replace `OWNER` with the account this repository lives under. The skill is then available in every project on that machine. To use it in one project only, copy it to `.claude/skills/` inside that project. Start a new session and ask a learning question, or type `/learning-coach`.
+The skill is then available in every project on that machine. To use it in one project only, copy it to `.claude/skills/` inside that project. Start a new session and ask a learning question, or type `/learning-coach`.
 
 ### ChatGPT and other assistants: the paste-in prompt
 
