@@ -32,7 +32,7 @@ Three things to know before you start:
 
 You need a Claude account. Skills also work on the free plan.
 
-1. Download **`learning-coach.zip`** from the [latest release](https://github.com/scotchline/learning-coach/releases/latest). Do not unpack it.
+1. Download [**`learning-coach.zip`**](https://github.com/scotchline/learning-coach/raw/main/dist/learning-coach.zip) (direct download, also in the folder `dist/`). Do not unpack it.
 2. In Claude, open **Settings > Capabilities** and switch on **Code execution and file creation** (in the newer layout it is called *Create and edit files*). Skills need this.
 3. Go to **Customize > Skills**, click **+**, then **Create skill**, then **Upload a skill**, and choose `learning-coach.zip`.
 4. Check that the skill is switched on in the list.
@@ -114,6 +114,7 @@ learning-coach/
   README.md
   LICENSE
   docs/                         source mapping and reference list
+  dist/learning-coach.zip       the skill folder zipped, ready to upload to Claude
   skills/learning-coach/
     SKILL.md                    the skill
     references/modes.md         learn something new, exam prep (two more planned)
@@ -135,6 +136,12 @@ The skill follows the open [Agent Skills format](https://agentskills.io/specific
 diff <(sed -n '/^<!-- portable:start -->$/,/^<!-- portable:end -->$/p' skills/learning-coach/SKILL.md | sed '1d;$d') portable/prompt.md; wc -m portable/prompt.md
 ```
 
+After any change to the skill folder, rebuild the ZIP so the download stays in step:
+
+```bash
+rm -f dist/learning-coach.zip && (cd skills && zip -qrX ../dist/learning-coach.zip learning-coach)
+```
+
 After any change to `SKILL.md` or the prompt, rerun the scenarios in `tests/scenarios.md` and update `tests/results.md`.
 
 Planned for later versions: the modes "feedback on my work" and "teach-back", and printable outputs such as test sheets.
@@ -147,7 +154,7 @@ Planned for later versions: the modes "feedback on my work" and "teach-back", an
 
 **Gut zu wissen:** Mit «sag es mir einfach» bekommst du die Antwort, ohne Vortrag. Bei benoteten Arbeiten erklärt der Coach Methoden und gibt Rückmeldung zu deinem Entwurf, schreibt die Arbeit aber nicht. Gewöhnliche Aufträge wie eine E-Mail oder eine Tabelle erledigt er einfach.
 
-**Installation in Claude:** Die Datei `learning-coach.zip` beim [neusten Release](https://github.com/scotchline/learning-coach/releases/latest) herunterladen, nicht entpacken. In Claude unter *Settings > Capabilities* die Code-Ausführung einschalten, dann unter *Customize > Skills* auf *+*, *Create skill*, *Upload a skill* klicken und das ZIP hochladen. Details stehen oben unter [Install](#install).
+**Installation in Claude:** Die Datei [`learning-coach.zip`](https://github.com/scotchline/learning-coach/raw/main/dist/learning-coach.zip) herunterladen, nicht entpacken. In Claude unter *Settings > Capabilities* die Code-Ausführung einschalten, dann unter *Customize > Skills* auf *+*, *Create skill*, *Upload a skill* klicken und das ZIP hochladen. Details stehen oben unter [Install](#install).
 
 **ChatGPT und andere:** Den Text aus [`portable/prompt.md`](portable/prompt.md) als erste Nachricht in einen neuen Chat einfügen oder in ChatGPT bei den *Custom instructions* hinterlegen.
 
