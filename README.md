@@ -53,9 +53,18 @@ You need a Claude account. Skills also work on the free plan.
 
 Then start a new chat and ask something you want to learn, for example "Help me understand net present value". The skill loads on its own when you ask to learn, understand, revise or be quizzed.
 
+**Updating to a new version.** New versions are listed under [Releases](https://github.com/scotchline/learning-coach/releases).
+
+1. Download `learning-coach.zip` again from the link in step 1.
+2. In **Customize > Skills**, open the menu next to `learning-coach`. If it offers to replace or update the skill, choose the new ZIP and go to step 4. If it does not, delete the skill, so that two versions do not compete for the same requests.
+3. Upload the new ZIP as in step 3 above.
+4. Check that the skill is switched on, then start a new chat. Chats that were already open keep the old version.
+
+Your learning log is your own file, so it carries over unchanged.
+
 If you would rather build the ZIP yourself, for example after changing the skill: download this repository (**Code > Download ZIP**), unpack it, and compress the folder `skills/learning-coach` on its own. If the upload fails, the usual cause is that the whole repository was zipped. The ZIP must contain the folder `learning-coach` with `SKILL.md` directly inside it.
 
-Menu names in Claude change from time to time. The steps above follow Anthropic's help article "Use skills in Claude" as of November 2026.
+Menu names in Claude change from time to time. The steps above follow Anthropic's help article "Use skills in Claude" as of November 2026. The article does not describe updating a skill, so the update steps take the safe route of removing the old version first.
 
 ### Claude Code
 
@@ -70,6 +79,12 @@ mkdir -p ~/.claude/skills && cp -r learning-coach/skills/learning-coach ~/.claud
 ```
 
 The skill is then available in every project on that machine. To use it in one project only, copy it to `.claude/skills/` inside that project. Start a new session and ask a learning question, or type `/learning-coach`.
+
+To update, pull the repository, remove the old copy and copy the folder again:
+
+```bash
+git -C learning-coach pull && rm -rf ~/.claude/skills/learning-coach && cp -r learning-coach/skills/learning-coach ~/.claude/skills/
+```
 
 ### ChatGPT and other assistants: the paste-in prompt
 
@@ -187,7 +202,7 @@ Planned for later versions: the mode "teach-back", and printable outputs such as
 
 **Eigene Texte korrigieren (neu in 0.2):** Wenn du schreibst, dass Englisch nicht deine Erstsprache ist, dass du besser werden willst oder dass der Text für einen Kurs ist, bekommst du den ganzen Text korrigiert, mit jeder Änderung **fett**. Darunter stehen höchstens zwei Zeilen zu den Fehlern, die sich wiederholen, und warum. Auf Wunsch kommen sie in dein Schreibprofil im Lernjournal. Bei benoteten Texten zeigt der Coach dir, wo die Fehler sind, und du korrigierst selbst. Mit «korrigier einfach» bekommst du nur noch die Korrekturen.
 
-**Installation in Claude:** Die Datei [`learning-coach.zip`](https://github.com/scotchline/learning-coach/releases/latest/download/learning-coach.zip) aus dem neuesten Release herunterladen, nicht entpacken. In Claude unter *Settings > Capabilities* die Code-Ausführung einschalten, dann unter *Customize > Skills* auf *+*, *Create skill*, *Upload a skill* klicken und das ZIP hochladen. Details stehen oben unter [Install](#install).
+**Installation in Claude:** Die Datei [`learning-coach.zip`](https://github.com/scotchline/learning-coach/releases/latest/download/learning-coach.zip) aus dem neuesten Release herunterladen, nicht entpacken. In Claude unter *Settings > Capabilities* die Code-Ausführung einschalten, dann unter *Customize > Skills* auf *+*, *Create skill*, *Upload a skill* klicken und das ZIP hochladen. Für eine neue Version das neue ZIP herunterladen, unter *Customize > Skills* die alte Version löschen (falls das Menü kein Ersetzen anbietet) und das neue ZIP hochladen. Das Lernprotokoll bleibt erhalten, weil es deine eigene Datei ist. Details stehen oben unter [Install](#install).
 
 **ChatGPT und andere:** Den Text aus [`portable/prompt.md`](portable/prompt.md) als erste Nachricht in einen neuen Chat einfügen oder in ChatGPT bei den *Custom instructions* hinterlegen.
 
