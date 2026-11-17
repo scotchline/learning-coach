@@ -46,7 +46,7 @@ Other parts of the same mode:
 
 You need a Claude account. Skills also work on the free plan.
 
-1. Download [**`learning-coach.zip`**](https://github.com/scotchline/learning-coach/raw/main/dist/learning-coach.zip) (direct download, also in the folder `dist/`). Do not unpack it.
+1. Download [**`learning-coach.zip`**](https://github.com/scotchline/learning-coach/releases/latest/download/learning-coach.zip) (direct download from the [latest release](https://github.com/scotchline/learning-coach/releases/latest)). Do not unpack it.
 2. In Claude, open **Settings > Capabilities** and switch on **Code execution and file creation** (in the newer layout it is called *Create and edit files*). Skills need this.
 3. Go to **Customize > Skills**, click **+**, then **Create skill**, then **Upload a skill**, and choose `learning-coach.zip`.
 4. Check that the skill is switched on in the list.
@@ -161,10 +161,16 @@ The skill follows the open [Agent Skills format](https://agentskills.io/specific
 diff <(sed -n '/^<!-- portable:start -->$/,/^<!-- portable:end -->$/p' skills/learning-coach/SKILL.md | sed '1d;$d') portable/prompt.md; wc -m portable/prompt.md
 ```
 
-After any change to the skill folder, rebuild the ZIP so the download stays in step:
+After any change to the skill folder, rebuild the ZIP:
 
 ```bash
 rm -f dist/learning-coach.zip && (cd skills && zip -qrX ../dist/learning-coach.zip learning-coach)
+```
+
+The install link points to the latest release, not to `dist/`, so students get a change only once it is released. To release, set `version` in `SKILL.md`, commit and push, write a few lines on what changed into `release-notes.md`, and publish the ZIP (here for version 0.3.1):
+
+```bash
+VERSION=0.3.1; gh release create "v$VERSION" dist/learning-coach.zip --target main --title "Learning coach $VERSION" --notes-file release-notes.md
 ```
 
 After any change to `SKILL.md` or the prompt, rerun the scenarios in `tests/scenarios.md` and update `tests/results.md`.
@@ -181,7 +187,7 @@ Planned for later versions: the mode "teach-back", and printable outputs such as
 
 **Eigene Texte korrigieren (neu in 0.2):** Wenn du schreibst, dass Englisch nicht deine Erstsprache ist, dass du besser werden willst oder dass der Text für einen Kurs ist, bekommst du den ganzen Text korrigiert, mit jeder Änderung **fett**. Darunter stehen höchstens zwei Zeilen zu den Fehlern, die sich wiederholen, und warum. Auf Wunsch kommen sie in dein Schreibprofil im Lernjournal. Bei benoteten Texten zeigt der Coach dir, wo die Fehler sind, und du korrigierst selbst. Mit «korrigier einfach» bekommst du nur noch die Korrekturen.
 
-**Installation in Claude:** Die Datei [`learning-coach.zip`](https://github.com/scotchline/learning-coach/raw/main/dist/learning-coach.zip) herunterladen, nicht entpacken. In Claude unter *Settings > Capabilities* die Code-Ausführung einschalten, dann unter *Customize > Skills* auf *+*, *Create skill*, *Upload a skill* klicken und das ZIP hochladen. Details stehen oben unter [Install](#install).
+**Installation in Claude:** Die Datei [`learning-coach.zip`](https://github.com/scotchline/learning-coach/releases/latest/download/learning-coach.zip) aus dem neuesten Release herunterladen, nicht entpacken. In Claude unter *Settings > Capabilities* die Code-Ausführung einschalten, dann unter *Customize > Skills* auf *+*, *Create skill*, *Upload a skill* klicken und das ZIP hochladen. Details stehen oben unter [Install](#install).
 
 **ChatGPT und andere:** Den Text aus [`portable/prompt.md`](portable/prompt.md) als erste Nachricht in einen neuen Chat einfügen oder in ChatGPT bei den *Custom instructions* hinterlegen.
 
