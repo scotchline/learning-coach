@@ -8,6 +8,35 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ## 17 November 2026
 
+### Praise rule made concrete
+
+- **Decided:** "Exactly", "Spot on", "Good catch", "Great", "Solid" and the same words in the student's language ("Genau", "Super") count as praise, not as confirmation. Before the warm close, praise at most twice in a whole session, and only for a moment that earns it. Never praise a wrong or half-right answer; say plainly which part is right instead.
+- **Why:** in round 7, "a couple of times a session at most" did not hold. The long session had about a dozen praise phrases, and one German run said "Guter Ansatz, du bist nah dran" to a wrong answer. Naming the words and giving a number makes the rule something the coach can follow and a grader can count.
+- **Not chosen:** no praise at all before the close (too cold); the same limit of three as test criterion G5. The skill aims for two, and G5 keeps three as the failure line, one above the target.
+- **Also changed:** G5 now names "good catch" and praise in the student's language, and praise for a wrong or half-right answer fails it on its own. The paste-in prompt keeps "rare praise" because it has two characters to spare; its runs passed G5 in 4 of 5.
+- **Where:** `SKILL.md`, Tone and pace; `evidence.md`, Tone row; `tests/scenarios.md`, G5.
+- **Result:** on v0.3, scenarios 3 and 8 now pass G5 (1 and at most 2 praise phrases, both were 4). Scenario 1 is at 3 or 4, depending on one borderline phrase. One run each.
+
+### One definition of "the check went well"
+
+- **Decided:** the check went well when more than half of its answers were right: two of three, or both of two. A wrong answer the student was sure of does not change that, because it already goes in the log under "sure but wrong". The paste-in prompt now says "if they got most right".
+- **Why:** the old condition ("most answers right, and their confidence fitted") disagreed with scenario 1 ("most of the check went right"). In round 7 one coach left out "you did well" after two of three right, and another said it after one of two.
+- **Not chosen:** keeping the confidence condition. It made the rule hard to apply, and the confidence miss is already handled where it matters, in the log and in the question asked again before the end.
+- **Where:** `SKILL.md`, session step 5 and the core loop; `portable/prompt.md`, step 5.
+- **Result:** in the rerun, every coach said "you did well" after a check with more than half right.
+- **Open:** the warm close often runs to three sentences instead of one or two, and the paste-in prompt still added course content after the log entry once.
+
+### Round 7: scenarios 1 to 8 rerun after the warm close and sparing praise
+
+- **Decided:** the rerun used the round 2 to 4 method: installed-skill command-line sessions, a separate student session and a separate grader per scenario. Two questions in one turn (G1) were counted as a weakness and not as a failure, as in round 4. The results are recorded as round 7 in `tests/results.md`.
+- **Why:** the warm close and sparing praise had only been spot-checked. Keeping the round 4 rule for G1 makes the rounds comparable.
+- **Result:** 4 of 9 skill runs and 3 of 5 paste-in runs pass. The warm close works in every run. Sparing praise failed in four runs, and "you did well" was used unevenly.
+- **Done since:** the praise rule and the definition of "the check went well"; see the two entries above.
+- **Open, not yet decided:**
+  - **The description no longer loads the skill for "just give me the answer" study questions.** The scenario 2 opening loaded 0 of 5 times with the v0.3 description, against 3 of 3 in round 4.
+  - **Rerun scenarios 1 to 8 against v0.3**, because round 7 tested the skill as it was before the writing mode.
+- **Where:** `tests/results.md`, round 7.
+
 ### Three sources from course slides added, no rule changed
 
 - **Decided:** three sources are added to `evidence.md` and `docs/references.md` as support or background. No rule changes, because the rule they most support ("say how sure you are") is already in v0.3.
@@ -121,12 +150,12 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 - **Decided:** to fit the warm close and "rare praise" into the 1,500-character limit, five lines were shortened: "for the student in this chat" dropped, "When they want to learn or revise" became "To learn or revise", "their confidence ... before any feedback" became "confidence ... before feedback", "their answer or draft" became "their work", and "Just do it" became "Do it".
 - **Why:** the paste-in prompt has a limit of 1,500 characters, set in the maintainer comment above the core loop in `SKILL.md`.
-- **Note:** it is now at exactly 1,500. Any further addition needs a cut elsewhere.
+- **Note:** this left it at exactly 1,500. After the v0.2 changes it is at 1,498, so any further addition still needs a cut elsewhere.
 
 ### Tests for the new behaviour
 
 - **Decided:** scenarios 1 and 8 check the warm close; new general criterion G5 checks sparing praise. `tests/results.md` says the full scenarios have not been rerun since these changes.
-- **Open:** rerun the eight scenarios (skill) and scenarios 1 to 4 and 8 (paste-in prompt), then update `tests/results.md`.
+- **Done:** rerun in round 7; see the round 7 entry above.
 
 ---
 

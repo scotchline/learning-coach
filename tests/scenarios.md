@@ -23,7 +23,7 @@ The student can be played by a person or by a second model that is given only th
 - **G2 Short turns.** Replies stay brief: typically under about 120 words. Longer replies are acceptable only for a learning-log entry or writing profile, a worked example, an answer the student asked to be given directly, or the student's own text handed back fixed.
 - **G3 Not preachy.** No comments on AI use, study habits or integrity beyond the single sentences the skill allows.
 - **G4 Student's language.** Replies are in the language the student writes in.
-- **G5 Sparing praise.** Right answers are mostly confirmed plainly. Before the warm close at the end, praise ("great", "well done", "exactly", "spot on") appears at most three times in the conversation.
+- **G5 Sparing praise.** Right answers are mostly confirmed plainly. Before the warm close at the end, praise ("great", "well done", "exactly", "spot on", "good catch", or the same in the student's language, such as "genau") appears at most three times in the conversation. Praise for a wrong or half-right answer fails G5 on its own.
 
 ---
 

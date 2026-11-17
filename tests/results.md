@@ -2,9 +2,9 @@
 
 **Status on 16 November 2026:** on the version in this repository, all eight scenarios pass for the skill, and scenarios 1 to 4 and 8 pass for the paste-in prompt. It took four rounds to get there. The failures on the way and the changes they led to are listed below.
 
-**Not yet rerun (17 November 2026):** two changes were made after these runs: a warm close at the end of a session (session step 5, and one sentence in the paste-in prompt), and sparing praise during the session (Tone and pace, and "rare praise" in the paste-in prompt). Scenarios 1 and 8 now check the close, and the new criterion G5 checks the praise. Until they are rerun, the results below are for the version before that change. A spot check of the closing message alone behaved as intended: three fresh coaches (skill after a good check, skill after a bad one, paste-in prompt in German) were given a scripted conversation up to the final reflection. That spot check does not replace the full scenarios.
+**Round 7, scenarios 1 to 8 rerun (17 November 2026):** after the warm close and sparing praise, 4 of 9 skill runs and 3 of 5 paste-in prompt runs pass. The warm close appeared in every coaching run. Sparing praise (the new criterion G5) failed in four runs, and "you did well" was applied unevenly. With the skill installed, the scenario 2 opening no longer loads it (0 of 5 with the current description). The skill runs used v0.1 with the warm close and sparing praise, not v0.3. See [Round 7](#round-7-scenarios-1-to-8-after-the-warm-close-and-sparing-praise).
 
-**Writing mode, round 5 (17 November 2026):** scenarios 9 to 14 and 12b pass for the skill, and scenario 9 passes for the paste-in prompt, each after at most one fix. Scenario 6b was rerun because the step-aside rule changed, and passes. In the trigger check, all 29 first messages (10 new fix and tone prompts, 19 from the earlier check) came out as intended in all three runs. Round 5 used a weaker method than rounds 2 to 4; see [Round 5](#round-5-writing-mode-v02). Scenarios 1 to 5, 7 and 8 have not been rerun since the warm close, sparing praise and the writing mode.
+**Writing mode, round 5 (17 November 2026):** scenarios 9 to 14 and 12b pass for the skill, and scenario 9 passes for the paste-in prompt, each after at most one fix. Scenario 6b was rerun because the step-aside rule changed, and passes. In the trigger check, all 29 first messages (10 new fix and tone prompts, 19 from the earlier check) came out as intended in all three runs. Round 5 used a weaker method than rounds 2 to 4; see [Round 5](#round-5-writing-mode-v02). Scenarios 1 to 5, 7 and 8 were rerun in round 7 for the warm close and sparing praise, but not with the writing mode.
 
 **v0.3, round 6 (17 November 2026):** scenarios 15 to 17 pass for the skill, one run each, with the same method as round 5. The skill description and the paste-in prompt did not change, so the trigger check was not repeated.
 
@@ -284,6 +284,81 @@ Weaknesses that did not fail a criterion:
 - **A promise not kept.** In scenario 16 the coach said it would ask the sure-but-wrong question again before the end, and the student left first. The log entry carries it instead, which is the fallback the skill intends.
 - **Exam triage not tested.** Scenario 16 had one miss, so the rule to work only on confident and repeated misses close to the exam was not put under pressure.
 
+## Round 7: scenarios 1 to 8 after the warm close and sparing praise
+
+### How it was run
+
+- **Coach.** As in rounds 2 to 4: a fresh command-line session with the skill installed in the project's skills folder, so that normal skill loading decided. The session had only project settings, no MCP servers, only the Skill and Read tools, and was told it knows nothing about the user. For the paste-in prompt, a fresh session had the prompt (plus today's date) as its only system prompt, with no tools and no skills.
+- **Student.** A second fresh session with no tools that saw only the "Student" paragraph and was told which message number it was about to send. Scripted messages were sent word for word.
+- **Judging.** One separate grading session per scenario, which received only G1 to G5, the scenario section and the transcripts. The assistant that ran the tests added mechanical checks (skill loaded, reply lengths, praise words, review dates, closings).
+- **Versions.** The skill runs used the skill as copied at 08:40 on 17 November: v0.1.0 with the warm close and sparing praise, before the writing mode (v0.2) was committed. The passages on the warm close and on praise are word for word the same in v0.3. Scenario 6b and the extra scenario 2 run had the v0.3 SKILL.md already loaded. The paste-in runs used the prompt as committed at 09:03, which is the current one.
+- **Date and model.** Tuesday 17 November 2026, one day later than the scenarios assume, so all dates were judged one day later. Model: claude-opus-5-5.
+- **Runs.** One per scenario. The first scenario 7 run crashed because a student message starting with "-" was read as a command-line option. Messages now go in on standard input, and scenario 7 was rerun.
+- **Two questions in one turn** (G1) were counted as a weakness and not as a failure, as in round 4.
+
+### Results
+
+Skill:
+
+| Scenario | Result | Skill loaded by the session | Why |
+|---|---|---|---|
+| 1. Normal session | fail | yes | The close thanks her and names what she did, but never says plainly that she did well (point 8). She had 2 of 3 check answers right, one wrong while "fairly sure" |
+| 2. "Just give me the answer" three times | fail | no | Answers were direct and correct, but with the skill closed there was no trade-off sentence and no offer to practise |
+| 2, skill already loaded (v0.3 text) | pass | not applicable | Trade-off once in one sentence, one offer at the end |
+| 3. Graded assignment | fail | yes | G5: four praise phrases ("Good, that's a real point.", "That's exactly what the paper needs.", "Exactly.", "good catch"). All five scenario points met |
+| 4. Wrong answer with high confidence | pass | yes | |
+| 5. Long session, 40 student messages | fail | yes | G5: about a dozen praise phrases. Fading not visible: late help was as heavy as early help (point 6) |
+| 6a. Non-learning request, trigger | pass | no, as intended | |
+| 6b. Non-learning request, skill already loaded (v0.3 text) | pass | not applicable | |
+| 7. Returning student with a log | pass | yes | |
+| 8. German-speaking student | fail, borderline | yes | G5: four praise phrases if "Genau" counts, among them "Guter Ansatz, du bist nah dran" for a wrong answer; two if it does not. All scenario points met |
+
+Paste-in prompt:
+
+| Scenario | Result | Why |
+|---|---|---|
+| 1. Normal session | fail, borderline | G5: four praise phrases, or three if the two in one reply count once. It also said "You did well" after one of two check answers was wrong |
+| 2. "Just give me the answer" three times | pass | |
+| 3. Graded assignment | pass | One point of its own about Migros (the 2022 member vote on alcohol, and Denner). Not a failure point of the scenario, but against "never add your points" |
+| 4. Wrong answer with high confidence | pass | |
+| 8. German-speaking student | fail | The trade-off after the formula took two sentences (point 4) |
+
+Trigger check for the scenario 2 opening ("What's the difference between a Type I and a Type II error? Just give me the answer, I don't have time."), each in a fresh session with the skill installed:
+
+| Skill description | Loaded |
+|---|---|
+| v0.1 (as tested in this round) | 2 of 5, plus 0 of 1 in the scenario 2 run |
+| v0.3 (current) | 0 of 5 |
+| Control, "Can you explain net present value? ...", both versions | 3 of 3 each |
+
+Round 4 had this opening at 3 of 3, and the description-only check in round 5 counted it as opening the skill. With the skill installed, the current description does not load it.
+
+### What this says about the two new rules
+
+- **Warm close: works.** Every coaching run ended with a thank-you and something specific the student had done. Example (scenario 5): "Thanks for staying with it, even when you were tired. You did well. You answered all three check questions correctly, and you found the mistake in task F yourself once you checked its dependency."
+- **"You did well": applied unevenly.** Said in scenarios 5 and 7 and paste-in 1 and 4; left out in scenarios 1, 3, 4 and 8. The skill's condition ("most answers right, and their confidence fitted") and the scenario's ("most of the check went right") point different ways when one answer is wrong at "fairly sure", as in scenario 1. In paste-in 1 the coach said it after one of two answers was wrong.
+- **Sparing praise: not yet reliable.** G5 failed in scenarios 3, 5 and 8 and in paste-in 1, and passed in 1, 4 and 7, the loaded scenario 2, and paste-in 2, 3, 4 and 8. The usual forms are "Exactly", "Good catch" and "That's a solid explanation". "A couple of times a session at most" is not specific enough to hold over a long session.
+
+### Weaknesses that did not fail a criterion
+
+- **Two questions in one turn** in scenarios 1, 3, 5 and 7 and paste-in 3, 4 and 8.
+- **Long direct answers for a student in a hurry.** The loaded scenario 2 run had a median of 151 words a reply. The exception for answers the student asked for allows it.
+- **Log entries with small errors.** Scenario 1: "Sure but wrong: None", followed by a miss at "fairly sure". Scenario 7 gave only the new entry and queue and left out the headings, so the student has to merge it by hand.
+- **Scenario 5 ending.** When the student got tired, the coach dropped the summary it had promised, and her last three messages drew three goodbyes.
+
+### Rerun after the two fixes, on v0.3
+
+After round 7 the praise rule was made concrete and "the check went well" was given one definition (see `docs/decisions.md`). The four runs where praise or "you did well" had gone wrong were repeated with the current v0.3 skill installed and the current paste-in prompt, using the same method.
+
+| Run | Result | Praise before the close (G5) | Close |
+|---|---|---|---|
+| Skill, scenario 1 | fail, narrow | 4 by a strict count, 3 if "your reasoning came before the numbers" is not counted | "You did well today", with two real things she did. Three sentences, where point 8 asks for one or two |
+| Skill, scenario 3 | pass | 1 ("Good catch."), was 4 | Thanks, and what she did herself |
+| Skill, scenario 8 | pass | 0 to 2 mild ones, was 4. The wrong first answer got "Die Grundidee stimmt aber schon", not praise | "Danke fürs Mitmachen! Du hast alle drei Aufgaben richtig gelöst ..." |
+| Paste-in, scenario 1 | fail | 3, at the limit (the praise line of the prompt did not change) | "You did well", after two of three right. Three sentences, and two sentences of new course content after the log entry |
+
+What this shows: the praise rule now holds in scenarios 3 and 8, and "you did well" is said whenever more than half of the check was right. Still open: the warm close often runs to three sentences, and the paste-in prompt still adds content after the log entry. One run each, so these are signs and not proof.
+
 ## Limits of these tests
 
 - No real students, and no measurement of learning.
@@ -293,3 +368,4 @@ Weaknesses that did not fail a criterion:
 - The paste-in prompt was tested as custom instructions in a Claude session, not inside ChatGPT.
 - Full transcripts are not part of this repository.
 - Round 5 (writing mode) used subagent coaches, a scripted student played by the assistant that wrote the skill, a description-only trigger check and one run per scenario. Rerun it with installed-skill sessions and a separate student and grader before relying on it.
+- Round 7 tested the skill as it was before the writing mode. Scenarios 1 to 8 have not been run against v0.3 as an installed skill.
