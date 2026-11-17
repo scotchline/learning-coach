@@ -14,6 +14,7 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 - **Why:** several sessions commit to `main` during a day, and the ZIP in `dist/` can be rebuilt in the middle of a change. Students should get a version that was tested and released, not whatever is on `main` at the time.
 - **Not chosen:** a link to a fixed version (`releases/download/v0.3.0/...`), because it would need a README edit for every release.
 - **Consequence:** a change reaches students only with a new release. The README's maintainer section says how to publish one.
+- **Update steps:** the README tells students to delete the old skill before uploading the new ZIP, unless the menu offers to replace it. Anthropic's help article does not say whether an upload with the same name replaces a personal skill, and two installed versions would compete for the same requests. Claude Code users pull, remove the old copy and copy the folder again. To check: what the Skills page actually offers, then shorten the steps.
 - **Where:** README, Install, the German summary and the maintainer section.
 
 ### Ideas for coming back to a topic parked for a later app
