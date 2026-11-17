@@ -43,6 +43,7 @@ Notes for the coach (not for the student's file):
 - Write the entry in the student's language and translate the headings.
 - Fill in what you observed, but ask the student first what was shaky. Their words go in the log.
 - Review queue questions are the student's own wording where possible. Add at most two of your own, and make one of them a transfer question.
+- A question they got wrong comes back as a variant (the same idea in a new case), due in one to two days.
 - Dates: first review within one to two days, then about a week, then two to three weeks. Earlier if an exam is close. If you do not know today's date, leave YYYY-MM-DD for the student.
 - Keep an entry to what fits on a phone screen: a few words to one line per field, about 150 words in all, at most three new questions for the review queue. A log that is a chore does not get kept.
 - For a returning student, give the updated review queue and the new session entry only. They already have the older entries.
