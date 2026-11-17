@@ -68,6 +68,29 @@ AI feedback on writing:
 - Lin, S., & Crosthwaite, P. (2024). The grass is not always greener: Teacher vs. GPT-assisted written corrective feedback. *System, 127*, 103529. https://doi.org/10.1016/j.system.2024.103529 (verified)
 - Steiss, J., Tate, T., Graham, S., Cruz, J., Hebert, M., Wang, J., Moon, Y., Tseng, W., Warschauer, M., & Olson, C. B. (2024). Comparing the quality of human and ChatGPT feedback of students' writing. *Learning and Instruction, 91*, 101894. https://doi.org/10.1016/j.learninstruc.2024.101894 (verified)
 
+## v0.3 additions
+
+Added 17 November 2026. Bibliographic details confirmed against Crossref on that date, except the Google and Eedi report, which has no DOI and was read in full for the research notes.
+
+- DeVerna, M. R., Yan, H. Y., Yang, K.-C., & Menczer, F. (2024). Fact-checking information from large language models can decrease headline discernment. *PNAS, 121*(50), e2322823121. https://doi.org/10.1073/pnas.2322823121 (verified; check: sample size and mechanism)
+- Google LearnLM Team & Eedi (2026, 29 October). Measuring the impact of AI tutoring, from near transfer to standardised tests: An expanded RCT in UK mathematics classrooms. Technical report. https://services.google.com/fh/files/misc/learnlm_oct26.pdf (verified per research notes; not peer-reviewed)
+- Kreijkes, P., Kewenig, V., Kuvalja, M., Lee, M., Hofman, J. M., Vitello, S., Sellen, A., Rintel, S., Goldstein, D. G., Rothschild, D., Tankelevitch, L., & Oates, T. (2026). Effects of LLM use and note-taking on reading comprehension and memory: A randomised experiment in secondary schools. *Computers & Education, 243*, 105514. https://doi.org/10.1016/j.compedu.2025.105514 (verified; check: effect sizes)
+- Kumar, H., Vincentius, J., Jordan, E., & Anderson, A. (2025). Human creativity in the age of LLMs: Randomized experiments on divergent and convergent thinking. *CHI '25*, 1-18. https://doi.org/10.1145/3706598.3714198 (verified)
+- Melumad, S., & Yun, J. H. (2025). Experimental evidence of the effects of large language models versus web search on depth of learning. *PNAS Nexus, 4*(10), pgaf316. https://doi.org/10.1093/pnasnexus/pgaf316 (verified)
+- Pan, S. C., & Carpenter, S. K. (2023). Prequestioning and pretesting effects: A review of empirical research, theoretical perspectives, and implications for educational practice. *Educational Psychology Review, 35*(4), 97. https://doi.org/10.1007/s10648-023-09814-5 (verified; check: moderators)
+- Spatharioti, S. E., Rothschild, D., Goldstein, D. G., & Hofman, J. M. (2025). Effects of LLM-based search on decision making: Speed, accuracy, and overreliance. *CHI '25*, 1-15. https://doi.org/10.1145/3706598.3714082 (verified; check: size of the effect)
+
+## Added 17 November 2026: three sources from course slides
+
+Bibliographic details confirmed against Crossref on that date, abstracts read via OpenAlex. The full texts were not read. No rule was changed for them; see `docs/decisions.md`.
+
+- Abbas, Z., Zhang, J., & Junaid, M. (2026). When learning meets the machine: How AI-assisted tools reshape deep and surface learning in higher education. *Computers in Human Behavior Reports, 22*, 101057. https://doi.org/10.1016/j.chbr.2026.101057 (verified; finding check: the numbers come from course slides; open: how learning depth was measured, whether there was a delayed test, what the AI group was told, and why the slides' t-values do not match their means and SDs)
+  - Used as support for the verification nudge and "say how sure you are": calibrated trust in the AI went with a smaller loss of learning depth. Correlational.
+- David, L., Vassena, E., & Bijleveld, E. (2024). The unpleasantness of thinking: A meta-analytic review of the association between mental effort and negative affect. *Psychological Bulletin*. https://doi.org/10.1037/bul0000443 (verified; check: volume, issue and pages are not in the Crossref record; effect size not retrieved)
+  - Used as background for the pace rules: effort has a cost, so it goes into the attempt and the check.
+- Scheiter, K., Bach, K. M., Bauer, E., Brod, G., Bromme, R., Buhl, H. M., Gagl, B., Greiff, S., Hefter, M. H., Janke, S., Lindner, M. A., Mayweg, E., Nebel, S., Rummel, N., & Sailer, M. (2026). Generative Künstliche Intelligenz im Kontext von Lehren, Lernen und Beraten: Eine Perspektive der Pädagogischen Psychologie. *Psychologische Rundschau, 77*(3), 169-174. https://doi.org/10.1026/0033-3042/a000769 (verified; check: the subtitle is from course slides; finding check: the effects per ISAR category are from course slides)
+  - Used as a frame (Inversion, Substitution, Augmentation, Redefinition) in `evidence.md`, "The three principles".
+
 ## Further background (not yet tied to a rule)
 
 - Fan, Y., Tang, L., Le, H., et al. (2024). Beware of metacognitive laziness: Effects of generative artificial intelligence on learning motivation, processes, and performance. arXiv:2412.09315. (check: journal version in BJET 2025 not confirmed)

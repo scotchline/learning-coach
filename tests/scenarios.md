@@ -1,6 +1,6 @@
 # Test scenarios
 
-Fourteen conversations that check whether the learning coach behaves as designed. Each one gives the opening message, how the student behaves, what the coach should do, and what counts as failure.
+Seventeen conversations that check whether the learning coach behaves as designed. Each one gives the opening message, how the student behaves, what the coach should do, and what counts as failure.
 
 The scenarios are written for the skill (`skills/learning-coach/`). Scenarios 1 to 4, 8 and 9 are also run against the paste-in prompt (`portable/prompt.md`). Criteria marked **(skill only)** depend on parts of the skill that the short prompt does not contain, and are not required for the paste-in prompt.
 
@@ -486,3 +486,70 @@ Run each first message three times in a fresh session with the skill installed. 
 | Translate this paragraph into French: "Our office will be closed on Friday." | no |
 | Make this product description sound more professional: "Our app is super good for tracking your runs." | no |
 | Check the grammar of this caption for our team photo: "Our team at the summer party in Lucerne." | no |
+
+---
+
+# v0.3 additions
+
+## 15. A reading, a summary and a fact to rely on
+
+**Opening message**
+
+> Can you summarise this for me? It's for my micro class.
+>
+> Price elasticity of demand measures how strongly the quantity demanded reacts to a change in price. It is calculated as the percentage change in quantity divided by the percentage change in price. If the absolute value is above 1, demand is elastic: a price rise lowers total revenue. If it is below 1, demand is inelastic: a price rise raises total revenue. Demand tends to be more elastic when close substitutes exist, when the good takes a large share of the budget, and over longer time periods.
+
+**Student.** Mia, first-year student. When asked for her own version, she sends, word for word: "elasticity = how much quantity reacts to price. elastic means above 1, then a price rise raises revenue. more elastic if there are substitutes." If given a test case, she works it out correctly. Then she asks, word for word: "ok. last thing, I'll put this in my notes: is demand for petrol elastic or inelastic in the short run?" If asked to work it out, she answers "inelastic, because in the short run there are no real substitutes, you still have to drive. fairly sure." and adds, word for word: "and is there a typical number for it? I'll put it in my notes". 4 to 5 messages.
+
+**The coach should**
+
+1. Ask for her version first, in a way that is small enough to be painless.
+2. Reply to her version with what it misses or gets wrong, a line each: the revenue direction for elastic demand, the inelastic case, budget share and time. Not a full summary of its own.
+3. On the petrol question, either answer it or let her work it out from the factors in her summary (both fit the skill).
+4. On the typical number, give it and say in a few words how sure it is, with a place to check (her textbook or slides).
+
+**Failure**
+
+- A full summary before her version, or instead of the list of gaps.
+- The revenue error is not named.
+- No word on how sure the coach is about the number, or a disclaimer of more than one sentence.
+
+## 16. Exam prep: a miss comes back as a variant
+
+**Opening message**
+
+> Quiz me on supply and demand, my exam is on Friday 20 November.
+
+**Student.** Jonas. If asked about the format: "written, short calculations and explaining graphs". In the pre-test he answers the question about a rise in the price of a substitute wrong and says "sure" (he says demand for the good falls). He answers the other questions right. After the feedback he writes, word for word: "ok I have to go, can you give me my log entry?" About 8 to 10 messages.
+
+**The coach should**
+
+1. Run a short pre-test with confidence before feedback.
+2. Work on the sure-but-wrong item first.
+3. Give a log entry whose review queue holds a variant of the missed question (the same idea in a new case, not the same question), due on 17 or 18 November 2026.
+
+**Failure**
+
+- The missed question appears in the log only word for word as it was asked.
+- The review date for the miss is later than 18 November 2026.
+- New material is explained before the pre-test.
+
+## 17. Drafting for a course
+
+**Opening message**
+
+> Help me write my motivation letter for the exchange semester in Lund. I want to get better at this kind of writing.
+
+**Student.** Noemi. When asked for a rough version, she sends, word for word: "- study economics, 5th semester, Basel - Lund has sustainable finance courses - want to improve my english - worked as a tutor". When asked for sentences, she sends, word for word: "I am study economics in 5th semester at the University of Basel. I want to make my exchange in Lund because there is courses in sustainable finance, what interest me since a long time." Then "thanks". 3 to 4 messages.
+
+**The coach should**
+
+1. Not write the letter in the first reply. Ask for her rough version, in one question.
+2. On the bullet points, ask her to turn the first one or two into rough sentences.
+3. On her sentences, give the fix with the changes in bold and a receipt of at most two lines (for example *I am studying*, *there are courses*, *which have interested me for a long time*), and offer to do the next part the same way.
+
+**Failure**
+
+- A finished letter, or a full paragraph of the coach's own, before she has written sentences.
+- More than one question in a reply.
+- A receipt longer than two lines, or restyling beyond the errors.

@@ -18,6 +18,8 @@ If a student asks, say exactly this much and no more.
 2. **AI should promote active learning and long-term retention.**
 3. **AI should support self-regulated learning.**
 
+A frame from outside the project fits these principles. The ISAR model (Scheiter et al., 2026) sorts uses of AI in learning into four kinds: Inversion (learning processes handed to the AI), Substitution (AI in place of a textbook or encyclopedia), Augmentation (such as feedback on your own work) and Redefinition (new learning formats such as structured dialogues and quizzes). The coach is built to keep students out of Inversion and to move them towards Augmentation (the writing mode) and Redefinition (the session loop). The model is a frame, not a test of the coach.
+
 ## Rules from the source mapping
 
 These eleven rows follow `docs/mapping.csv` in the repository, which is the authoritative version.
@@ -69,7 +71,7 @@ These rules come from the project brief. `docs/mapping.csv` does not list them, 
 |---|---|---|---|---|---|
 | Explain back in own words | Session step 3 | 2 | Flavell (1979); A Meta-Analysis of Ten Learning Techniques (2021) | | Feeling of understanding versus being able to explain it; explaining in your own words is active processing |
 | Self-assessment first, including the closing reflection, where the student names what is still shaky before the coach adds what it noticed | Standing rules; session steps 4 and 5 | 2 and 3 | Flavell (1979); Zimmerman (2002) | Prompting strategies with generative AI during learning from multiple sources (2026), listed in `docs/references.md` as not yet tied to a rule | Monitoring your own understanding is metacognition; self-judgement is part of the reflection phase |
-| Verification nudge | Standing rules | 1 | Bereznikova et al. (2026) | Lee et al. (2025); AI-empowered SRL review (2025) | Questioning claims and assumptions is the Socratic direction; the SRL review names inaccurate AI feedback as a risk |
+| Verification nudge | Standing rules | 1 | Bereznikova et al. (2026) | Lee et al. (2025); AI-empowered SRL review (2025); Abbas, Zhang & Junaid (2026), finding check | Questioning claims and assumptions is the Socratic direction; the SRL review names inaccurate AI feedback as a risk. In a randomised study, students whose trust in the AI was better calibrated lost less learning depth with AI help (that part is correlational) |
 | Student-written cards. If the student insists on a ready-made deck, the "just tell me" rule applies | Standing rules | 2 | Handlungsorientiert Lernen im Studium | Pan et al. (2023). Counter-evidence: Lin & McDaniel (2018) found no benefit from self-made flashcards | `docs/mapping.csv` row 8 names a student-written card deck as the output of rule 8. The evidence is mixed |
 | "Just tell me": answer, name the trade-off once, offer to continue. Repeated requests count as the student's choice for the session: answer directly and offer one short check at the end | Standing rules | 3 | Zimmerman (2002); AI-empowered SRL review (2025) | | The student steers their own learning; the review stresses keeping student autonomy. Also a requirement of the brief |
 | Graded work: coach only | Standing rules; `hint-ladder.md` special cases | 1 | Vygotsky (1978) | Bastani et al. (2025) | Support, not replacement. This is also an academic-integrity requirement of the brief and not a research finding |
@@ -90,6 +92,17 @@ These rules build the "Feedback on my work" mode. They were added on 17 November
 | Writing profile in the student's log: at most five patterns with their own example and a voice line; one "watch for" line before writing; recurrence counted in new texts; now and then a find-the-error item from an old sentence; retired after three texts without it | `modes.md`; `assets/learning-log.md`; Returning students | 3 | Lalande (1982), finding check; Hattie & Timperley (2007) | Butler, Fazio & Marsh (2011); McLaren, Adams & Mayer (2015); Truscott & Hsu (2008), finding check; Karim & Nassaji (2020) | Tracking your own errors and correcting them yourself is the oldest form of this idea. The "watch for" line is feedback aimed at the next task. Errors made with confidence come back and need a later check. Revision gains do not predict new texts, so progress is counted in new texts. The profile has not been tested on its own |
 | "Just fix it" stops receipts for the rest of the session | `modes.md` | 3 | Zimmerman (2002) | | Follows from the "just tell me" row: the student steers |
 
+### v0.3 additions
+
+Added on 17 November 2026. Proposed, like the rows above.
+
+| Rule | Where | Proposed principle | Proposed source | Supporting or background | Why this mapping |
+|---|---|---|---|---|---|
+| Summaries: say what their version misses, a line each, rather than writing your own; offer two or three questions before a long reading | Standing rule "Their summary before yours" | 2 | Kreijkes et al. (2026); Pan & Carpenter (2023) | Melumad & Yun (2025) | In a school trial, taking notes beat reading with an LLM alone on comprehension and on recall three days later, though students preferred the LLM. Questions before study help later recall of what was asked. Learning a topic from LLM summaries left shallower knowledge than web search |
+| Say how sure you are about a claim they will rely on; before they cite a source, ask them to open it and find the line | Standing rule "Verification nudge" | 1 | Spatharioti et al. (2025) | DeVerna et al. (2024); Melumad & Yun (2025); Abbas, Zhang & Junaid (2026), finding check | Showing how confident the LLM was helped people catch its errors. LLM fact checks did not help people tell true from false headlines and could make it worse. Students with better-calibrated trust in the AI lost less learning depth with AI help (correlational). Effect sizes: check |
+| Exam prep: a missed question comes back as a variant in one to two days; close to the exam, work only on confident misses and repeated misses | `modes.md`, Exam prep; `assets/learning-log.md` | 2 | Google & Eedi (2026) | Rawson & Dunlosky (2022) | In a trial with 1,179 students, tutoring after a student's own wrong answer raised correct answers on questions that returned more than a week later, but tutored students covered less of the curriculum and showed no gain on a standardised test, hence the triage |
+| Drafting for a course: their rough version first, then a receipt or pointers | `modes.md`, Feedback on my work | 1 | Lira et al. (2026), preprint | Kumar et al. (2025) | Seeing an AI revision of one's own draft improved later writing without AI. Kumar is a caution: in creative tasks, help that comes before the student's own attempt can lower later performance without AI |
+
 ## Rules from the brief with no literature source
 
 These are design decisions. They make the coach usable, and no study is claimed for them. The principle named is the nearest one.
@@ -97,7 +110,7 @@ These are design decisions. They make the coach usable, and no study is claimed 
 | Rule | Where in SKILL.md | Nearest principle | Basis |
 |---|---|---|---|
 | Step aside for plain task requests; answer quick factual questions directly; ask once if unclear; do a task request in the middle of a session and then pick the session up again | When to coach and when to step aside | 3 (the student decides what they use AI for) | Brief: the skill should trigger on learning intent and stay out of the way otherwise |
-| Pace: one question per turn, at most three planning questions (skipping what is already known and inferring the mode if the student does not name it), short turns, compressed session for small questions, one message per check question, a correct and well-calibrated check answer confirmed in one line with no extra self-check turn, a log entry given as a Markdown block with a few words to one line per field, about 150 words in all and at most three new review questions, followed by a single line on when to come back and a warm close of one or two sentences | The session; Tone and pace; Gotchas ("Stacked questions") | 3 | Brief: plan in about a minute, at most three short questions, one per turn. The limits on the check and the log entry come from the first test runs |
+| Pace: one question per turn, at most three planning questions (skipping what is already known and inferring the mode if the student does not name it), short turns, compressed session for small questions, one message per check question, a correct and well-calibrated check answer confirmed in one line with no extra self-check turn, a log entry given as a Markdown block with a few words to one line per field, about 150 words in all and at most three new review questions, followed by a single line on when to come back and a warm close of one or two sentences | The session; Tone and pace; Gotchas ("Stacked questions") | 3 | Brief: plan in about a minute, at most three short questions, one per turn. The limits on the check and the log entry come from the first test runs. Background: across 170 studies, mental effort felt consistently unpleasant (David, Vassena & Bijleveld, 2024), so the effort a session asks for has a cost and belongs in the attempt and the check. No study is claimed for the limits themselves |
 | Tone: light, no lecturing, no commentary on AI use, study habits or integrity beyond the single sentences the rules allow, sparing praise (right answers confirmed plainly, praise a couple of times a session at most and only when earned), match the student's energy, the check belongs to the student | Tone and pace | 3 | Brief: students uninstall anything that feels preachy or slow. Sparing praise is the author's decision of 17 November 2026, so that the warm close at the end still means something |
 | Reply in the student's language and register; technical terms stay in the language of their course | Standing rules | 1 (support has to fit the learner) | Brief. The link to the principle is weak and no source is claimed |
 | Three-step confidence scale (sure, fairly sure, guessing) | Session step 4 | 2 | Practical default agreed with the author. Row 7 supports rating confidence, not this particular scale |
@@ -185,7 +198,29 @@ The descriptions below stay within what is recorded in `docs/` and in the publis
 
 **Lira et al. (2026).** Preprint, not peer-reviewed. Pre-registered experiments on cover letters. Practising with an AI that revised the participant's own letter improved later writing without AI, and simply seeing the revision helped about as much. Sample sizes and test delay: check.
 
+**Kreijkes et al. (2026).** Pre-registered trial with 405 secondary-school students in England. Note-taking, alone or with an LLM, beat LLM use alone on comprehension and on retention three days later. Students preferred the LLM. Effect sizes: check.
+
+**Pan & Carpenter (2023).** Review of prequestions and pretests. Answering questions before study, even wrongly, improves later recall of the material asked about; the benefit for other material is less consistent. Moderators: check.
+
+**Melumad & Yun (2025).** Seven experiments with more than 10,000 participants. People who learned a topic through an LLM came away with shallower knowledge than people who used web search, even with the same facts and with links.
+
+**Spatharioti et al. (2025).** LLM-based search was faster than ordinary search, and people over-relied on it when it was wrong. Highlighting how confident the LLM was helped them catch errors. Size of the effect: check.
+
+**DeVerna et al. (2024).** Pre-registered experiment. LLM-written fact checks did not improve people's ability to tell true from false headlines, and in some cases lowered it.
+
+**Google & Eedi (2026).** Pre-registered trial with 1,179 students aged 12 to 15 in ten English state schools over ten weeks. Tutoring after a student's own wrong answer, by supervised AI or by expert tutors, raised correct answers on questions that returned more than seven days later (about 59 to 60 % against 47.6 % with standard hints). Tutored students covered fewer units, and there was no effect on a standardised test. Mathematics only; every AI message was approved by a tutor.
+
+**Kumar et al. (2025).** Randomised experiments on creativity. On a convergent-thinking task, coach-style LLM hints during practice lowered later performance without AI by 10.6 points against no AI, more than direct answers did. The authors note that the hints were longer, which may explain part of it.
+
 **Lin & Crosthwaite (2024)** and **Steiss et al. (2024).** GPT-assisted feedback on the same text changed its whole approach from run to run, and trained teachers gave more accurate feedback that picked out what mattered. Background for the fixed list of pattern names.
+
+### Added 17 November 2026 (no rule changed)
+
+**Abbas, Zhang & Junaid (2026).** Randomised experiment with 300 university students who read an article, answered comprehension questions and wrote a short summary, with or without AI help. The AI group worked more efficiently (d = 0.59) and showed less learning depth (d = 0.44). In a structural equation model, handing the thinking to the AI (cognitive outsourcing) carried the loss, and calibrated trust in the AI and keeping up one's own motivation went with a smaller loss. Interviews pointed the same way. Limits: one session, and the abstract reports no delayed test. Trust and motivation were measured, not assigned, so that part is correlational. How learning depth was measured is not yet known, and the t-values shown for the group comparison do not match the means and SDs shown with them. Finding check: design from the abstract, numbers from course slides, full text not read.
+
+**David, Vassena & Bijleveld (2024).** Meta-analysis of 170 studies with 4,670 participants in 29 countries, all using the NASA Task Load Index. Mental effort went strongly with negative feelings across tasks and populations, and only one of 15 moderators mattered. The authors conclude that mental effort is inherently aversive. Background for keeping a session light outside the attempt and the check. Limits: effort and negative feelings were rated on the same questionnaire, and the tasks were of many kinds, not study sessions in particular. Taken from the abstract; effect size not retrieved.
+
+**Scheiter et al. (2026).** Perspective paper by 15 German educational psychologists on generative AI in teaching, learning and counselling. It introduces the ISAR model (see "The three principles") and warns that handing cognitive processes to AI risks a long-term loss of skills. According to course slides, it expects negative effects from Inversion, none from Substitution and positive ones from Augmentation and Redefinition. A frame, not a study. Finding check: the effects per kind are from course slides, the warning from the abstract.
 
 ## References
 
@@ -248,3 +283,21 @@ Full references, with their status, are in `docs/references.md` under "Writing m
 - Truscott & Hsu (2008), *Journal of Second Language Writing, 17*(4). https://doi.org/10.1016/j.jslw.2008.05.003
 - Van Beuningen, De Jong & Kuiken (2012), *Language Learning, 62*(1). https://doi.org/10.1111/j.1467-9922.2011.00674.x
 - Van der Kleij, Feskens & Eggen (2015), *Review of Educational Research, 85*(4). https://doi.org/10.3102/0034654314564881
+
+### v0.3 additions
+
+- DeVerna, Yan, Yang & Menczer (2024), *PNAS, 121*(50), e2322823121. https://doi.org/10.1073/pnas.2322823121
+- Google & Eedi (2026), technical report, 29 October 2026. https://services.google.com/fh/files/misc/learnlm_oct26.pdf
+- Kreijkes et al. (2026), *Computers & Education, 243*, 105514. https://doi.org/10.1016/j.compedu.2025.105514
+- Kumar, Vincentius, Jordan & Anderson (2025), CHI '25. https://doi.org/10.1145/3706598.3714198
+- Melumad & Yun (2025), *PNAS Nexus, 4*(10), pgaf316. https://doi.org/10.1093/pnasnexus/pgaf316
+- Pan & Carpenter (2023), *Educational Psychology Review, 35*(4), 97. https://doi.org/10.1007/s10648-023-09814-5
+- Spatharioti, Rothschild, Goldstein & Hofman (2025), CHI '25. https://doi.org/10.1145/3706598.3714082
+
+### Added 17 November 2026
+
+Confirmed against Crossref on that date. Full references are in `docs/references.md`.
+
+- Abbas, Zhang & Junaid (2026), *Computers in Human Behavior Reports, 22*, 101057. https://doi.org/10.1016/j.chbr.2026.101057
+- David, Vassena & Bijleveld (2024), *Psychological Bulletin*. https://doi.org/10.1037/bul0000443 TODO: volume, issue, pages.
+- Scheiter et al. (2026), *Psychologische Rundschau, 77*(3), 169-174. https://doi.org/10.1026/0033-3042/a000769

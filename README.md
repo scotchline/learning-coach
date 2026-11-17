@@ -4,7 +4,7 @@ An Agent Skill that turns a general AI assistant into a learning coach. Its aim 
 
 There is also a short paste-in prompt for assistants that do not support skills.
 
-Version 0.2. Deutsche Kurzfassung [weiter unten](#kurz-auf-deutsch).
+Version 0.3. Deutsche Kurzfassung [weiter unten](#kurz-auf-deutsch).
 
 ## Why this exists
 
@@ -83,16 +83,22 @@ The paste-in prompt has no hint examples and no log template, so expect it to be
 
 ## Using it
 
-Things you can say:
+Things you can say, by what students most often use AI for:
 
-- "Explain opportunity cost. We had it today and I didn't get it."
-- "I have a statistics exam on 24 November. Quiz me on regression."
-- "Here is my learning log from last week. Quiz me from it."
-- "I want flashcards for chapter 4." (You draft them, the coach corrects them and adds questions you missed.)
-- "Just tell me." (Any time.)
-- "Can you fix my English? It's not my first language." (The fixed text, then the mistakes that keep coming back.)
-- "Is this too direct for my supervisor?" plus your email.
-- "Here's my writing profile. I'm about to write to my exchange coordinator."
+| You want to | Say something like |
+|---|---|
+| Understand a concept | "Explain opportunity cost. We had it today and I didn't get it." |
+| Prepare for an exam | "I have a statistics exam on 24 November. Quiz me on regression." |
+| Get through a reading | "I'm about to read chapter 3. Give me three questions to read with." Then: "Here's my summary, what did I miss?" |
+| Check facts | "Is this right? How sure are you, and where can I check it?" |
+| Do homework | "Here's my attempt at exercise 2. Where does it go wrong?" |
+| Improve your writing | "Can you fix my English? It's not my first language." |
+| Get the tone right | "Is this too direct for my supervisor?" plus your email |
+| Write something for a course | "Help me write my motivation letter. Here's my rough first paragraph." |
+| Structure your thoughts | "Here's my outline for the essay. What's missing?" |
+| Make flashcards | "I want flashcards for chapter 4." (You draft them, the coach corrects them and adds questions you missed.) |
+| Continue from last time | "Here is my learning log from last week. Quiz me from it." |
+| Get the answer | "Just tell me." (Any time.) |
 
 **The learning log** is a Markdown file that you keep, for example in your notes app. A template is in [`skills/learning-coach/assets/learning-log.md`](skills/learning-coach/assets/learning-log.md). The coach cannot remember earlier chats or remind you of anything. The log is what connects one session to the next, so the review only happens if you bring it back. If you use the coach for your writing, the log also has a short writing profile: your recurring mistakes with an example of your own, and a line on how you like to write.
 
@@ -121,7 +127,7 @@ The full table of rule, principle and source is in [`skills/learning-coach/refer
 
 ## Tests
 
-[`tests/scenarios.md`](tests/scenarios.md) describes fourteen conversations with expected behaviour and failure criteria: a normal session, "just give me the answer" three times, a graded assignment, a confident wrong answer, a 40-message session, a non-learning request, a returning student with a log, a German-speaking student, and six for the writing mode (a fix with a receipt, "just fix it", a graded text, tone, a returning writer with a profile, and a writer who keeps repeating a mistake).
+[`tests/scenarios.md`](tests/scenarios.md) describes seventeen conversations with expected behaviour and failure criteria: a normal session, "just give me the answer" three times, a graded assignment, a confident wrong answer, a 40-message session, a non-learning request, a returning student with a log, a German-speaking student, and six for the writing mode (a fix with a receipt, "just fix it", a graded text, tone, a returning writer with a profile, and a writer who keeps repeating a mistake), and three for v0.3 (a reading and a summary, an exam miss that comes back as a variant, and drafting for a course).
 
 [`tests/results.md`](tests/results.md) records the runs, with transcript excerpts, what failed along the way and what was changed. The tests use simulated students. They show whether the assistant follows the rules, and they say nothing about learning outcomes.
 

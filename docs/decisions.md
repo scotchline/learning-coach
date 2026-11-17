@@ -8,6 +8,36 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ## 17 November 2026
 
+### Three sources from course slides added, no rule changed
+
+- **Decided:** three sources are added to `evidence.md` and `docs/references.md` as support or background. No rule changes, because the rule they most support ("say how sure you are") is already in v0.3.
+  - **Abbas, Zhang & Junaid (2026):** a randomised experiment with 300 students. AI help raised efficiency and lowered learning depth. Calibrated trust in the AI and keeping up one's own motivation went with a smaller loss. Added as support for the verification nudge and for "say how sure you are".
+  - **David, Vassena & Bijleveld (2024):** a meta-analysis finding that mental effort feels unpleasant. Added as background for the pace rules, which had no source.
+  - **Scheiter et al. (2026):** the ISAR model (Inversion, Substitution, Augmentation, Redefinition). Added as a frame under "The three principles".
+- **Why:** Abbas is one more randomised study for the core premise, and the first in the project to link calibrated trust in the AI with keeping learning depth. David gives the light pace a reason beyond the brief. ISAR names what the coach does in terms educational psychologists use.
+- **Not chosen:**
+  - Abbas in "What the evidence supports", which the coach quotes to students. Not until the methods are read: how learning depth was measured is unknown, the abstract reports no delayed test, and the t-values on the slides do not match their means and SDs.
+  - A rule for coaching motivation ("why does this matter to you?"). It would feel preachy, and the research notes found little evidence that chatbots change motivation. The study's point about lost pride is already covered: the student does the work, and the warm close names it.
+  - An announced "find the mistake in this example" exercise to train healthy distrust. It costs a turn, so it waits for a test.
+- **Open:** read the Abbas full text (the publisher page refused automated access) and check the measures and the numbers.
+- **Where:** `evidence.md` ("The three principles", the verification nudge row, the v0.3 row on how sure the coach is, the pace row, "What each source shows", References); `docs/references.md`.
+
+### v0.3: small upgrades for the other common uses, one skill
+
+- **Decided:** no new mode and no new skill for each common student use. A sentence or two was added to rules that already exist:
+  - Summaries: the coach says what the student's version misses, a line each, and offers two or three questions before a long reading.
+  - Checking: the coach says how sure it is about claims the student will rely on, and asks them to open a source before citing it.
+  - Exam prep: a missed question comes back as a variant in one to two days; close to the exam, only confident and repeated misses get worked on.
+  - Drafting for a course: their rough version first, then a receipt or pointers.
+  - Three fixes from round 5: a push is not a try on graded text; tone versions are built from the student's own text; a first-language cause is named only when it is known.
+  - The README lists example prompts for each common use.
+- **Why:** explaining, homework and exam prep were already covered. The other uses each needed one rule, not a mode. One skill avoids competing triggers and extra installs, and a study session often mixes uses anyway. The skill description is at 1,020 of 1,024 characters and the paste-in prompt at 1,498 of 1,500, so neither was changed.
+- **Not chosen:**
+  - A mode or a skill per use case (more triggers, more files, more drift).
+  - Brainstorming. The evidence is mixed (Kumar et al., 2025, found coach-style hints lowered later performance without AI), so it needs its own small test first.
+  - Translation. No study was found on translation tools and learning, so it stays a plain task.
+- **Where:** `SKILL.md` (verification nudge, their summary before yours, Modes); `references/modes.md` (exam prep, Feedback on my work); `assets/learning-log.md`; `evidence.md`, "v0.3 additions"; README, "Using it"; `tests/scenarios.md`, scenarios 15 to 17.
+
 ### v0.2: the writing mode ("Feedback on my work") is built
 
 - **Decided:** the planned mode is built, starting with fixes of the student's own text, because that is one of the largest things people use AI for. In OpenAI's analysis of about 1.1 million ChatGPT messages, editing or critiquing the user's own text is 10.6 % of messages, about as large as all tutoring (10.2 %). In student surveys, 35 to 49 % use AI to improve their own writing. The mode has four parts:

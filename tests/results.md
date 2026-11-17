@@ -6,6 +6,8 @@
 
 **Writing mode, round 5 (17 November 2026):** scenarios 9 to 14 and 12b pass for the skill, and scenario 9 passes for the paste-in prompt, each after at most one fix. Scenario 6b was rerun because the step-aside rule changed, and passes. In the trigger check, all 29 first messages (10 new fix and tone prompts, 19 from the earlier check) came out as intended in all three runs. Round 5 used a weaker method than rounds 2 to 4; see [Round 5](#round-5-writing-mode-v02). Scenarios 1 to 5, 7 and 8 have not been rerun since the warm close, sparing praise and the writing mode.
 
+**v0.3, round 6 (17 November 2026):** scenarios 15 to 17 pass for the skill, one run each, with the same method as round 5. The skill description and the paste-in prompt did not change, so the trigger check was not repeated.
+
 These tests use simulated students. They show whether an assistant follows the rules of the skill. They say nothing about whether students learn more.
 
 ## How the tests were run
@@ -255,6 +257,32 @@ Trigger check: 87 of 87 decisions as intended (29 messages, three runs). The fiv
 - **Contrasting versions on a new text.** In scenario 12 the three versions were about a new email (a meeting request), not her own. The mode says her version should be among them where it fits.
 - **A first-language cause she does not have.** In scenario 14 the receipt blamed German *seit* and French *depuis*, but the student had not said her first language (Italian). `writing-patterns.md` says to check what the student actually wrote.
 - **"How I write" was inferred.** In scenario 9 the coach wrote the voice line from the email and told Noemi to change it if it did not fit. That is allowed but not ideal: the line should be in her words.
+
+## Round 6: v0.3 additions
+
+Same method as round 5: fresh subagent coaches with only the skill folder, the scripted student played by the assistant that wrote the skill, judged against the written criteria by that assistant. One run per scenario.
+
+| Scenario | Result | Skill opened |
+|---|---|---|
+| 15. A reading, a summary and a fact to rely on | pass | yes (SKILL.md) |
+| 16. Exam prep: a miss comes back as a variant | pass | yes (SKILL.md, modes.md; learning-log.md for the entry) |
+| 17. Drafting for a course | pass | yes (SKILL.md, modes.md; writing-patterns.md for the receipt) |
+
+Changed during the round: scenario 15 first expected a direct answer to "is demand for petrol elastic or inelastic in the short run?". The coach let the student work it out from her own summary, which fits the attempt-first rule. The scenario now tests the confidence label on a follow-up question that she cannot work out herself ("is there a typical number for it?").
+
+Excerpts:
+
+> **Coach (scenario 15, on her summary):** Line 1 is right. Two gaps to add: [...] Line 2 needs another look. Test it: the price rises from 10 to 11 (+10%) and quantity falls from 100 to 80 (−20%). What's the elasticity, and what happens to total revenue?
+
+> **Coach (scenario 15, on the typical number):** [...] I'm fairly sure of those ranges, but the figures vary by study and country, so check which one your textbook or slides use before it goes in your notes.
+
+> **Coach (scenario 16, review queue):** | Butter gets more expensive. What happens to the demand, price and quantity of margarine? | Substitutes | wrong, was sure | 2026-11-18 |
+
+Weaknesses that did not fail a criterion:
+
+- **Offer plus next step.** In scenario 17 the receipt ended with the save offer and an instruction to write the next part, so the reply asked for two things.
+- **A promise not kept.** In scenario 16 the coach said it would ask the sure-but-wrong question again before the end, and the student left first. The log entry carries it instead, which is the fallback the skill intends.
+- **Exam triage not tested.** Scenario 16 had one miss, so the rule to work only on confident and repeated misses close to the exam was not put under pressure.
 
 ## Limits of these tests
 
