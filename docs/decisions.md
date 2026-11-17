@@ -1,0 +1,111 @@
+# Decisions
+
+What we decided about the learning coach, and why. Newest first. Add an entry whenever a decision changes how the coach behaves, what goes in the repository, or how it is tested.
+
+Each entry says what was decided, why, what was considered and not chosen, and where the decision lives in the repository.
+
+---
+
+## 17 November 2026
+
+### v0.2: the writing mode ("Feedback on my work") is built
+
+- **Decided:** the planned mode is built, starting with fixes of the student's own text, because that is one of the largest things people use AI for. In OpenAI's analysis of about 1.1 million ChatGPT messages, editing or critiquing the user's own text is 10.6 % of messages, about as large as all tutoring (10.2 %). In student surveys, 35 to 49 % use AI to improve their own writing. The mode has four parts:
+  - **Fix receipt** for an ungraded fix: the whole text fixed in the first reply, changes in bold, at most two lines on one to three recurring patterns and why, and one offer to save them.
+  - **Spot it first** on graded work and on request: the coach points, the student fixes.
+  - **Tone:** a verdict, one version for the named reader and a one-line reason. When the student wants to get better at tone, two or three versions, a pick, then the principle.
+  - **Writing profile:** a new section of the learning log with at most five patterns and a voice line, plus a fixed list of pattern names in `references/writing-patterns.md`.
+- **Why:** a silent fix teaches little, because how much a draft improves in revision does not predict the next text. Marked correction with a short reason for a few recurring patterns has moderate effects that last. The full reasoning and sources are in `reports/AI use cases and coach upgrades.md` and in `evidence.md`, "Writing mode (v0.2)".
+- **Not chosen:**
+  - Pointing before fixing on every request (too slow when someone needs the text now, and find-and-fix is liked less).
+  - Correcting everything and explaining everything (focused feedback works better for learning, and a long receipt is preachy).
+  - A full rewrite in a smoother style (hides what changed, flattens the student's voice).
+  - Platform memory (the student-kept log stays the only memory).
+- **Where:** `SKILL.md` (description, core loop, step aside, graded work, Modes, Returning students, Tone and pace, Gotchas); `references/modes.md`; `references/writing-patterns.md`; `assets/learning-log.md`; `evidence.md`; `portable/prompt.md`; `tests/scenarios.md`, scenarios 9 to 14; `tests/results.md`, round 5.
+- **Open:** the mappings in `evidence.md`, "Writing mode (v0.2)", are proposals and need the author's confirmation. Round 5 of the tests used a weaker method than rounds 2 to 4 and should be rerun with installed-skill sessions.
+
+### A fix gets a receipt only with a learning signal
+
+- **Decided:** the skill opens for a fix of the student's own text, and adds the receipt, only when there is a learning signal. The signals are: they say the language is not their first, that they want to get better, that the text is for a course, or they paste a writing profile. "Proofread my LinkedIn post" stays a plain task. The fix never waits for a question.
+- **Why:** a coach that turns every proofread into a lesson gets switched off. The research report called this the conservative route and recommended it for v0.2.
+- **Not chosen:** a receipt on every fix (the bold route). It could ship later as a separate small skill that people install on purpose, if the pilot shows that students save patterns and keep coming back.
+- **Note:** "it's not my first language" counts as a signal. It is the most common way students introduce a fix request, and the receipt costs two lines.
+
+### Graded text: no corrected sentences, not even "only the grammar"
+
+- **Decided:** on graded work the coach points at language problems and explains the rule. It never returns a corrected version of the student's sentences.
+- **Why:** this follows from the existing rule that the wording of graded work has to be the student's. Some courses allow proofreading tools. The coach cannot know the course rules, so it takes the stricter reading and says so once.
+- **Not chosen:** correcting grammar only, without changing content (the line between grammar and wording is not clear enough to hold).
+
+### Paste-in prompt: one line for fixes, other lines shortened
+
+- **Decided:** the new line is "Fixing their text as they learn: fix errors only, bold them; name 1-3 recurring patterns, a line each." "Fix errors only" was added after the first test run, in which the prompt changed a correct "Can you" to "Could you". To fit the line, these lines were shortened:
+  - Step 2: the ladder in fewer words.
+  - Step 3: "Explain back in their words, own example".
+  - Step 4: "one at a time, confidence ... before feedback", and "Sure but wrong?".
+  - Step 5: "short log entry, review date in 1-2 days".
+  - "Just tell me": "answer".
+  - "one question a turn".
+  - Step 1: "Max 3 questions, skip known ones".
+  - "Sometimes ask how they'd check a claim, yours too".
+  - The graded-work line now says "point at problems in their draft. Never write or fix it".
+- **Why:** the 1,500-character limit. The prompt is now at 1,498.
+- **Not in the paste-in prompt:** "just fix it" switching receipts off, tone, spot it first on ungraded work, and the writing profile. They need the reference files.
+
+### The decision log lives in `docs/decisions.md`
+
+- **Decided:** one running file for decisions, in `docs/`, next to the source mapping and the reference list.
+- **Why:** `docs/` is the author's material. Everything in `skills/learning-coach/` goes into the ZIP that students install, so a decision log there would ship to every user.
+- **Not chosen:** one file per decision (more structure than a project this size needs); a section in the README (the README is for people installing the skill).
+
+### Sparing praise during the session
+
+- **Decided:** right answers are confirmed plainly ("Right, about -18."). Praise is kept for moments that earn it, such as a mistake the student found themselves or a hard case cracked alone: a few words, a couple of times a session at most. The paste-in prompt says "rare praise".
+- **Why:** praise on every answer stops meaning anything, and the warm close at the end should be the one that counts. In the spot check, the coaches answered nearly every right answer with "Exactly", "Spot on" or similar.
+- **Not chosen:** no praise at all during the session (too cold for non-technical students).
+- **Where:** `SKILL.md`, Tone and pace; `portable/prompt.md`, first line; `evidence.md`, Tone row; test criterion G5.
+
+### A warm close at the end of every session
+
+- **Decided:** after the log entry and the line on when to come back, the coach closes in one or two sentences.
+  - It always thanks the student for the work.
+  - If the check went well (most answers right, confidence fitted), it also says plainly that they did well and names what they did.
+  - If it went badly, or there was no check, it does not say they did well. It names one thing that was true and good, such as catching their own mistake, and thanks them.
+  - No generic praise ("Great job!", "You're a natural"), and no repeat of the review date.
+- **Why:** the end is what the student takes away, and a student who leaves glad they came is more likely to return for the review. A student who struggled needs that reason to come back most. Praise that names the work tells them what to keep doing. "You did well" only when it is true keeps it believable, and the confidence ratings depend on the student trusting the coach's verdicts.
+- **Not chosen:** praise after every right answer (makes the check feel like grading); a badge or celebration message (does not fit the plain style); thanks only when the student did well (leaves out the students who most need it).
+- **Where:** `SKILL.md`, session step 5; `portable/prompt.md`, step 5; `evidence.md`, proposed mapping table.
+
+### The example sentence for the warm close is a description, not a quote
+
+- **Decided:** `SKILL.md` describes what to praise ("for example that they worked out the new case on their own") and asks for the coach's own words each time.
+- **Why:** with a quoted example, both test coaches ended with the same words from the example ("thanks for sticking with it"). A returning student would hear it every week. After the change, the rerun coach used its own words.
+
+### Hattie & Timperley (2007) as the proposed source for the warm close
+
+- **Decided:** proposed, not confirmed. It sits in the "proposed mapping" table of `evidence.md`, principle 3, with Zimmerman (2002) as background.
+- **Why:** the review finds that praise aimed at the person carries little information for learning, while praise tied to the work has more, though still limited, effect. Checked against the paper itself.
+- **Open:** needs the author's confirmation, like the other proposed mappings. No study is claimed for the effect of ending warmly.
+
+### Paste-in prompt wording trimmed to make room
+
+- **Decided:** to fit the warm close and "rare praise" into the 1,500-character limit, five lines were shortened: "for the student in this chat" dropped, "When they want to learn or revise" became "To learn or revise", "their confidence ... before any feedback" became "confidence ... before feedback", "their answer or draft" became "their work", and "Just do it" became "Do it".
+- **Why:** the paste-in prompt has a limit of 1,500 characters, set in the maintainer comment above the core loop in `SKILL.md`.
+- **Note:** it is now at exactly 1,500. Any further addition needs a cut elsewhere.
+
+### Tests for the new behaviour
+
+- **Decided:** scenarios 1 and 8 check the warm close; new general criterion G5 checks sparing praise. `tests/results.md` says the full scenarios have not been rerun since these changes.
+- **Open:** rerun the eight scenarios (skill) and scenarios 1 to 4 and 8 (paste-in prompt), then update `tests/results.md`.
+
+---
+
+## 16 November 2026 and earlier
+
+These were recorded in the repository before this file existed. The detail is in the file named.
+
+- **Three-step confidence scale** (sure, fairly sure, guessing): practical default agreed with the author. `evidence.md`, rules with no literature source.
+- **Review gaps** of one to two days, about a week, then two to three weeks: practical default agreed with the author, adjusted to the student's calendar. `evidence.md`, same table.
+- **Two modes in v0.1** (learn something new, exam prep). Feedback on my work and teach-back are planned and handled with the standing rules for now. `references/modes.md`, README.
+- **The paste-in prompt is the core loop of `SKILL.md`, copied word for word**, at most 1,500 characters. Comment above the core loop in `SKILL.md`.
+- **Changes after the test rounds:** one message per check question (answer, confidence and what to double-check together); log entries capped at about 150 words; under 100 words a turn; on graded work all content comes from the student; after the check, the student's summary still comes first. `tests/results.md`, "what failed and what changed".

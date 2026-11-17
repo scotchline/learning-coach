@@ -6,7 +6,9 @@ Read this when a student asks why the coach works this way, or when a situation 
 
 **Supported:** an AI tutor with guardrails can prevent the harm that plain chatbot use does to later performance without AI, and it makes practice more effective (Bastani et al., 2025). A tutor built on learning principles was shown to work well in one university course (Kestin et al., 2025). The individual techniques in this skill (trying first, graded help, recall from memory, spaced review, confidence ratings, planning and reflection) each rest on the learning literature listed below.
 
-**Not claimed:** that this skill makes anyone learn faster or get better grades. The skill itself has not been evaluated with students. It applies principles that were tested in other tools, other subjects and other settings.
+For writing, correcting a learner's errors has moderate effects that last into later texts (Brown, Liu & Norouzian), and how much a draft improves during revision does not predict accuracy in the next text (Karim & Nassaji, 2020; Truscott & Hsu, 2008, finding check). The writing mode is built on both findings.
+
+**Not claimed:** that this skill makes anyone learn faster or get better grades. The skill itself has not been evaluated with students. It applies principles that were tested in other tools, other subjects and other settings. The writing mode ("Feedback on my work") has not been evaluated with students either. It combines findings from separate studies, mostly with learners of English as a second language, that were never tested together.
 
 If a student asks, say exactly this much and no more.
 
@@ -71,6 +73,22 @@ These rules come from the project brief. `docs/mapping.csv` does not list them, 
 | Student-written cards. If the student insists on a ready-made deck, the "just tell me" rule applies | Standing rules | 2 | Handlungsorientiert Lernen im Studium | Pan et al. (2023). Counter-evidence: Lin & McDaniel (2018) found no benefit from self-made flashcards | `docs/mapping.csv` row 8 names a student-written card deck as the output of rule 8. The evidence is mixed |
 | "Just tell me": answer, name the trade-off once, offer to continue. Repeated requests count as the student's choice for the session: answer directly and offer one short check at the end | Standing rules | 3 | Zimmerman (2002); AI-empowered SRL review (2025) | | The student steers their own learning; the review stresses keeping student autonomy. Also a requirement of the brief |
 | Graded work: coach only | Standing rules; `hint-ladder.md` special cases | 1 | Vygotsky (1978) | Bastani et al. (2025) | Support, not replacement. This is also an academic-integrity requirement of the brief and not a research finding |
+| Warm close: always thank the student; say they did well, naming what they did, only when the check went well; no generic praise | Session step 5; Tone and pace | 3 | Hattie & Timperley (2007) | Zimmerman (2002) | Praise about the person carries little information for learning, while praise tied to the work and how it was done has more, though still limited, effect. Self-reflection on the result is a phase of self-regulated learning. Ending warmly at all is the author's request, and no study is claimed for its effect |
+
+### Writing mode (v0.2)
+
+These rules build the "Feedback on my work" mode. They were added on 17 November 2026 at the author's request, from a research review of how people use AI assistants and of the feedback literature. Like the rows above, the mappings are **proposed and need the author's confirmation**. "Finding check" means the reference is confirmed but the result was taken from a summary.
+
+| Rule | Where | Proposed principle | Proposed source | Supporting or background | Why this mapping |
+|---|---|---|---|---|---|
+| Fix receipt: the whole text fixed in the first reply, changes in bold, then at most two lines on one to three recurring, rule-governed patterns with a short reason, and one offer to save them | `modes.md`, Feedback on my work; SKILL.md, step aside and Modes; core loop | 2 | Van der Kleij et al. (2015); Brown, Liu & Norouzian (2023) | Sachs & Polio (2007); Sheen (2007); Sheen, Wright & Moldawa (2009), finding check; Lira et al. (2026), preprint | Feedback that explains beats a corrected answer alone, which beats right or wrong. Correcting a learner's errors has moderate effects that last. Marked correction helped learners notice more than a full rewrite. A short rule helps most for a single rule-governed feature, and focused feedback on a few categories helps learning more than correcting everything. In a preprint, seeing an AI revision of one's own text improved later writing without AI |
+| The receipt is about the text, never the person | `modes.md` | 2 | Kluger & DeNisi (1996) | Hattie & Timperley (2007) | Feedback that draws attention to the self is where feedback most often lowers performance |
+| Spot it first: on graded work and on request, point at the sentence and the pattern, the student fixes, the coach confirms; a gap gets the rule and one correct example | `modes.md`; SKILL.md graded-work rule | 1 | Ferris & Roberts (2001), finding check; Shintani, Ellis & Suzuki (2014) | Van Beuningen, De Jong & Kuiken (2012); Chandler (2003), finding check; Lu, Zhang & Li (2026), preprint; McLaren, Adams & Mayer (2015) | Locating the error was enough to set off self-correction, and a chance to revise after feedback strengthened learning. For grammar not yet learned, direct correction did better. In a preprint, AI feedback that guided self-repair beat direct answers on delayed transfer. Find-and-fix pays off later but is liked less, so outside graded work it is offered, not imposed |
+| On graded work, never return corrected sentences, even "only the grammar" | SKILL.md graded-work rule; `modes.md` | 1 | Vygotsky (1978) | Bastani et al. (2025) | Follows from "Graded work: coach only": the wording has to be the student's. An integrity requirement, not a research finding |
+| Tone: a verdict, one version for the named reader and a one-line reason, with "yours is fine" allowed; when they want to get better, two or three contrasting versions, a pick, then the principle | `modes.md`; `writing-patterns.md` | 2 | Alfieri, Nokes-Malach & Schunn (2013); Schwartz & Bransford (1998) | Jeon & Kaya (2006) via Shakki (2022), check; Agarwal, Naaman & Vashistha (2025); Draxler et al. (2024) | Comparing cases beats studying one, especially when the principle comes after the comparison. Explicit teaching of politeness beats exposure alone. AI suggestions pulled writing toward Western styles, and writers feel more ownership when they had more influence over the text |
+| Fix, do not restyle: keep their words, order, greeting and sign-off | `modes.md`; Gotchas | 1 | Draxler et al. (2024) | Agarwal, Naaman & Vashistha (2025); Padmakumar & He (2024); Sachs & Polio (2007) | A rewrite hides what changed and takes away the writer's influence, which lowers ownership and makes texts more alike |
+| Writing profile in the student's log: at most five patterns with their own example and a voice line; one "watch for" line before writing; recurrence counted in new texts; now and then a find-the-error item from an old sentence; retired after three texts without it | `modes.md`; `assets/learning-log.md`; Returning students | 3 | Lalande (1982), finding check; Hattie & Timperley (2007) | Butler, Fazio & Marsh (2011); McLaren, Adams & Mayer (2015); Truscott & Hsu (2008), finding check; Karim & Nassaji (2020) | Tracking your own errors and correcting them yourself is the oldest form of this idea. The "watch for" line is feedback aimed at the next task. Errors made with confidence come back and need a later check. Revision gains do not predict new texts, so progress is counted in new texts. The profile has not been tested on its own |
+| "Just fix it" stops receipts for the rest of the session | `modes.md` | 3 | Zimmerman (2002) | | Follows from the "just tell me" row: the student steers |
 
 ## Rules from the brief with no literature source
 
@@ -79,14 +97,18 @@ These are design decisions. They make the coach usable, and no study is claimed 
 | Rule | Where in SKILL.md | Nearest principle | Basis |
 |---|---|---|---|
 | Step aside for plain task requests; answer quick factual questions directly; ask once if unclear; do a task request in the middle of a session and then pick the session up again | When to coach and when to step aside | 3 (the student decides what they use AI for) | Brief: the skill should trigger on learning intent and stay out of the way otherwise |
-| Pace: one question per turn, at most three planning questions (skipping what is already known and inferring the mode if the student does not name it), short turns, compressed session for small questions, one message per check question, a correct and well-calibrated check answer confirmed in one line with no extra self-check turn, a log entry given as a Markdown block with a few words to one line per field, about 150 words in all and at most three new review questions, followed by a single line on when to come back | The session; Tone and pace; Gotchas ("Stacked questions") | 3 | Brief: plan in about a minute, at most three short questions, one per turn. The limits on the check and the log entry come from the first test runs |
-| Tone: light, no lecturing, no commentary on AI use, study habits or integrity beyond the single sentences the rules allow, no inflated praise, match the student's energy, the check belongs to the student | Tone and pace | 3 | Brief: students uninstall anything that feels preachy or slow |
+| Pace: one question per turn, at most three planning questions (skipping what is already known and inferring the mode if the student does not name it), short turns, compressed session for small questions, one message per check question, a correct and well-calibrated check answer confirmed in one line with no extra self-check turn, a log entry given as a Markdown block with a few words to one line per field, about 150 words in all and at most three new review questions, followed by a single line on when to come back and a warm close of one or two sentences | The session; Tone and pace; Gotchas ("Stacked questions") | 3 | Brief: plan in about a minute, at most three short questions, one per turn. The limits on the check and the log entry come from the first test runs |
+| Tone: light, no lecturing, no commentary on AI use, study habits or integrity beyond the single sentences the rules allow, sparing praise (right answers confirmed plainly, praise a couple of times a session at most and only when earned), match the student's energy, the check belongs to the student | Tone and pace | 3 | Brief: students uninstall anything that feels preachy or slow. Sparing praise is the author's decision of 17 November 2026, so that the warm close at the end still means something |
 | Reply in the student's language and register; technical terms stay in the language of their course | Standing rules | 1 (support has to fit the learner) | Brief. The link to the principle is weak and no source is claimed |
 | Three-step confidence scale (sure, fairly sure, guessing) | Session step 4 | 2 | Practical default agreed with the author. Row 7 supports rating confidence, not this particular scale |
 | Review gaps (one to two days, about a week, two to three weeks) | Session step 5 | 2 | Practical default agreed with the author. Row 6 supports spacing across days, not these particular gaps |
 | Without a log, do not pretend to remember earlier sessions. If today's date is unknown, ask or leave it for the student to fill in | Returning students; session step 5 | 3 | Honesty; the log is the student's record |
-| When to read the reference files (`hint-ladder.md`, `modes.md`, this file) | Session step 2; Modes; Where the rules come from | none | Agent Skills format: detail is loaded only when needed. Not a learning rule |
-| A request for a mode that is not built yet (feedback on my work, teach-back) is handled with the standing rules, as described in `modes.md` | Modes; `modes.md` | 1, 3 | Brief: the two modes are planned for a later version |
+| When to read the reference files (`hint-ladder.md`, `modes.md`, `writing-patterns.md`, this file) | Session step 2; Modes; Where the rules come from | none | Agent Skills format: detail is loaded only when needed. Not a learning rule |
+| A request for a mode that is not built yet (teach-back) is handled with the standing rules, as described in `modes.md` | Modes; `modes.md` | 1, 3 | Brief: the mode is planned for a later version |
+| A fix of their own text gets a receipt only with a learning signal (the language is not their first, they want to get better, the text is for a course, or they paste a writing profile). Otherwise it is a plain task. The fix never waits for a question | Step aside; skill description; core loop | 3 | Author's decision of 17 November 2026. A receipt on every proofread would turn the coach into a lesson nobody asked for |
+| Fixed list of pattern names, with point-or-correct guidance, first-language transfer and "not errors" | `writing-patterns.md`; `modes.md` | 3 | Design. Background: Lin & Crosthwaite (2024) found GPT-assisted feedback changing its whole approach between runs on the same text, and Steiss et al. (2024) found trained teachers more accurate than ChatGPT and better at picking what matters. Neither tests a fixed list |
+| Swiss *ss*, British or American spelling and regional usage are not errors | `writing-patterns.md` | 1 | Design; follows from the register row above |
+| The fixed text may run longer than the usual turn | Tone and pace | 3 | Design: handing back only part of the text makes the student stitch it together |
 | First reply: no explanation of the method, one line of framing that also says the student can ask for the answer, then the first question | The session | 3 | Brief: light tone, plan in about a minute. The line about asking for the answer belongs to the "just tell me" rule above |
 
 ## What each source shows
@@ -113,11 +135,57 @@ The descriptions below stay within what is recorded in `docs/` and in the publis
 
 **Zimmerman (2002).** Theory overview. Self-regulated learning is a cycle of forethought (planning), performance and self-reflection.
 
+**Hattie & Timperley (2007).** Review of research on feedback. It separates feedback about the task, about the process, about self-regulation and about the person. Praise aimed at the person ("good student") is rarely effective, because it says little about the work. Praise that names the effort or the process has more effect, though the review calls it still limited. Limits: a review and model of feedback in general, not a test of how an AI coach should end a session.
+
 **AI-empowered SRL review (2025).** Qualitative systematic review of 14 studies. AI can support planning, the learning process and reflection. Named risks: inaccurate AI feedback, and loss of student autonomy.
 
 **GenAI and SRL review (2025).** Systematic review of 73 studies. Generative AI can support planning, explanation, monitoring, feedback and reflection. Named challenge: students often use AI as an answer generator.
 
 **Lee et al. (2025).** Survey of knowledge workers. More confidence in the AI went with less critical thinking, more self-confidence went with more. Background for the verification nudge. Self-report, not students.
+
+### Sources for the writing mode
+
+**Brown, Liu & Norouzian (2023).** Bayesian meta-analysis of 52 control-group studies of written corrective feedback. It reports robust evidence that moderate effects last over time, and direct, indirect and metalinguistic feedback gave similar effects. Limits: the exact pooled effect sizes were not retrieved; second-language learners.
+
+**Van Beuningen, De Jong & Kuiken (2012).** 268 Dutch secondary-school learners, correction of all errors. Direct and indirect correction both beat self-editing and extra practice, in revision and in new texts one and four weeks later. Only direct correction improved grammar in new texts; indirect correction helped most with other errors. Students did not simplify their writing.
+
+**Karim & Nassaji (2020).** 53 intermediate learners of English, three weeks. All feedback types improved revisions, while gains in new writing were largely not significant. Used for the point that revision is not learning.
+
+**Truscott & Hsu (2008).** Two groups differed sharply in error reduction during revision and did not differ in later new writing. Finding check: taken from a summary.
+
+**Van der Kleij, Feskens & Eggen (2015).** Meta-analysis of 40 studies of feedback in computer-based learning. Elaborated feedback d = 0.49, the correct answer alone 0.32, right or wrong only 0.05. Effects were smaller in languages than in mathematics.
+
+**Kluger & DeNisi (1996).** Meta-analysis of 607 effect sizes. Feedback helped on average, but more than a third of feedback interventions lowered performance, more so when the feedback drew attention to the self rather than the task.
+
+**Sachs & Polio (2007).** Two small experiments on a write-compare-revise task. Marked error correction led to more accurate revisions than a native-like rewrite of the whole text.
+
+**Sheen (2007).** 91 adult learners of English, articles. Correction with a short rule explanation stayed ahead on delayed tests, correction alone did not. **Sheen, Wright & Moldawa (2009)** found focused correction better for learning than correcting everything (finding check).
+
+**Shintani, Ellis & Suzuki (2014).** University students, two grammatical structures, measured in new writing. Feedback followed by a chance to revise worked best.
+
+**Ferris & Roberts (2001)** and **Chandler (2003).** Underlining the error was about as effective as labelling it, and better than describing the error type. Finding check for both: taken from summaries.
+
+**Lu, Zhang & Li (2026).** Preprint, not peer-reviewed. 70 learners of English, articles. AI feedback that guided self-repair beat AI feedback that gave the answer on delayed near transfer, with less overconfidence and more effort. One grammatical feature, item tests rather than free writing.
+
+**McLaren, Adams & Mayer (2015).** 390 middle-school students, decimals. Finding and fixing errors in examples gave better results a week later (d = 0.33), not immediately, and students liked it less.
+
+**Butler, Fazio & Marsh (2011).** Errors made with high confidence are corrected well once feedback is given, but tend to return after a week.
+
+**Lalande (1982).** Learners of German who self-corrected coded errors and tracked their error types on an "error awareness sheet" made fewer errors than a group with traditional correction. Old and small, and the log was never tested on its own. Finding check.
+
+**Alfieri, Nokes-Malach & Schunn (2013).** Meta-analysis of 57 experiments. Comparing cases beat studying them one at a time (d = 0.50), especially when learners looked for what the cases share and the principle came after the comparison. **Schwartz & Bransford (1998)** show that analysing contrasting cases prepares learners to learn from the explanation that follows.
+
+**Jeon & Kaya (2006), via Shakki (2022).** Meta-analysis of instruction in pragmatics (politeness, requests, register). Explicit instruction d = 0.70 against controls, implicit 0.44. Check: the figures are taken from Shakki's review.
+
+**Agarwal, Naaman & Vashistha (2025).** 118 participants from India and the US. AI writing suggestions led Indian participants to adopt Western styles. Background for tying tone advice to the reader the student names.
+
+**Draxler et al. (2024).** Two studies. People did not feel they owned AI-written text, and more influence over the text increased ownership.
+
+**Padmakumar & He (2024).** Co-writing essays with an instruction-tuned model made texts more alike; the text the writers wrote themselves stayed diverse. Venue check: arXiv record confirmed, conference listing not.
+
+**Lira et al. (2026).** Preprint, not peer-reviewed. Pre-registered experiments on cover letters. Practising with an AI that revised the participant's own letter improved later writing without AI, and simply seeing the revision helped about as much. Sample sizes and test delay: check.
+
+**Lin & Crosthwaite (2024)** and **Steiss et al. (2024).** GPT-assisted feedback on the same text changed its whole approach from run to run, and trained teachers gave more accurate feedback that picked out what mattered. Background for the fixed list of pattern names.
 
 ## References
 
@@ -149,3 +217,34 @@ Status follows `docs/references.md`. **TODO** marks details that are missing or 
 
 - Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., & Wilson, N. (2025). The impact of generative AI on critical thinking. *CHI '25*, Article 1121. https://doi.org/10.1145/3706598.3713778 (verified per the project literature file)
 - Prompting strategies with generative AI during learning from multiple sources (2026). *Learning and Instruction*. https://doi.org/10.1016/j.learninstruc.2026.102435 TODO: authors.
+
+### Writing mode
+
+Full references, with their status, are in `docs/references.md` under "Writing mode". All were confirmed against their DOI or arXiv record on 17 November 2026. Where the finding itself was taken from a summary, the table above says "finding check".
+
+- Agarwal, Naaman & Vashistha (2025), CHI '25. https://doi.org/10.1145/3706598.3713564
+- Alfieri, Nokes-Malach & Schunn (2013), *Educational Psychologist, 48*(2). https://doi.org/10.1080/00461520.2013.775712
+- Brown, Liu & Norouzian (2023, online; 2026 in print), *Language Teaching Research, 30*(3). https://doi.org/10.1177/13621688221147374
+- Butler, Fazio & Marsh (2011), *Psychonomic Bulletin & Review, 18*(6). https://doi.org/10.3758/s13423-011-0173-y
+- Chandler (2003), *Journal of Second Language Writing, 12*(3). https://doi.org/10.1016/S1060-3743(03)00038-9
+- Draxler et al. (2024), *ACM Transactions on Computer-Human Interaction, 31*(2). https://doi.org/10.1145/3637875
+- Ferris & Roberts (2001), *Journal of Second Language Writing, 10*(3). https://doi.org/10.1016/S1060-3743(01)00039-X
+- Hattie & Timperley (2007), *Review of Educational Research, 77*(1). https://doi.org/10.3102/003465430298487
+- Karim & Nassaji (2020), *Language Teaching Research, 24*(4). https://doi.org/10.1177/1362168818802469
+- Kluger & DeNisi (1996), *Psychological Bulletin, 119*(2). https://doi.org/10.1037/0033-2909.119.2.254
+- Lalande (1982), *The Modern Language Journal, 66*(2). https://doi.org/10.1111/j.1540-4781.1982.tb06973.x
+- Lin & Crosthwaite (2024), *System, 127*. https://doi.org/10.1016/j.system.2024.103529
+- Lira, Rogers, Goldstein, Ungar & Duckworth (2026), preprint. arXiv:2502.02880
+- Lu, Zhang & Li (2026), preprint. https://doi.org/10.21203/rs.3.rs-10545020/v1
+- McLaren, Adams & Mayer (2015), *International Journal of Artificial Intelligence in Education, 25*(4). https://doi.org/10.1007/s40593-015-0064-x
+- Padmakumar & He (2024), arXiv:2309.05196
+- Sachs & Polio (2007), *Studies in Second Language Acquisition, 29*(1). https://doi.org/10.1017/S0272263107070039
+- Schwartz & Bransford (1998), *Cognition and Instruction, 16*(4). https://doi.org/10.1207/s1532690xci1604_4
+- Shakki (2022), *Frontiers in Psychology, 13*. https://doi.org/10.3389/fpsyg.2022.1016661 (for Jeon & Kaya, 2006: check)
+- Sheen (2007), *TESOL Quarterly, 41*(2). https://doi.org/10.1002/j.1545-7249.2007.tb00059.x
+- Sheen, Wright & Moldawa (2009), *System, 37*(4). https://doi.org/10.1016/j.system.2009.09.002
+- Shintani, Ellis & Suzuki (2014), *Language Learning, 64*(1). https://doi.org/10.1111/lang.12029
+- Steiss et al. (2024), *Learning and Instruction, 91*. https://doi.org/10.1016/j.learninstruc.2024.101894
+- Truscott & Hsu (2008), *Journal of Second Language Writing, 17*(4). https://doi.org/10.1016/j.jslw.2008.05.003
+- Van Beuningen, De Jong & Kuiken (2012), *Language Learning, 62*(1). https://doi.org/10.1111/j.1467-9922.2011.00674.x
+- Van der Kleij, Feskens & Eggen (2015), *Review of Educational Research, 85*(4). https://doi.org/10.3102/0034654314564881
