@@ -24,6 +24,49 @@ Status key: **verified** = bibliographic details confirmed against the publisher
 - Zimmerman, B. J. (2002). Becoming a self-regulated learner: An overview. *Theory Into Practice, 41*(2), 64-70. https://doi.org/10.1207/s15430421tip4102_2 (check: title and pages from memory; DOI from the deck's link)
 - A qualitative systematic review on AI empowered self-regulated learning in higher education (2025). *npj Science of Learning*. https://www.nature.com/articles/s41539-025-00319-0 (check: authors missing). 14 studies.
 - A systematic literature review on designing self-regulated learning using generative artificial intelligence and its future research directions (2025). *Computers & Education*. https://doi.org/10.1016/j.compedu.2025.105465 (check: authors missing). 73 studies.
+- Hattie, J., & Timperley, H. (2007). The power of feedback. *Review of Educational Research, 77*(1), 81-112. https://doi.org/10.3102/003465430298487 (verified: publisher page and APA PsycNet)
+  - Used for the warm close: praise aimed at the person carries little information; praise tied to the work has more, though limited, effect.
+
+## Writing mode ("Feedback on my work", v0.2)
+
+Added 17 November 2026. Bibliographic details of every entry were confirmed against its Crossref (DOI) or arXiv record on that date. **finding check** = the reference is confirmed, but the result was taken from a summary (abstract, review or machine summary) and not read in the paper. The research notes behind these entries are in `research_notes/AI use cases and coach upgrades/` and the synthesis in `reports/AI use cases and coach upgrades.md`.
+
+Correction and feedback:
+
+- Brown, D., Liu, Q., & Norouzian, R. (2023, online; 2026 in print). Effectiveness of written corrective feedback in developing L2 accuracy: A Bayesian meta-analysis. *Language Teaching Research, 30*(3), 1357-1389. https://doi.org/10.1177/13621688221147374 (verified; pooled effect sizes not retrieved)
+- Van Beuningen, C. G., De Jong, N. H., & Kuiken, F. (2012). Evidence on the effectiveness of comprehensive error correction in second language writing. *Language Learning, 62*(1), 1-41. https://doi.org/10.1111/j.1467-9922.2011.00674.x (verified)
+- Karim, K., & Nassaji, H. (2020). The revision and transfer effects of direct and indirect comprehensive corrective feedback on ESL students' writing. *Language Teaching Research, 24*(4), 519-539. https://doi.org/10.1177/1362168818802469 (verified)
+- Truscott, J., & Hsu, A. Y.-p. (2008). Error correction, revision, and learning. *Journal of Second Language Writing, 17*(4), 292-305. https://doi.org/10.1016/j.jslw.2008.05.003 (verified; finding check)
+- Van der Kleij, F. M., Feskens, R. C. W., & Eggen, T. J. H. M. (2015). Effects of feedback in a computer-based learning environment on students' learning outcomes. *Review of Educational Research, 85*(4), 475-511. https://doi.org/10.3102/0034654314564881 (verified)
+- Kluger, A. N., & DeNisi, A. (1996). The effects of feedback interventions on performance: A historical review, a meta-analysis, and a preliminary feedback intervention theory. *Psychological Bulletin, 119*(2), 254-284. https://doi.org/10.1037/0033-2909.119.2.254 (verified)
+- Sachs, R., & Polio, C. (2007). Learners' uses of two types of written feedback on a L2 writing revision task. *Studies in Second Language Acquisition, 29*(1), 67-100. https://doi.org/10.1017/S0272263107070039 (verified)
+- Sheen, Y. (2007). The effect of focused written corrective feedback and language aptitude on ESL learners' acquisition of articles. *TESOL Quarterly, 41*(2), 255-283. https://doi.org/10.1002/j.1545-7249.2007.tb00059.x (verified)
+- Sheen, Y., Wright, D., & Moldawa, A. (2009). Differential effects of focused and unfocused written correction on the accurate use of grammatical forms by adult ESL learners. *System, 37*(4), 556-569. https://doi.org/10.1016/j.system.2009.09.002 (verified; finding check)
+- Shintani, N., Ellis, R., & Suzuki, W. (2014). Effects of written feedback and revision on learners' accuracy in using two English grammatical structures. *Language Learning, 64*(1), 103-131. https://doi.org/10.1111/lang.12029 (verified)
+- Ferris, D., & Roberts, B. (2001). Error feedback in L2 writing classes. *Journal of Second Language Writing, 10*(3), 161-184. https://doi.org/10.1016/S1060-3743(01)00039-X (verified; finding check)
+- Chandler, J. (2003). The efficacy of various kinds of error feedback for improvement in the accuracy and fluency of L2 student writing. *Journal of Second Language Writing, 12*(3), 267-296. https://doi.org/10.1016/S1060-3743(03)00038-9 (verified; finding check)
+- Lu, R., Zhang, H., & Li, R. (2026). Socratic generative AI feedback improves learning transfer and confidence calibration in second language learning. Preprint, Research Square. https://doi.org/10.21203/rs.3.rs-10545020/v1 (verified as preprint; not peer-reviewed)
+- Lalande, J. F. (1982). Reducing composition errors: An experiment. *The Modern Language Journal, 66*(2), 140-149. https://doi.org/10.1111/j.1540-4781.1982.tb06973.x (verified; finding check)
+
+Learning from errors:
+
+- McLaren, B. M., Adams, D. M., & Mayer, R. E. (2015). Delayed learning effects with erroneous examples: A study of learning decimals with a web-based tutor. *International Journal of Artificial Intelligence in Education, 25*(4), 520-542. https://doi.org/10.1007/s40593-015-0064-x (verified)
+- Butler, A. C., Fazio, L. K., & Marsh, E. J. (2011). The hypercorrection effect persists over a week, but high-confidence errors return. *Psychonomic Bulletin & Review, 18*(6), 1238-1244. https://doi.org/10.3758/s13423-011-0173-y (verified)
+
+Tone, comparison and voice:
+
+- Alfieri, L., Nokes-Malach, T. J., & Schunn, C. D. (2013). Learning through case comparisons: A meta-analytic review. *Educational Psychologist, 48*(2), 87-113. https://doi.org/10.1080/00461520.2013.775712 (verified)
+- Schwartz, D. L., & Bransford, J. D. (1998). A time for telling. *Cognition and Instruction, 16*(4), 475-522. https://doi.org/10.1207/s1532690xci1604_4 (verified)
+- Shakki, F. (2022). Meta-analysis as an emerging trend to scrutinize the effectiveness of L2 pragmatics instruction. *Frontiers in Psychology, 13*, 1016661. https://doi.org/10.3389/fpsyg.2022.1016661 (verified). Used for Jeon, E. H., & Kaya, T. (2006), in Norris & Ortega (Eds.), *Synthesizing Research on Language Learning and Teaching*, John Benjamins, pp. 165-211 (check: details and figures only via Shakki)
+- Agarwal, D., Naaman, M., & Vashistha, A. (2025). AI suggestions homogenize writing toward Western styles and diminish cultural nuances. *CHI '25*, 1-21. https://doi.org/10.1145/3706598.3713564 (verified)
+- Draxler, F., Werner, A., Lehmann, F., Hoppe, M., Schmidt, A., Buschek, D., & Welsch, R. (2024). The AI ghostwriter effect: When users do not perceive ownership of AI-generated text but self-declare as authors. *ACM Transactions on Computer-Human Interaction, 31*(2), 1-40. https://doi.org/10.1145/3637875 (verified)
+- Padmakumar, V., & He, H. (2024). Does writing with language models reduce content diversity? arXiv:2309.05196 (verified as arXiv record; check: ICLR 2024 listing)
+
+AI feedback on writing:
+
+- Lira, B., Rogers, T., Goldstein, D. G., Ungar, L., & Duckworth, A. L. (2026). Coach not crutch: Evidence that AI can improve writing skill despite reducing effort. arXiv:2502.02880, version 4 (verified as arXiv record; not peer-reviewed; check: sample sizes and test delay)
+- Lin, S., & Crosthwaite, P. (2024). The grass is not always greener: Teacher vs. GPT-assisted written corrective feedback. *System, 127*, 103529. https://doi.org/10.1016/j.system.2024.103529 (verified)
+- Steiss, J., Tate, T., Graham, S., Cruz, J., Hebert, M., Wang, J., Moon, Y., Tseng, W., Warschauer, M., & Olson, C. B. (2024). Comparing the quality of human and ChatGPT feedback of students' writing. *Learning and Instruction, 91*, 101894. https://doi.org/10.1016/j.learninstruc.2024.101894 (verified)
 
 ## Further background (not yet tied to a rule)
 

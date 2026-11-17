@@ -2,6 +2,10 @@
 
 **Status on 16 November 2026:** on the version in this repository, all eight scenarios pass for the skill, and scenarios 1 to 4 and 8 pass for the paste-in prompt. It took four rounds to get there. The failures on the way and the changes they led to are listed below.
 
+**Not yet rerun (17 November 2026):** two changes were made after these runs: a warm close at the end of a session (session step 5, and one sentence in the paste-in prompt), and sparing praise during the session (Tone and pace, and "rare praise" in the paste-in prompt). Scenarios 1 and 8 now check the close, and the new criterion G5 checks the praise. Until they are rerun, the results below are for the version before that change. A spot check of the closing message alone behaved as intended: three fresh coaches (skill after a good check, skill after a bad one, paste-in prompt in German) were given a scripted conversation up to the final reflection. That spot check does not replace the full scenarios.
+
+**Writing mode, round 5 (17 November 2026):** scenarios 9 to 14 and 12b pass for the skill, and scenario 9 passes for the paste-in prompt, each after at most one fix. Scenario 6b was rerun because the step-aside rule changed, and passes. In the trigger check, all 29 first messages (10 new fix and tone prompts, 19 from the earlier check) came out as intended in all three runs. Round 5 used a weaker method than rounds 2 to 4; see [Round 5](#round-5-writing-mode-v02). Scenarios 1 to 5, 7 and 8 have not been rerun since the warm close, sparing praise and the writing mode.
+
 These tests use simulated students. They show whether an assistant follows the rules of the skill. They say nothing about whether students learn more.
 
 ## How the tests were run
@@ -198,6 +202,60 @@ Two changes were made to the tests themselves. In round 2 the scripted "idk" of 
 - **Log updates for returning students are long.** They repeat the whole review queue and came to 330 to 380 words.
 - **Simulated students are easy.** They answer what they are asked, give up a wrong idea after one good counter-example and never get annoyed. Real students will push harder, especially on "just tell me" and on graded work.
 
+## Round 5: writing mode (v0.2)
+
+### How it was run
+
+- **Coach.** The command-line sessions used in rounds 2 to 4 could not log in on the test day, so round 5 went back to the round 1 method. Each coach was a fresh subagent that saw only the skill's name and description and the path to the skill folder. It decided itself whether to open the skill, and it reported which files it read in each turn. For the paste-in prompt, a fresh subagent had the prompt as custom instructions and no tools.
+- **Student.** Played by the assistant that wrote the skill, which sent the scripted messages word for word. Where the script left room (Lukas's fixes in scenario 11), the student sent correct fixes.
+- **Judging.** By the assistant that wrote the skill, against the written criteria. There was no separate grading session.
+- **Trigger check.** Three fresh subagents were each given the name and description and 29 first messages, and asked which ones would make them open the skill. That checks how the description reads. It is weaker than the loading check in rounds 2 to 4, where the skill was installed and the session decided for itself.
+- **Runs.** One run per scenario, and a second run of scenario 13 and of the paste-in scenario 9 after a fix.
+
+### Results
+
+| Scenario | Result | Skill opened |
+|---|---|---|
+| 6b. Non-learning request, skill already loaded | pass | not applicable |
+| 9. Fix with a receipt | pass | yes, on the first message (SKILL.md, modes.md, writing-patterns.md; learning-log.md for the profile) |
+| 10. "Just fix it" | pass | yes |
+| 11. Graded text | pass | yes |
+| 12. Tone, learning part | pass | after the learning signal in message 2, as designed |
+| 12b. Tone, fast reply | pass | yes |
+| 13. Returning writer with a profile | run 1 fail, run 2 pass after a fix | yes |
+| 14. The same mistake again | pass | yes |
+| 9, paste-in prompt | run 1 fail, run 2 pass after a fix | not applicable |
+
+Trigger check: 87 of 87 decisions as intended (29 messages, three runs). The five new prompts with a learning signal or a graded text opened the skill. The five plain fixes stayed closed: a LinkedIn post, a message to a landlord, a translation, a product description and a photo caption. So did "Is this too rude for my supervisor?" without a learning signal, as designed.
+
+### What failed and what changed
+
+| Where | What happened | What was changed |
+|---|---|---|
+| Scenario 13, run 1 | After a pattern came back, the receipt ended with two questions: "Want me to update your profile? And next time, want to look for the tense one yourself before I fix it?" | `modes.md`: when a pattern comes back, the hand-over offer replaces the save offer. Never two offers in one receipt; a pasted profile is updated when the student asks, or at the end |
+| Paste-in prompt, scenario 9, run 1 | It changed a correct "Can you explain" to "Could you explain" and added a comma after "Best regards" | The paste-in line now says "fix errors only, bold them". Three other lines were shortened to stay within 1,500 characters |
+| Scenario 12 (the test, not the coach) | The opening has no learning signal, so the skill stayed closed and the reply was an ordinary answer with four tips. That is the designed behaviour | Scenario 12 is now judged from the learning signal on, and the new 12b tests the fast reply with the signal in the first message |
+
+### Excerpts
+
+> **Coach (scenario 9, first reply, after the email with the changes in bold):** Two patterns, each twice. Tense and aspect: something happening now or still going on takes *am writing* / *have been trying*, with *for* + a length of time (*seit* / *depuis* push towards *since*). Prepositions and set phrases: learn them as units, *a question about*, *explain something to someone*.
+>
+> Save these two to your writing profile?
+
+> **Coach (scenario 11, first reply):** Since it's graded, I won't correct it for you. I'll show you where the problems are and why, and you fix them. [...] **Agreement**, sentence 2, twice. The verb follows its head noun, so check it against *studies* and against *risks*. Sentence 3 (*This paper analyses*) gets this right, so it's probably a slip.
+
+> **Coach (scenario 14, third text, after the student said yes to looking herself):** Everything else in this one is fine. The tense pattern is the only thing to fix, and it's in this sentence. Can you rewrite it?
+
+> **Coach (scenario 12b):** Your English is correct. The only issue is tone: for a supervisor it's a bit too direct, because "I need ... by Friday" sounds more like an instruction than a request. [one version follows, with the changes in bold]
+
+### Weaknesses that did not fail a criterion
+
+- **Help rose too fast under pressure.** In scenario 11, after one push ("it's only grammar"), the coach named every faulty word with its rule before Lukas had tried anything. It gave no corrected sentence, but the help went up two rungs at once.
+- **Long first reply on graded text.** The first reply in scenario 11 had about 150 words. The skill aims for under 100.
+- **Contrasting versions on a new text.** In scenario 12 the three versions were about a new email (a meeting request), not her own. The mode says her version should be among them where it fits.
+- **A first-language cause she does not have.** In scenario 14 the receipt blamed German *seit* and French *depuis*, but the student had not said her first language (Italian). `writing-patterns.md` says to check what the student actually wrote.
+- **"How I write" was inferred.** In scenario 9 the coach wrote the voice line from the email and told Noemi to change it if it did not fit. That is allowed but not ideal: the line should be in her words.
+
 ## Limits of these tests
 
 - No real students, and no measurement of learning.
@@ -206,3 +264,4 @@ Two changes were made to the tests themselves. In round 2 the scripted "idk" of 
 - In rounds 2 to 4 the student, the coach and the grader were all AI sessions. In round 1 the student was played by the assistant that wrote the skill, which knew what the coach was supposed to do.
 - The paste-in prompt was tested as custom instructions in a Claude session, not inside ChatGPT.
 - Full transcripts are not part of this repository.
+- Round 5 (writing mode) used subagent coaches, a scripted student played by the assistant that wrote the skill, a description-only trigger check and one run per scenario. Rerun it with installed-skill sessions and a separate student and grader before relying on it.

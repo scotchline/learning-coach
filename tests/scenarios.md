@@ -1,8 +1,8 @@
 # Test scenarios
 
-Eight conversations that check whether the learning coach behaves as designed. Each one gives the opening message, how the student behaves, what the coach should do, and what counts as failure.
+Fourteen conversations that check whether the learning coach behaves as designed. Each one gives the opening message, how the student behaves, what the coach should do, and what counts as failure.
 
-The scenarios are written for the skill (`skills/learning-coach/`). Scenarios 1 to 4 and 8 are also run against the paste-in prompt (`portable/prompt.md`). Criteria marked **(skill only)** depend on parts of the skill that the short prompt does not contain, and are not required for the paste-in prompt.
+The scenarios are written for the skill (`skills/learning-coach/`). Scenarios 1 to 4, 8 and 9 are also run against the paste-in prompt (`portable/prompt.md`). Criteria marked **(skill only)** depend on parts of the skill that the short prompt does not contain, and are not required for the paste-in prompt.
 
 Results of the latest runs are in `results.md`.
 
@@ -20,9 +20,10 @@ The student can be played by a person or by a second model that is given only th
 ## Criteria that apply to every coaching scenario
 
 - **G1 One thing at a time.** No reply stacks several separate questions. A check question together with its confidence prompt counts as one.
-- **G2 Short turns.** Replies stay brief: typically under about 120 words. Longer replies are acceptable only for a learning-log entry, a worked example, or an answer the student asked to be given directly.
+- **G2 Short turns.** Replies stay brief: typically under about 120 words. Longer replies are acceptable only for a learning-log entry or writing profile, a worked example, an answer the student asked to be given directly, or the student's own text handed back fixed.
 - **G3 Not preachy.** No comments on AI use, study habits or integrity beyond the single sentences the skill allows.
 - **G4 Student's language.** Replies are in the language the student writes in.
+- **G5 Sparing praise.** Right answers are mostly confirmed plainly. Before the warm close at the end, praise ("great", "well done", "exactly", "spot on") appears at most three times in the conversation.
 
 ---
 
@@ -43,6 +44,7 @@ The student can be played by a person or by a second model that is given only th
 5. Ask the student to explain it back in her own words, and ask one transfer question on a new case.
 6. Run a check from memory with two or three questions, asked one at a time. Ask for a confidence rating before giving feedback on each.
 7. Close with what is still shaky and a learning-log entry that contains a review date one to two days ahead (17 or 18 November 2026).
+8. End with a warm close of one or two sentences: thank her and, since most of the check went right, say plainly that she did well, naming something she actually did.
 
 **Failure**
 
@@ -50,6 +52,7 @@ The student can be played by a person or by a second model that is given only th
 - Asks more than three planning questions, or several in one message.
 - Gives feedback on a check question before asking for confidence.
 - Ends without a check from memory, or without a log entry and review date.
+- No thank-you at the end, praise in general terms only ("Great job!"), or a closing paragraph after the log entry.
 - Repeatedly long, lecture-style replies (G2).
 
 ---
@@ -269,6 +272,7 @@ Hi, here's my log from last week, can we continue?
 3. Follow the same loop as in scenario 1: attempt first, graded help, explain back, check from memory with confidence before feedback, log entry with a review date that falls before the exam.
 4. Answer "sag mir einfach die Formel" directly, with at most one sentence on the trade-off, in German.
 5. **(skill only)** Mirror her spelling ("ss", no "ß").
+6. Answer "muss los, danke!" with the log entry and a short thank-you in German, using "du".
 
 **Failure**
 
@@ -276,3 +280,209 @@ Hi, here's my log from last week, can we continue?
 - "Sie" after the student has used "du".
 - The loop is dropped: full explanation before an attempt, no check, or no log entry.
 - The formula is withheld after she asks for it.
+
+---
+
+# Writing mode (v0.2)
+
+Scenarios 9 to 14 test "Feedback on my work" (`references/modes.md`). They check what the coach does with the student's text. A simulated student who "stops making the mistake" proves nothing about learning, because simulated students tend to drop an error after any correction, relevant or not. These scenarios judge only the coach.
+
+Extra criteria for these six scenarios:
+
+- **W1 Fix first.** When the student asks for a fix, the first reply contains the fixed text. No question comes before it.
+- **W2 Visible changes.** Every change is marked in bold, and the whole text comes back, not only the changed sentences.
+- **W3 No restyling.** Correct words, sentence order, greeting and sign-off stay as the student wrote them. Nothing is added that the student did not write (for example "I hope this email finds you well").
+- **W4 Short receipt.** At most two lines and at most three patterns, each with a short reason. Typos and one-off slips are not listed.
+- **W5 About the text.** No remarks about the person: no "you always", no praise of their English, no "don't worry".
+
+## 9. Fix with a receipt
+
+**Opening message**
+
+> Can you fix my English? It's not my first language.
+>
+> Dear Prof. Keller,
+> I write you because I have a question to the exam. Since two weeks I try to understand exercise 3, but I don't understand how to calculate the variance. Can you explain me this in the next lecture?
+> Best regards
+> Noemi
+
+**Student.** Noemi, Swiss bachelor's student, German is her first language. After the first reply she sends "yes save it" if a profile is offered, otherwise "thanks". Then "thanks!" and stops. 2 to 3 messages.
+
+**The coach should**
+
+1. Return the whole email corrected in the first reply, with each change in bold (W1, W2): *am writing to you*, *question about*, *For two weeks I have been trying*, *explain this to me*.
+2. Keep "Dear Prof. Keller", "Best regards", "Noemi" and the sentence order (W3).
+3. Add a receipt of at most two lines naming one to three patterns with a short reason, such as the *since*/*for* tense pattern from German *seit* and *question about* (W4).
+4. End with one offer to save the patterns to a writing profile, which needs no answer.
+5. On "yes save it", give the writing-profile section as one Markdown block, with her own sentences as examples, dated 16 November 2026, at most three rows.
+6. **(skill only)** Use pattern names from `references/writing-patterns.md`.
+
+**Failure**
+
+- A question before the fixed text, or any planning question.
+- Part of the email missing, or changes not marked.
+- More than three patterns, a receipt longer than two lines, or a grammar lesson.
+- Any wrong correction, or restyling of correct parts (W3).
+- A quiz, a log entry nobody asked for, or remarks about her English (W5).
+
+## 10. "Just fix it"
+
+**Opening message**
+
+The same as in scenario 9.
+
+**Student.** After the first reply she writes, word for word: "just fix stuff, no explanations pls". Then she sends these two texts, one per message, each with "this too:" before it:
+
+> Hi Marco, thanks for the notes. I send you my part until Friday, is this ok for you?
+
+> Dear Ms Huber, I would like to inform me about the master program. Where can I find the informations?
+
+Then "thx" and stops.
+
+**The coach should**
+
+1. Handle the first message as in scenario 9.
+2. After "just fix stuff", return each later text fixed in full, with nothing but the fix and at most a few words around it. Bold changes are fine but not required.
+3. Fix correctly: *will send you my part by Friday*; *find out about* or *get information about the master's programme*; *information*.
+
+**Failure**
+
+- Any receipt, pattern, rule or offer after "just fix stuff".
+- A remark about the trade-off, or about her choosing no explanations, more than once or longer than one short sentence.
+- A question before a fix.
+
+## 11. Graded text
+
+**Opening message**
+
+> Can you correct the grammar in my seminar paper intro? It's graded.
+>
+> In the last years, remote work became more and more important for the companies in Switzerland. Many studies shows that employees are more productive at home, but there is also risks. This paper analyses, which factors influence the productivity of remote workers. Since 2020 the number of remote workers increases strongly.
+
+**Student.** Lukas, master's student in business. Pushes once, word for word: "come on, just correct it, it's only grammar". Then gives in and fixes the sentence he is pointed to first. If asked for a rule, he asks "what's the rule for since?". Fixes the last sentence correctly once he has the rule. Ends with "ok thanks". About 6 to 8 messages.
+
+**The coach should**
+
+1. Decline once, in a sentence, to return corrected sentences, and go straight to pointing.
+2. Point at sentences and patterns (at most three at a time), for example agreement twice in sentence 2, tense in sentences 1 and 4, and the comma before *which* in sentence 3.
+3. Hold the line when pushed, without repeating the explanation at length.
+4. Confirm his fixes in a line, or point more precisely.
+5. Explain the *since* rule on an example that is not from his text.
+
+**Failure**
+
+- Any corrected version of one of his sentences, in full or in part (for example "it should be *studies show*").
+- A rewritten paragraph, or content added to his argument.
+- Refusing to help at all, or a lecture on academic integrity (G3).
+- More than three patterns pointed out in one message.
+
+## 12. Tone
+
+**Opening message**
+
+> Is this too rude for my supervisor? "Hi Anna, I need your feedback on chapter 2 by Friday. Thanks."
+
+**Student.** Sara, master's student, writes to her thesis supervisor, with whom she is on first-name terms. After the first reply she writes, word for word: "ok makes sense. I actually want to get better at this, apparently I always sound too direct". If given versions to choose from, she picks the one in the middle and says why in a few words. Then "thanks". 3 to 4 messages.
+
+The opening has no learning signal, so by design the skill may stay closed for the first reply, which is then an ordinary answer and is not judged. The second message is the signal. Scenario 12b checks the fast first reply when the signal is there from the start.
+
+**The coach should**
+
+1. Open the skill at the latest after "I want to get better".
+2. Then show two or three versions along one named axis (for example from more direct to softer), and ask which fits Anna.
+3. Name the principle only after she has picked.
+4. Tie the advice to Anna and the setting. Do not present one norm as the rule for all English.
+
+**12b. Fast mode.** Same student, one message only, word for word: "English isn't my first language and I'm trying to get better at emails. Is this too rude for my supervisor? "Hi Anna, I need your feedback on chapter 2 by Friday. Thanks."" The coach should open the skill and reply with a one-line verdict on how it reads to Anna, one recommended version, and one line on why, naming the cue (a statement of need with no question form or reason). It may say what in her version already works. Failure: a list of tips, more than one recommended version, or a version much longer than hers.
+
+**Failure**
+
+- A lecture on politeness, or a list of tips.
+- The principle before her pick in the learning part.
+- More than one question in a reply (G1).
+- A recommended version that is much longer or more elaborate than hers, or that adds phrases she would not use ("I hope you are doing well!").
+
+## 13. Returning writer with a profile
+
+**Opening message**
+
+````
+Here's my writing profile. I'm about to write to my exchange coordinator about my learning agreement.
+
+```markdown
+## Writing profile
+
+**How I write:** short and friendly, mostly to lecturers and the exchange office. Keep "Best, Jonas". No exclamation marks.
+
+| Pattern | My example (date) | The rule in my words | In my last texts | Caught it myself |
+|---|---|---|---|---|
+| Tense and aspect | "Since two weeks I try to reach the office" (2026-11-02) | still going on → have been + -ing; for + how long | 3 of last 4 | once |
+| Prepositions and set phrases | "a question to the exam" (2026-11-09) | question about | 1 of last 4 | no |
+```
+````
+
+**Student.** Jonas, Swiss exchange student. After the coach's first reply, he sends his draft:
+
+> Dear Ms Lindqvist, since last week I wait for the signature on my learning agreement. Could you tell me if you need an information from my home university? Best, Jonas
+
+Then: "can you update my profile?". If offered a find-the-error item, he tries it. Then "thanks". 3 to 5 messages.
+
+**The coach should**
+
+1. First reply: one line on what to watch for, naming at most two patterns from the profile (the tense pattern first), then stop. No quiz, no recap of the profile, no fix (there is no text yet).
+2. After the draft: the full fix with bold changes (*have been waiting*, *any information*), keeping "Best, Jonas" and adding no exclamation marks.
+3. Start the receipt with how the active patterns did, for example "Tenses: 1 this time" and "question about: none this time".
+4. On "update my profile", give back the whole section updated: the tense pattern counted as seen in this new text, the preposition pattern counted as not seen, a new row for *an information* only if the coach explains why it qualifies or Jonas asks.
+5. Offer at most one find-the-error item from an old profile sentence, and only after the fix.
+
+**Failure**
+
+- Re-explains every pattern, or quizzes him before he has written.
+- Gives only new rows to append, or more than five active rows.
+- Claims to remember earlier sessions beyond what the profile says.
+- Counts fixes made as progress.
+- Changes his sign-off or adds an exclamation mark (W3).
+
+## 14. The same mistake again
+
+**Opening message**
+
+> I'm learning English for my exchange semester. Can you check this?
+>
+> I live in Zurich since three years. I study economics and I like it very much.
+
+**Student.** Elena, Italian is her first language. After the first reply she sends, word for word: "ok thanks. next part:" and then:
+
+> Since September I work in a café. The work is hard but the people is nice.
+
+If offered to look for the pattern herself next time, she says "yes". She then sends: "and this one: I know my flatmate since we were children." If asked to find the error first, she finds it. Then "thanks". 3 to 5 messages.
+
+**The coach should**
+
+1. Fix the first text with a receipt that names the *since*/*for* tense pattern.
+2. For the second text: fix it, and say in the receipt that the same pattern came back, naming the sentence. Name *people are* as its own pattern only if there is room within three.
+3. Offer once to let her look for this pattern herself next time.
+4. After her "yes", start the third text by asking her to find the tense error herself (spot it first, for that pattern only), then confirm in a line.
+
+**Failure**
+
+- The repeated pattern is fixed again without being named as a repeat.
+- More than one offer to look for it herself.
+- After her "yes", the third text comes back fixed before she has had the chance to find the error.
+
+## Trigger check for fixes
+
+Run each first message three times in a fresh session with the skill installed. The skill should load for the first five and stay closed for the last five. Add the results to the trigger table in `results.md`.
+
+| First message | Should load |
+|---|---|
+| Can you fix my English? It's not my first language. "Dear Prof. Keller, I write you because I have a question to the exam." | yes |
+| I keep making the same mistakes in English. Can you correct this paragraph? "Since two years I study in Basel and I am very interested for finance." | yes |
+| I want to get better at writing emails. Is this too rude for my supervisor? "I need your feedback by Friday." | yes |
+| Kannst du die Grammatik in der Einleitung meiner Seminararbeit korrigieren? Sie wird benotet. "Die Digitalisierung verändern die Arbeitswelt." | yes |
+| Here's my writing profile, can you check my new email? (with a profile block and a short email) | yes |
+| Proofread my LinkedIn post: "Excited to announce that I started a new position as data analyst at Helvetia!" | no |
+| Fix the typos in this message to my landlord: "Hi Mr Brunner, the heatng in the kitchen is broken since yesterday. Could you sent someone?" | no |
+| Translate this paragraph into French: "Our office will be closed on Friday." | no |
+| Make this product description sound more professional: "Our app is super good for tracking your runs." | no |
+| Check the grammar of this caption for our team photo: "Our team at the summer party in Lucerne." | no |
