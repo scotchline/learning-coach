@@ -8,6 +8,14 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ## 17 November 2026
 
+### First release, and the install link points to it
+
+- **Decided:** version 0.3.0 is the first GitHub release, with `learning-coach.zip` attached. The README's download links (English and German) now point to the ZIP in the latest release (`releases/latest/download/learning-coach.zip`), no longer to `dist/` on `main`.
+- **Why:** several sessions commit to `main` during a day, and the ZIP in `dist/` can be rebuilt in the middle of a change. Students should get a version that was tested and released, not whatever is on `main` at the time.
+- **Not chosen:** a link to a fixed version (`releases/download/v0.3.0/...`), because it would need a README edit for every release.
+- **Consequence:** a change reaches students only with a new release. The README's maintainer section says how to publish one.
+- **Where:** README, Install, the German summary and the maintainer section.
+
 ### Ideas for coming back to a topic parked for a later app
 
 - **Decided:** a harder question after a right answer, a one-page topic card and calendar reminders are not built in the skill for now; they are parked in a local backlog for a possible learning coach app.
