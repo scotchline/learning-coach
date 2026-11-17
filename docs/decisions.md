@@ -8,6 +8,10 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ## 17 November 2026
 
+### Ideas for coming back to a topic parked for a later app
+
+- **Decided:** a harder question after a right answer, a one-page topic card and calendar reminders are not built in the skill for now; they are parked in a local backlog for a possible learning coach app.
+
 ### Praise rule made concrete
 
 - **Decided:** "Exactly", "Spot on", "Good catch", "Great", "Solid" and the same words in the student's language ("Genau", "Super") count as praise, not as confirmation. Before the warm close, praise at most twice in a whole session, and only for a moment that earns it. Never praise a wrong or half-right answer; say plainly which part is right instead.
