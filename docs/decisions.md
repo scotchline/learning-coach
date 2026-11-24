@@ -8,6 +8,15 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ## 24 November 2026
 
+### The simulator covers conversations, and each role gets its own reference file
+
+- **Decided:** at the author's request, the Simulator is built first and covers conversations with one counterpart: an oral exam, questions after a presentation, a seminar discussion, a conversation in a foreign language, a patient or client conversation in programmes that train those. The coach plays only the other person. The author also confirmed one skill with one reference file per role (`references/simulator.md` first), which the coach reads only when that role runs.
+- **Why:** one counterpart is one mechanism that stays realistic and can be tested. A file per role keeps `SKILL.md` short, and an exam-prep session does not read the role-play instructions.
+- **Not chosen:**
+  - Case simulations in which the coach narrates a situation and the student makes decisions. They are broader and closer to the prompt sheet, but the coach plays narrator and world at once, slips into explaining more easily and is harder to test. Possible later as an extension.
+  - Only oral exams and presentations. This overlaps most with exam prep.
+- **Where:** the design is in `docs/specs/2026-11-24-simulator-mode.md`. Nothing is built yet.
+
 ### Release 0.3.1: the exam guess step, without the study group draft
 
 - **Decided:** at the author's request, version 0.3.1 is released with the exam guess step (22 and 23 November). The study group draft (17 November) is parked as backlog on the branch `study-group-draft`. It is not on `main` and not in the ZIP.
@@ -27,8 +36,8 @@ Each entry says what was decided, why, what was considered and not chosen, and w
   - Building for work as well. The description is nearly full, each audience needs its own test scenarios, and the tools the sheet names for employees may not load skills at all.
 - **Audience, decided by the author the same day:** the skill stays for studying and learning, not for the job. The sheet's workplace examples (a new regulation, shift planning, a critical talk with a colleague) are not taken over. Examples for the new roles come from study: an oral exam, a presentation, a seminar paper, being stuck on how to start an assignment.
 - **Found along the way:** the Mentor, Trainer and Lernende prompts in the sheet are close translations of the example prompts in Mollick & Mollick (2023), "Assigning AI: Seven Approaches for Students, with Prompts" (arXiv 2306.10052). The sheet does not cite it. The Coach prompt is the sheet's own; the Simulator prompt was not compared. The paper is a source for the roles, not evidence that they work.
-- **Claude's calls, for the author to confirm:** one reference file per role in place of more sections in `modes.md`; build order Simulator, Lernende:r, Mentor:in, Coach. Candidate sources, checked: Chernikova et al. (2020) for simulations, Chase et al. (2009) for learning by teaching, Gollwitzer & Sheeran (2006) for if-then plans.
-- **Where:** not in the repository yet. The comparison is in a slide deck, "Lernrollen im Learning Coach", made in Claude and kept outside the repository.
+- **Claude's calls, for the author to confirm:** one reference file per role in place of more sections in `modes.md` (confirmed by the author the same day); build order Simulator, Lernende:r, Mentor:in, Coach. Candidate sources, checked: Chernikova et al. (2020) for simulations, Chase et al. (2009) for learning by teaching, Gollwitzer & Sheeran (2006) for if-then plans.
+- **Where:** not in the repository yet. The comparison was shown in a slide deck made in Claude and kept outside the repository, since reworked into the status report «Learning Coach: Statusbericht».
 - **Open:** the skill description has 4 characters left (1,020 of 1,024), so new triggers mean shortening others; the paste-in prompt has 2 left (1,498 of 1,500), so the roles will not fit there; what "able to do it without AI" means for the Coach.
 
 ## 23 November 2026
