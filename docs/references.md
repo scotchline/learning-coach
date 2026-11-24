@@ -100,6 +100,15 @@ Bibliographic details confirmed against Crossref on 22 November 2026. Findings a
 - Rosenshine, B., Meister, C., & Chapman, S. (1996). Teaching students to generate questions: A review of the intervention studies. *Review of Educational Research, 66*(2), 181-221. https://doi.org/10.3102/00346543066002181 (verified)
   - Median effect size 0.36 on standardised comprehension tests, 0.86 on experimenter-made tests, all on new material.
 
+## Added 24 November 2026: the simulator
+
+Bibliographic details confirmed on 24 November 2026 against the publisher's page, APA PsycNet and arXiv. Findings for Chernikova et al. are from the abstract and the published text.
+
+- Chernikova, O., Heitzmann, N., Stadler, M., et al. (2020). Simulation-based learning in higher education: A meta-analysis. *Review of Educational Research, 90*(4), 499-541. https://doi.org/10.3102/0034654320933544 (verified; findings from the abstract; full author list not checked)
+  - 145 studies; large overall effect on complex skills, g = 0.85; mostly medical education; well-run role plays without technology did about as well as computer simulations; no AI.
+- Mollick, E. R., & Mollick, L. (2023). Assigning AI: Seven approaches for students, with prompts. *Wharton School Research Paper.* arXiv:2306.10052. https://arxiv.org/abs/2306.10052 (verified; a collection of prompts, no outcome data)
+  - Source of the simulator role. The Mentor, Trainer and Lernende prompts in the prompt sheet «Lernprompts» are close translations of prompts in this paper.
+
 ## Further background (not yet tied to a rule)
 
 - Fan, Y., Tang, L., Le, H., et al. (2024). Beware of metacognitive laziness: Effects of generative artificial intelligence on learning motivation, processes, and performance. arXiv:2412.09315. (check: journal version in BJET 2025 not confirmed)

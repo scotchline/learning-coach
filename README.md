@@ -104,6 +104,7 @@ Things you can say, by what students most often use AI for:
 |---|---|
 | Understand a concept | "Explain opportunity cost. We had it today and I didn't get it." |
 | Prepare for an exam | "I have a statistics exam on 24 November. Quiz me on regression." |
+| Practise a conversation | "Be my examiner for my oral exam on Friday. Topic: regression." |
 | Get through a reading | "I'm about to read chapter 3. Give me three questions to read with." Then: "Here's my summary, what did I miss?" |
 | Check facts | "Is this right? How sure are you, and where can I check it?" |
 | Do homework | "Here's my attempt at exercise 2. Where does it go wrong?" |
@@ -157,6 +158,7 @@ learning-coach/
   skills/learning-coach/
     SKILL.md                    the skill
     references/modes.md         learn something new, exam prep, feedback on my work (teach-back planned)
+    references/simulator.md     practise a conversation: the coach plays the other person
     references/writing-patterns.md  names and rules for recurring writing mistakes
     references/hint-ladder.md   how help is graded
     references/evidence.md      rule -> principle -> source
@@ -203,6 +205,8 @@ Planned for later versions: the mode "teach-back", and printable outputs such as
 **Eigene Texte korrigieren (neu in 0.2):** Wenn du schreibst, dass Englisch nicht deine Erstsprache ist, dass du besser werden willst oder dass der Text für einen Kurs ist, bekommst du den ganzen Text korrigiert, mit jeder Änderung **fett**. Darunter stehen höchstens zwei Zeilen zu den Fehlern, die sich wiederholen, und warum. Auf Wunsch kommen sie in dein Schreibprofil im Lernjournal. Bei benoteten Texten zeigt der Coach dir, wo die Fehler sind, und du korrigierst selbst. Mit «korrigier einfach» bekommst du nur noch die Korrekturen.
 
 **Installation in Claude:** Die Datei [`learning-coach.zip`](https://github.com/scotchline/learning-coach/releases/latest/download/learning-coach.zip) aus dem neuesten Release herunterladen, nicht entpacken. In Claude unter *Settings > Capabilities* die Code-Ausführung einschalten, dann unter *Customize > Skills* auf *+*, *Create skill*, *Upload a skill* klicken und das ZIP hochladen. Für eine neue Version das neue ZIP herunterladen, unter *Customize > Skills* die alte Version löschen (falls das Menü kein Ersetzen anbietet) und das neue ZIP hochladen. Das Lernprotokoll bleibt erhalten, weil es deine eigene Datei ist. Details stehen oben unter [Install](#install).
+
+**Gespräche üben (neu):** Der Coach spielt dein Gegenüber, etwa in einer mündlichen Prüfung oder bei den Fragen nach einem Referat. Danach gibt es eine Nachbesprechung, in der du zuerst sagst, wie es lief, und eine zweite, schwierigere Runde. Nur im Skill, nicht im Kopier-Prompt.
 
 **ChatGPT und andere:** Den Text aus [`portable/prompt.md`](portable/prompt.md) als erste Nachricht in einen neuen Chat einfügen oder in ChatGPT bei den *Custom instructions* hinterlegen.
 

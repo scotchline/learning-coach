@@ -8,7 +8,7 @@ Read this when a student asks why the coach works this way, or when a situation 
 
 For writing, correcting a learner's errors has moderate effects that last into later texts (Brown, Liu & Norouzian), and how much a draft improves during revision does not predict accuracy in the next text (Karim & Nassaji, 2020; Truscott & Hsu, 2008, finding check). The writing mode is built on both findings.
 
-**Not claimed:** that this skill makes anyone learn faster or get better grades. The skill itself has not been evaluated with students. It applies principles that were tested in other tools, other subjects and other settings. The writing mode ("Feedback on my work") has not been evaluated with students either. It combines findings from separate studies, mostly with learners of English as a second language, that were never tested together.
+**Not claimed:** that this skill makes anyone learn faster or get better grades. The skill itself has not been evaluated with students. It applies principles that were tested in other tools, other subjects and other settings. The writing mode ("Feedback on my work") has not been evaluated with students either. It combines findings from separate studies, mostly with learners of English as a second language, that were never tested together. The simulator mode has been tested only with simulated students, and the evidence behind it comes from simulation studies without AI.
 
 If a student asks, say exactly this much and no more.
 
@@ -110,6 +110,15 @@ Proposed, like the rows above. Not tested.
 | Rule | Where | Proposed principle | Proposed source | Supporting or background | Why this mapping |
 |---|---|---|---|---|---|
 | Exam prep: the student guesses two or three exam questions before the pre-test; the coach adds at most two likely ones they left out, says why, says they are guesses and does not rank them; the pre-test is drawn from the combined list | `modes.md`, Exam prep | 2, 3 | Ebersbach, Feierabend & Nazari (2020) | Rosenshine, Meister & Chapman (1996) | In a university lecture, generating questions helped recall a week later about as much as answering questions, and both beat restudying. Teaching students to generate questions improved comprehension. Guessing what an exam will ask is planning for it. Predicting exam questions in particular, and doing it with an AI, was not studied |
+
+### Added 24 November 2026
+
+Proposed, like the rows above. Tested with simulated students only.
+
+| Rule | Where | Proposed principle | Proposed source | Supporting or background | Why this mapping |
+|---|---|---|---|---|---|
+| Simulator: the coach plays one counterpart in a conversation the student is practising and stays in role; a debrief follows, then a harder second round | `simulator.md` | 2 | Chernikova et al. (2020) | Mollick & Mollick (2023), as the source of the role | In higher education, simulations had a large effect on complex skills such as diagnosing and communicating, across domains but mostly in medical education. Well-run role plays without technology did about as well as screen-based simulations. The studies did not use AI, and AI as the counterpart was not studied |
+| Simulator: in the debrief, the student says how it went and which moment they would redo before the coach gives its view | `simulator.md`, Debrief | 2 and 3 | Flavell (1979); Zimmerman (2002) | | The self-assessment-first rule above, applied to a performance in place of an answer |
 
 ## Rules from the brief with no literature source
 
@@ -236,6 +245,12 @@ The descriptions below stay within what is recorded in `docs/` and in the publis
 
 **Rosenshine, Meister & Chapman (1996).** Review of intervention studies that taught students to generate questions about what they read. Median effect size 0.36 on standardised comprehension tests and 0.86 on tests the researchers made, all on new material. Limits: reading comprehension, tested at the end of the intervention, not later. Taken from the abstract.
 
+### Added 24 November 2026
+
+**Chernikova et al. (2020).** Meta-analysis of 145 empirical studies of simulation-based learning in higher education, on complex skills that involve dealing with other people (for example diagnosing, communicating, teaching). Large overall effect, g = 0.85. Scaffolding helped, with reflection phases working better for learners with more prior knowledge and examples for those with less. Well-organised role plays and simulated patients without technology did about as well as computer simulations. Limits: most findings come from medical education; teamwork showed only a medium effect; the simulations did not use AI. Taken from the abstract and the published text.
+
+**Mollick & Mollick (2023).** A guide for instructors with seven ways to assign AI to students (mentor, tutor, coach, teammate, student, simulator, tool), each with prompts, benefits and risks. It is the source of the simulator role and of the prompt sheet this mode was compared with. It reports no outcome data, so it is not evidence that the role works.
+
 ## References
 
 Status follows `docs/references.md`. **TODO** marks details that are missing or unconfirmed there. They are left open on purpose and must not be filled in from memory.
@@ -322,3 +337,10 @@ Confirmed against Crossref on that date. Full references are in `docs/references
 
 - Ebersbach, Feierabend & Nazari (2020), *Applied Cognitive Psychology, 34*(3), 724-736. https://doi.org/10.1002/acp.3639
 - Rosenshine, Meister & Chapman (1996), *Review of Educational Research, 66*(2), 181-221. https://doi.org/10.3102/00346543066002181
+
+### Added 24 November 2026
+
+Confirmed on that date. Full references are in `docs/references.md`.
+
+- Chernikova et al. (2020), *Review of Educational Research, 90*(4), 499-541. https://doi.org/10.3102/0034654320933544
+- Mollick & Mollick (2023), arXiv:2306.10052. https://arxiv.org/abs/2306.10052
