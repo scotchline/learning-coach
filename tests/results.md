@@ -409,6 +409,16 @@ Weaknesses that did not fail a criterion:
 - **A queue outside the block.** In the skip run, the review queue sat below the Markdown block, so copying the block leaves it behind.
 - **The demand shift as a drawing task.** In run A, Jonas's first guess was covered only through the substitutes question and never asked as a drawing task.
 
+### Check of the 0.3.1 release build
+
+The runs above used the working tree with the study group draft in it. The 0.3.1 ZIP leaves the draft out, so on Tuesday 24 November one more normal run of scenario 16 was made with the skill unpacked from that ZIP. Same method; the opening again named Friday 27 November, so the miss had to be due on 25 or 26 November.
+
+| Run | Result | Guess step | Planted miss | Praise before the close (G5) |
+|---|---|---|---|---|
+| Release build | pass | No examples in the ask. His guess taken as "Noted: a demand shift, and a rise in a substitute's price." Two added with reasons, called guesses, not ranked | Q2 of the pre-test. Logged as butter and margarine, due 25 November | 0 |
+
+Weaknesses that did not fail a criterion: the format question again gave an example ("calculations (like finding the equilibrium price)"); the coach pointed Jonas to a "substitutes" slide he had never mentioned; and the review queue added a question on complements that the session never covered. One run, so a sign and not proof.
+
 ## Limits of these tests
 
 - No real students, and no measurement of learning.

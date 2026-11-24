@@ -8,6 +8,15 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ## 24 November 2026
 
+### Release 0.3.1: the exam guess step, without the study group draft
+
+- **Decided:** at the author's request, version 0.3.1 is released with the exam guess step (22 and 23 November). The study group draft (17 November) is parked as backlog on the branch `study-group-draft`. It is not on `main` and not in the ZIP.
+- **Why:** the guess step passed its tests. The study group draft has not been tested at all, and every release asks students to replace the skill, so the draft waits until it is tested.
+- **Not chosen:** keeping the guess step back until the study group is tested and releasing both together; shipping the study group marked as a draft.
+- **Tested:** the round 8 runs used the working tree with the draft in it. One more run of scenario 16 was made with the skill unpacked from the 0.3.1 ZIP itself, and it passed (`tests/results.md`, Round 8, "Check of the 0.3.1 release build").
+- **Where:** `SKILL.md`, version 0.3.1; `dist/learning-coach.zip`; the GitHub release v0.3.1; the branch `study-group-draft`.
+- **Open:** before the study group comes back, it needs the scenarios named in its entry on that branch and a test run. The points left open on 23 November still stand.
+
 ### The roles from the SBB prompt sheet become modes of the same skill
 
 - **Decided:** at the author's request, the five AI roles from the prompt sheet «Lernprompts» (Team Lernen, Bern, August 2026) are to be added as modes of the learning coach (Weg 1). They are not a separate skill and not a role menu at the start. Trainer:in is already covered by "Learn something new". Simulator and Coach would be new modes. Lernende:r would build teach-back in both directions: the student explains and the coach asks naive questions, or the coach explains with one or two planted mistakes and the student finds them. Mentor:in would extend "Feedback on my work" to feedback on content (plans, concepts, messages). Nothing is built yet.
@@ -31,7 +40,7 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 - **Not chosen:** requiring the pre-test to cover a topic outside the guess list. The skip run with no guess showed the same four pre-test questions, so the guess step did not narrow the pre-test. A rule for it would have fixed a problem the test did not show.
 - **Result:** in the rerun on 23 November, all three runs passed. No run gave examples or praised the guess, and the planted miss came up in all three and came back as a variant due on 24 or 25 November. One run each, three in all.
 - **Where:** `modes.md`, Exam prep; `tests/scenarios.md`, scenario 16; `tests/results.md`, Round 8.
-- **Open:** two runs still put an example in the format question ("calculations (like finding equilibrium price from equations)"), one step before the guess. Scenario 4 also opens with "quiz me", and its student script does not cover the guess. Not released. The ZIP in `dist/` has been rebuilt.
+- **Open:** two runs still put an example in the format question ("calculations (like finding equilibrium price from equations)"), one step before the guess. Scenario 4 also opens with "quiz me", and its student script does not cover the guess. Not released. The ZIP in `dist/` has been rebuilt. (Released in 0.3.1 on 24 November, see above.)
 
 ## 22 November 2026
 
