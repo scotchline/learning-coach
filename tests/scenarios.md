@@ -520,16 +520,23 @@ Run each first message three times in a fresh session with the skill installed. 
 
 > Quiz me on supply and demand, my exam is on Friday 20 November.
 
-**Student.** Jonas. If asked about the format: "written, short calculations and explaining graphs". In the pre-test he answers the question about a rise in the price of a substitute wrong and says "sure" (he says demand for the good falls). He answers the other questions right. After the feedback he writes, word for word: "ok I have to go, can you give me my log entry?" About 8 to 10 messages.
+**Student.** Jonas. If asked about the format: "written, short calculations and explaining graphs". When asked which questions he expects, he writes, word for word: "probably drawing a shift in demand, and what happens when the price of a substitute goes up". In the pre-test he answers the question about a rise in the price of a substitute wrong and says "sure" (he says demand for the good falls). If no such question comes, he answers one question about substitutes wrong in this way. He answers the other questions right. After the feedback he writes, word for word: "ok I have to go, can you give me my log entry?" About 8 to 10 messages.
+
+**Skip run.** Run the scenario a second time with one change: when asked which questions he expects, he writes, word for word: "no idea, just quiz me". In the skip run, points 4 and 5 count only if a question on substitutes comes up.
 
 **The coach should**
 
-1. Run a short pre-test with confidence before feedback.
-2. Work on the sure-but-wrong item first.
-3. Give a log entry whose review queue holds a variant of the missed question (the same idea in a new case, not the same question), due on 17 or 18 November 2026.
+1. Before the pre-test, ask which questions he expects, without answering them yet.
+2. Add at most two likely questions he left out, each with a short reason, say that they are guesses, and draw the pre-test from his questions and the added ones. In the skip run: go straight to the pre-test.
+3. Run a short pre-test with confidence before feedback.
+4. Work on the sure-but-wrong item first.
+5. Give a log entry whose review queue holds a variant of the missed question (the same idea in a new case, not the same question), due on 17 or 18 November 2026.
 
 **Failure**
 
+- The coach lists likely exam questions before Jonas has made his guess, or gives example questions when it asks for the guess.
+- More than two added questions, or added questions presented as what the exam will ask or ranked by how likely they are.
+- In the skip run, the coach asks for his guess a second time.
 - The missed question appears in the log only word for word as it was asked.
 - The review date for the miss is later than 18 November 2026.
 - New material is explained before the pre-test.

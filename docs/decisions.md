@@ -6,6 +6,30 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ---
 
+## 23 November 2026
+
+### No examples and no praise when asking for the exam guess
+
+- **Decided:** in exam prep, the coach asks for the student's guess at the exam questions without example questions, because an example tends to become the guess. It takes the guess in a plain line, without praise. In test scenario 16, Jonas's scripted guess now names substitutes ("what happens when the price of a substitute goes up"). A failure point was added for example questions in the ask.
+- **Why:** in the first round 8 runs, the coach suggested sample questions in the ask ("find the equilibrium"). One sample became the coach's own added question, and another was almost a pre-test question. Both runs where the student guessed also said "Those two are good guesses", which put each run at the G5 limit. Two of three runs never asked about substitutes, so the planted miss could not happen.
+- **Not chosen:** requiring the pre-test to cover a topic outside the guess list. The skip run with no guess showed the same four pre-test questions, so the guess step did not narrow the pre-test. A rule for it would have fixed a problem the test did not show.
+- **Result:** in the rerun on 23 November, all three runs passed. No run gave examples or praised the guess, and the planted miss came up in all three and came back as a variant due on 24 or 25 November. One run each, three in all.
+- **Where:** `modes.md`, Exam prep; `tests/scenarios.md`, scenario 16; `tests/results.md`, Round 8.
+- **Open:** two runs still put an example in the format question ("calculations (like finding equilibrium price from equations)"), one step before the guess. Scenario 4 also opens with "quiz me", and its student script does not cover the guess. Not released. The ZIP in `dist/` has been rebuilt.
+
+## 22 November 2026
+
+### Exam prep starts with the student's guess at the exam questions
+
+- **Decided:** in exam prep, before the pre-test, the coach asks which two or three questions the student expects. This takes the place of the question about the topic list, so planning still needs at most three questions. The coach then adds at most two likely questions the student left out, each with a few words on why, and says these are guesses from the material, not knowledge of the exam, without ranking them. The pre-test is drawn from the combined list. A student who would rather not guess ("no idea", "just quiz me") goes straight to the pre-test.
+- **Why:** the idea comes from an Instagram reel with five custom ChatGPT study commands. One of them, "/questionpredictor", reads the student's notes and lists the most likely exam questions. Having the student guess first keeps the thinking with them, like "their summary before yours" and student-written cards. Generating questions helped recall a week later about as much as answering them did (Ebersbach, Feierabend & Nazari, 2020), and guessing what an exam will ask is something students can do on their own before the next one.
+- **Not chosen:**
+  - The coach predicting the questions from the notes, as in the reel. That does the thinking for the student, and a ranked list of the "most likely" questions claims a knowledge of the exam that the coach does not have.
+  - The reel's other four commands. The check from memory already does what "/quizme" does. Notes and study guides written by the AI ("/stickynotes", "/studyguide") go against "their summary before yours", and the one-page topic card is parked. A story-style retell in the student's words (from "/storymode") was suggested but is not part of this change.
+- **Where:** `modes.md`, Exam prep; `SKILL.md`, Modes; `evidence.md`, Added 22 November 2026 (row, sources and references); `docs/references.md`; `tests/scenarios.md`, scenario 16.
+- **Tests:** scenario 16 now includes the guess step (Jonas's guess is scripted word for word) and a skip run ("no idea, just quiz me"), with three new failure points. In round 8 (`tests/results.md`) all three runs passed, and the step behaved as written each time. Only one run tested the planted miss, because the other two never asked about substitutes.
+- **Open:** the coach gives example questions when it asks for the guess, which can steer the guess, and it praised the guess in both runs. Scenario 16's planted miss depends on the coach choosing a substitutes question. (These three were fixed on 23 November, see above.) Scenario 4 also opens with "quiz me", and its student script does not cover the guess. Not released. The ZIP in `dist/` has been rebuilt.
+
 ## 17 November 2026
 
 ### First release, and the install link points to it

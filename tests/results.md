@@ -359,6 +359,56 @@ After round 7 the praise rule was made concrete and "the check went well" was gi
 
 What this shows: the praise rule now holds in scenarios 3 and 8, and "you did well" is said whenever more than half of the check was right. Still open: the warm close often runs to three sentences, and the paste-in prompt still adds content after the log entry. One run each, so these are signs and not proof.
 
+## Round 8: the student's guess at the exam questions (scenario 16)
+
+### How it was run
+
+- **Coach, student and judging** as in round 7. The coach was a fresh command-line session with the skill in the skills folder of an otherwise empty project, project settings only, no MCP servers, only the Skill and Read tools, and told it knows nothing about the user. The student was a fresh session with no tools that saw only the "Student" paragraph. One grading session received G1 to G5, the scenario section, a note on the dates and all three transcripts. The assistant that ran the tests added mechanical checks (skill and files opened, reply lengths, praise words, dates).
+- **Version.** The skill as it stood in the working tree on 22 November: v0.3.0 plus the study group draft and the new guess step in exam prep, not committed.
+- **Scenario.** Scenario 16 with the guess step added (`scenarios.md`). Two runs where Jonas guesses, word for word, "probably drawing a shift in demand, and what happens to the price when supply goes down", and one skip run where he writes "no idea, just quiz me".
+- **Date and model.** Sunday 22 November 2026, six days later than the scenarios assume. The opening message named the exam as Friday 27 November in place of Friday 20 November, and the miss had to be due on 23 or 24 November. Model: claude-opus-5-5.
+
+### Results
+
+| Run | Result | Opened | Guess step | Planted miss (points 4 and 5) |
+|---|---|---|---|---|
+| Guess, run A | pass | SKILL.md, modes.md, learning-log.md | Asked after the format, before the pre-test. Added two questions with a reason each, labelled "guesses from what intro courses usually ask, not inside knowledge of your exam". Pre-test Q1 to Q4 covered his two and the two added | Came in Q6, after the pre-test, as "a common trap". The coach let him test it first ("Do you ... buy more coffee or less?"), and the log has a variant (butter and margarine) due on 24 November |
+| Guess, run B | pass, inconclusive | same | Same shape, with "my guesses ..., not knowledge of your exam" | Not tested: no question on substitutes in seven questions |
+| Skip run | pass | same | Went straight to a four-question pre-test and did not ask again | Not tested, as in run B |
+
+### What this shows
+
+- **The guess step works as written.** In all three runs the coach asked before the pre-test and answered nothing yet, added exactly two questions with a reason each, called them guesses and never ranked them. The skip was honoured at once.
+- **The pre-test barely changed with the guess.** All three runs used nearly the same four questions (a demand shift, a supply shift, equilibrium from two equations, a price ceiling), with or without his guess. In round 6 the pre-test had a question on substitutes; here one came only once, after the pre-test.
+- **Scenario 16 depends on the coach asking about substitutes.** Two of three runs did not, so the rule that a miss comes back as a variant was tested once in this round.
+
+### Weaknesses that did not fail a criterion
+
+- **Examples in the ask.** The coach gave sample questions when asking for his guess ("find the equilibrium", "shift in demand vs movement along the curve"). In run A the example became one of its own added questions, and in the skip run it was almost pre-test Q3. Examples can steer the guess that the step is meant to leave to the student.
+- **Praise for the guess.** Both guess runs said "Those two are good guesses", which brought each run to three praise phrases by the grader's count, the G5 limit.
+- **"Your confidence matched every time"** after a right answer given at "fairly sure", in all three runs. Not caused by the new step.
+
+### Rerun after two fixes
+
+Two changes followed from the first runs. In `modes.md`, the coach now asks for the guess without example questions and takes the guess in a plain line, without praise. In scenario 16, Jonas's scripted guess is now "probably drawing a shift in demand, and what happens when the price of a substitute goes up", so that the pre-test reaches the planted miss through his own guess. A failure point was added for example questions in the ask.
+
+Same method, on Monday 23 November 2026, one week later than the scenarios assume. The opening message again named the exam as Friday 27 November, so the miss had to be due on 24 or 25 November. A first attempt broke off when the internet connection dropped. All three conversations were started again from the beginning, so no transcript contains a failed turn.
+
+| Run | Result | Guess step | Planted miss | Praise before the close (G5) |
+|---|---|---|---|---|
+| Guess, run A | pass | "which two or three questions do you think will come up? Rough is fine." No examples. His guess taken as "Noted: a demand shift, and a substitute's price rising." Two added with reasons, called guesses | Q2 of the pre-test. Tested by the coach's coffee-drinker example, then logged as butter and margarine, due 25 November | 0 (was 3) |
+| Guess, run B | pass | The same, with "Noted: a demand shift on a graph, and a rise in the price of a substitute." | Q1 of the pre-test. Logged as butter and margarine, due 24 November | 0 (was 3) |
+| Skip run | pass | No examples. Straight to the pre-test after "no idea, just quiz me", not asked again | Q2 of the pre-test, this time without help from the script. Logged as butter and margarine, due 25 November | 1 borderline ("you were sure of them and had good reasons") |
+
+What this shows: both fixes held in every run. Examples and praise were gone from the ask, and because the guess named substitutes, the planted miss came up in the pre-test. The rule that a miss comes back as a variant was tested three times, against once before. One run of each, three runs in all, so these are signs and not proof.
+
+Weaknesses that did not fail a criterion:
+
+- **An example in the format question.** Runs B and skip asked about the format with "calculations (like finding equilibrium price from equations)". This is one step before the guess and previews one of the questions the coach later adds. The grader counted it as an illustration of a format, not a list of likely questions.
+- **A pre-test question that gives the concept away.** In the skip run, Q2 said "the market for tea (a substitute)".
+- **A queue outside the block.** In the skip run, the review queue sat below the Markdown block, so copying the block leaves it behind.
+- **The demand shift as a drawing task.** In run A, Jonas's first guess was covered only through the substitutes question and never asked as a drawing task.
+
 ## Limits of these tests
 
 - No real students, and no measurement of learning.

@@ -142,7 +142,7 @@ These hold in every step.
 v0.2 has three modes. Settle the mode in the plan step, or from the first message when the student brings their own text. If the student does not say, infer it and move on.
 
 - **Learn something new**: the full loop as above, with most of the time in steps 2 and 3.
-- **Exam prep**: starts with questions and not with explanations, spends most of the time in step 4, and plans the reviews backwards from the exam date.
+- **Exam prep**: starts with questions and not with explanations (their guess at what the exam will ask, then a short pre-test), spends most of the time in step 4, and plans the reviews backwards from the exam date.
 - **Feedback on my work**: the student brings their own text or draft. An ungraded fix comes back whole, with the changes in bold, followed by at most two lines on the one to three patterns that recur and why, and an offer to save them to their writing profile. On graded work you point and they fix. A tone question gets a verdict and one version for the reader they named.
 
 Read `references/modes.md` at the start of an exam-prep session, whenever a student brings their own text to fix, check or improve or wants help drafting one for a course, or when a student asks for something that sounds like another mode (teaching the topic back to you, which is planned and not built yet). For any fix or writing feedback, also read `references/writing-patterns.md`, so that patterns get the same names in every session.

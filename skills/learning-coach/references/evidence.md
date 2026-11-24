@@ -103,6 +103,14 @@ Added on 17 November 2026. Proposed, like the rows above.
 | Exam prep: a missed question comes back as a variant in one to two days; close to the exam, work only on confident misses and repeated misses | `modes.md`, Exam prep; `assets/learning-log.md` | 2 | Google & Eedi (2026) | Rawson & Dunlosky (2022) | In a trial with 1,179 students, tutoring after a student's own wrong answer raised correct answers on questions that returned more than a week later, but tutored students covered less of the curriculum and showed no gain on a standardised test, hence the triage |
 | Drafting for a course: their rough version first, then a receipt or pointers | `modes.md`, Feedback on my work | 1 | Lira et al. (2026), preprint | Kumar et al. (2025) | Seeing an AI revision of one's own draft improved later writing without AI. Kumar is a caution: in creative tasks, help that comes before the student's own attempt can lower later performance without AI |
 
+### Added 22 November 2026
+
+Proposed, like the rows above. Not tested.
+
+| Rule | Where | Proposed principle | Proposed source | Supporting or background | Why this mapping |
+|---|---|---|---|---|---|
+| Exam prep: the student guesses two or three exam questions before the pre-test; the coach adds at most two likely ones they left out, says why, says they are guesses and does not rank them; the pre-test is drawn from the combined list | `modes.md`, Exam prep | 2, 3 | Ebersbach, Feierabend & Nazari (2020) | Rosenshine, Meister & Chapman (1996) | In a university lecture, generating questions helped recall a week later about as much as answering questions, and both beat restudying. Teaching students to generate questions improved comprehension. Guessing what an exam will ask is planning for it. Predicting exam questions in particular, and doing it with an AI, was not studied |
+
 ## Rules from the brief with no literature source
 
 These are design decisions. They make the coach usable, and no study is claimed for them. The principle named is the nearest one.
@@ -222,6 +230,12 @@ The descriptions below stay within what is recorded in `docs/` and in the publis
 
 **Scheiter et al. (2026).** Perspective paper by 15 German educational psychologists on generative AI in teaching, learning and counselling. It introduces the ISAR model (see "The three principles") and warns that handing cognitive processes to AI risks a long-term loss of skills. According to course slides, it expects negative effects from Inversion, none from Substitution and positive ones from Augmentation and Redefinition. A frame, not a study. Finding check: the effects per kind are from course slides, the warning from the abstract.
 
+### Added 22 November 2026
+
+**Ebersbach, Feierabend & Nazari (2020).** University lecture, with students who were not trained in the strategies. Recall a week later was better after generating questions or answering them (testing) than after restudying. Analysed by knowledge type, the classical analysis found a benefit for factual knowledge only with testing, while Bayesian analyses suggested that generating questions and testing helped factual and transfer knowledge about equally. Limits: one lecture; the students wrote questions about the content, not guesses at an exam. Taken from the abstract. Effect sizes and sample size: check.
+
+**Rosenshine, Meister & Chapman (1996).** Review of intervention studies that taught students to generate questions about what they read. Median effect size 0.36 on standardised comprehension tests and 0.86 on tests the researchers made, all on new material. Limits: reading comprehension, tested at the end of the intervention, not later. Taken from the abstract.
+
 ## References
 
 Status follows `docs/references.md`. **TODO** marks details that are missing or unconfirmed there. They are left open on purpose and must not be filled in from memory.
@@ -301,3 +315,10 @@ Confirmed against Crossref on that date. Full references are in `docs/references
 - Abbas, Zhang & Junaid (2026), *Computers in Human Behavior Reports, 22*, 101057. https://doi.org/10.1016/j.chbr.2026.101057
 - David, Vassena & Bijleveld (2024), *Psychological Bulletin*. https://doi.org/10.1037/bul0000443 TODO: volume, issue, pages.
 - Scheiter et al. (2026), *Psychologische Rundschau, 77*(3), 169-174. https://doi.org/10.1026/0033-3042/a000769
+
+### Added 22 November 2026
+
+Confirmed against Crossref on that date. Full references are in `docs/references.md`.
+
+- Ebersbach, Feierabend & Nazari (2020), *Applied Cognitive Psychology, 34*(3), 724-736. https://doi.org/10.1002/acp.3639
+- Rosenshine, Meister & Chapman (1996), *Review of Educational Research, 66*(2), 181-221. https://doi.org/10.3102/00346543066002181

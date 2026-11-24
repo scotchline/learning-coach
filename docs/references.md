@@ -91,6 +91,15 @@ Bibliographic details confirmed against Crossref on that date, abstracts read vi
 - Scheiter, K., Bach, K. M., Bauer, E., Brod, G., Bromme, R., Buhl, H. M., Gagl, B., Greiff, S., Hefter, M. H., Janke, S., Lindner, M. A., Mayweg, E., Nebel, S., Rummel, N., & Sailer, M. (2026). Generative Künstliche Intelligenz im Kontext von Lehren, Lernen und Beraten: Eine Perspektive der Pädagogischen Psychologie. *Psychologische Rundschau, 77*(3), 169-174. https://doi.org/10.1026/0033-3042/a000769 (verified; check: the subtitle is from course slides; finding check: the effects per ISAR category are from course slides)
   - Used as a frame (Inversion, Substitution, Augmentation, Redefinition) in `evidence.md`, "The three principles".
 
+## Added 22 November 2026: students guess the exam questions
+
+Bibliographic details confirmed against Crossref on 22 November 2026. Findings are from the abstracts on Crossref. The full texts were not read.
+
+- Ebersbach, M., Feierabend, M., & Nazari, K. B. B. (2020). Comparing the effects of generating questions, testing, and restudying on students' long-term recall in university learning. *Applied Cognitive Psychology, 34*(3), 724-736. https://doi.org/10.1002/acp.3639 (verified; finding check: effect sizes and sample size not in the abstract)
+  - Recall after one week profited from generating questions and from testing, not from restudying. The classical analysis found a benefit for factual knowledge only with testing; Bayesian analyses suggested both helped factual and transfer knowledge about equally.
+- Rosenshine, B., Meister, C., & Chapman, S. (1996). Teaching students to generate questions: A review of the intervention studies. *Review of Educational Research, 66*(2), 181-221. https://doi.org/10.3102/00346543066002181 (verified)
+  - Median effect size 0.36 on standardised comprehension tests, 0.86 on experimenter-made tests, all on new material.
+
 ## Further background (not yet tied to a rule)
 
 - Fan, Y., Tang, L., Le, H., et al. (2024). Beware of metacognitive laziness: Effects of generative artificial intelligence on learning motivation, processes, and performance. arXiv:2412.09315. (check: journal version in BJET 2025 not confirmed)
