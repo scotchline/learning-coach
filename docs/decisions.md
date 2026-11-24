@@ -6,6 +6,22 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ---
 
+## 24 November 2026
+
+### The roles from the SBB prompt sheet become modes of the same skill
+
+- **Decided:** at the author's request, the five AI roles from the prompt sheet «Lernprompts» (Team Lernen, Bern, August 2026) are to be added as modes of the learning coach (Weg 1). They are not a separate skill and not a role menu at the start. Trainer:in is already covered by "Learn something new". Simulator and Coach would be new modes. Lernende:r would build teach-back in both directions: the student explains and the coach asks naive questions, or the coach explains with one or two planted mistakes and the student finds them. Mentor:in would extend "Feedback on my work" to feedback on content (plans, concepts, messages). Nothing is built yet.
+- **Why:** the standing rules (attempt first, "just tell me", graded work, praise, the log) then apply to every role without copies, and students install one skill. The same reason kept the study group from becoming its own skill.
+- **Not chosen:**
+  - A role menu at the start, as in the sheet. It is a form-like first question, against the rule for the first reply.
+  - A separate skill for practising and coaching, or five role skills under an umbrella skill. The rules would be copied and drift, the skills would compete to load, there would be several ZIPs to install and update, and one skill cannot reliably load another.
+  - Building for work as well. The description is nearly full, each audience needs its own test scenarios, and the tools the sheet names for employees may not load skills at all.
+- **Audience, decided by the author the same day:** the skill stays for studying and learning, not for the job. The sheet's workplace examples (a new regulation, shift planning, a critical talk with a colleague) are not taken over. Examples for the new roles come from study: an oral exam, a presentation, a seminar paper, being stuck on how to start an assignment.
+- **Found along the way:** the Mentor, Trainer and Lernende prompts in the sheet are close translations of the example prompts in Mollick & Mollick (2023), "Assigning AI: Seven Approaches for Students, with Prompts" (arXiv 2306.10052). The sheet does not cite it. The Coach prompt is the sheet's own; the Simulator prompt was not compared. The paper is a source for the roles, not evidence that they work.
+- **Claude's calls, for the author to confirm:** one reference file per role in place of more sections in `modes.md`; build order Simulator, Lernende:r, Mentor:in, Coach. Candidate sources, checked: Chernikova et al. (2020) for simulations, Chase et al. (2009) for learning by teaching, Gollwitzer & Sheeran (2006) for if-then plans.
+- **Where:** not in the repository yet. The comparison is in a slide deck, "Lernrollen im Learning Coach", made in Claude and kept outside the repository.
+- **Open:** the skill description has 4 characters left (1,020 of 1,024), so new triggers mean shortening others; the paste-in prompt has 2 left (1,498 of 1,500), so the roles will not fit there; what "able to do it without AI" means for the Coach.
+
 ## 23 November 2026
 
 ### No examples and no praise when asking for the exam guess
@@ -31,6 +47,13 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 - **Open:** the coach gives example questions when it asks for the guess, which can steer the guess, and it praised the guess in both runs. Scenario 16's planted miss depends on the coach choosing a substitutes question. (These three were fixed on 23 November, see above.) Scenario 4 also opens with "quiz me", and its student script does not cover the guess. Not released. The ZIP in `dist/` has been rebuilt.
 
 ## 17 November 2026
+
+### The prompt sheet PDF stays out of the repository
+
+- **Decided:** a one-page PDF of example prompts (in German, made from the table under "Using it" in the README) is not kept in `dist/` or anywhere else in the repository. If students should get it, it goes on a GitHub release next to `learning-coach.zip`.
+- **Why:** the PDF copies the README table. When a prompt in the README changes, the PDF goes out of date and nothing catches it. `portable/prompt.md` has a diff check for this problem; the PDF would have none.
+- **Not chosen:** committing the PDF to `dist/`.
+- **Where:** nothing in the repository. The prompts themselves are in the README, under "Using it".
 
 ### First release, and the install link points to it
 
