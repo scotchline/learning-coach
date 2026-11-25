@@ -214,4 +214,4 @@ Planned for later versions: the mode "teach-back", and printable outputs such as
 
 ## Licence
 
-[MIT](LICENSE). Copyright (c) 2026 Daniel.
+[MIT](LICENSE). Copyright (c) 2026 Rebecca, Sara, Lara and Daniel.
