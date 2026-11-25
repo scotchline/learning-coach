@@ -109,6 +109,13 @@ Bibliographic details confirmed on 24 November 2026 against the publisher's page
 - Mollick, E. R., & Mollick, L. (2023). Assigning AI: Seven approaches for students, with prompts. *Wharton School Research Paper.* arXiv:2306.10052. https://arxiv.org/abs/2306.10052 (verified; a collection of prompts, no outcome data)
   - Source of the simulator role. The Mentor, Trainer and Lernende prompts in the prompt sheet «Lernprompts» are close translations of prompts in this paper.
 
+## Added 25 November 2026: input first
+
+Confirmed on APA PsycNet on 25 November 2026. The DOI was not confirmed and is left out.
+
+- Kalyuga, S., Ayres, P., Chandler, P., & Sweller, J. (2003). The expertise reversal effect. *Educational Psychologist, 38*(1), 23-31. (verified; findings from the published text excerpts)
+  - Formats that help novices, such as worked examples, lose their benefit or reverse for learners with more knowledge.
+
 ## Further background (not yet tied to a rule)
 
 - Fan, Y., Tang, L., Le, H., et al. (2024). Beware of metacognitive laziness: Effects of generative artificial intelligence on learning motivation, processes, and performance. arXiv:2412.09315. (check: journal version in BJET 2025 not confirmed)

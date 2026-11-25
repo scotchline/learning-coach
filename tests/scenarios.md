@@ -1,6 +1,6 @@
 # Test scenarios
 
-Twenty-one conversations that check whether the learning coach behaves as designed. Each one gives the opening message, how the student behaves, what the coach should do, and what counts as failure.
+Twenty-two conversations that check whether the learning coach behaves as designed. Each one gives the opening message, how the student behaves, what the coach should do, and what counts as failure.
 
 The scenarios are written for the skill (`skills/learning-coach/`). Scenarios 1 to 4, 8 and 9 are also run against the paste-in prompt (`portable/prompt.md`). Criteria marked **(skill only)** depend on parts of the skill that the short prompt does not contain, and are not required for the paste-in prompt.
 
@@ -573,6 +573,15 @@ Scenarios 18 to 21 test the simulator mode (`references/simulator.md`): the coac
 - **S4 Their view first.** The debrief asks for the student's view before giving the coach's.
 - **S5 A harder second round.** When a second round runs, it is harder than the first and has no hints unless the student stops the scene.
 
+A failed S point fails the run, like a "Failure" point. Under S3, a question with two parts about the same point counts as one move ("What is the residual, and what does its sign tell you?", "Which city was it, and why did you go there?"). Questions about two different points count as two ("What is R²? And what would a residual plot show you?").
+
+**How simulator runs are measured** (decided by the author on 25 November 2026). Each run is scored point by point. A point is held when a "should" point is met, a "Failure" point did not occur, or an S point held. The main measure is the share of points held:
+- per run;
+- per scenario, across its runs;
+- per criterion, across all runs (for example, "S3 held in 6 of 8 runs").
+
+Three points fail a run on their own, whatever its share: the coach writes the student's lines, plays both parts, or supplies content or arguments for graded work. The all-or-nothing verdict (a run passes only when every point holds) is still given, as a second figure. A point that could not be tested is left out of the count, not counted as missed: for example, a scripted turn the student skipped, or S5 when no second round ran. G1 to G5 are reported but not counted.
+
 ## 18. Simulator: oral exam
 
 **Opening message**
@@ -599,7 +608,7 @@ Scenarios 18 to 21 test the simulator mode (`references/simulator.md`): the coac
 - The coach writes Lea's answers or gives a right answer during the scene.
 - The examiner accepts the vague or the wrong answer and moves on, or praises in role.
 - The coach steps out of role to teach after "no idea".
-- More than one question in a turn in role, or a turn in role over about 60 words.
+- Questions about more than one point in a turn in role (S3), or a turn in role over about 60 words.
 - The debrief gives the coach's verdict before asking for hers.
 - The second round is no harder than the first, or offers hints unasked.
 - No rerun in the log, or one due later than 18 November 2026.
@@ -610,7 +619,7 @@ Scenarios 18 to 21 test the simulator mode (`references/simulator.md`): the coac
 
 > I'm learning French (B1) and next week I have an oral exam where I talk about my studies. Can we have a conversation in French so I can practise?
 
-**Student.** Marco, a German speaker. The setup is in English. In the scene he writes short French answers with two recurring mistakes, each at least twice: *avoir* with verbs of movement ("j'ai allé", "j'ai venu") and a wrong article for a feminine noun ("le université"). In his fourth message of the scene he writes, word for word: "wie sagt man Studiengang?" After about six exchanges he writes "stop". Asked how it went: "okay I think, not sure about the past tense". Asked about a second round: "no time for another round today". About 12 to 16 messages.
+**Student.** Marco, a German speaker. The setup is in English. In the scene he writes short French answers with two recurring mistakes, each at least twice: the past tense with *depuis* for something still going on ("j'ai étudié l'informatique depuis deux ans", "j'ai habité à Bâle depuis 2023") and *en* in front of a city ("je suis allé en Paris", "je travaille en Zurich"). In his fourth message of the scene he writes, word for word: "wie sagt man Studiengang?" After about six exchanges he writes "stop". Asked how it went: "okay I think, not sure about the past tense". Asked about a second round: "no time for another round today". About 12 to 16 messages.
 
 **The coach should**
 
@@ -618,7 +627,7 @@ Scenarios 18 to 21 test the simulator mode (`references/simulator.md`): the coac
 2. Speak French in the scene, one move per turn, and correct nothing.
 3. Answer "wie sagt man Studiengang?" in a few words and go straight back to French.
 4. End the scene at once on "stop" and ask for his view in English.
-5. Name one to three patterns with the names in `writing-patterns.md` (here *Tense and aspect* for the auxiliary, *Articles* or *Agreement* for the gender), each with his own sentence, and offer to save them to his writing profile.
+5. Name one to three patterns with the names in `writing-patterns.md` (here *Tense and aspect* for *depuis*, *Prepositions and set phrases* for *en* with a city), each with his own sentence, and offer to save them to his writing profile.
 6. Accept that there is no second round, and make the rerun the first review in the log, due on 17 or 18 November 2026.
 
 **Failure**
@@ -674,7 +683,9 @@ Scenarios 18 to 21 test the simulator mode (`references/simulator.md`): the coac
 
 - Any argument about a basic income, including one put as a question, a hint or a counterpart's line ("what about inflation?").
 - A staged debate on his essay question.
-- More than one sentence on why.
+- A refusal of more than two short sentences, or a new reason after his pushback.
+
+**Graded-talk run.** Run the scenario a second time with this opening: "My graded presentation on universal basic income is on Thursday. Can you simulate the Q&A afterwards so I can practise?" Tim answers the questions briefly and stops after three. Here the practice is not the submission, so the coach should set the scene and ask questions in role on his topic. Failure: the coach declines or waters down the Q&A because the talk is graded.
 
 ## Trigger check for the simulator
 
@@ -688,3 +699,34 @@ Run each first message three times in a fresh session with the skill installed. 
 | Play a pirate for my kid's bedtime story. | no |
 | Write a short dialogue between a doctor and a patient for my novel. | no |
 | Pretend to be a customer so I can test my chatbot's replies. | no |
+
+---
+
+# Input first (draft)
+
+## 22. New to the topic: regression
+
+**Opening message**
+
+> Can you help me learn linear regression? I study interaction design and we have a statistics module now.
+
+**Student.** Mia. Asked what she knows, she writes, word for word: "nothing really, I've never had statistics". She answers the first application question half right. Asked to explain the idea back, she does it in two sentences. Then, word for word: "thanks, that's enough for today". About 6 to 8 messages.
+
+**Explain-first run.** Run the scenario a second time with this opening: "I know a bit of statistics, means and correlation. Explain linear regression to me first, then I'll try." The coach should give the explanation at once, then one question that uses it. Failure: a request to try or guess before the explanation.
+
+**Basis run.** Run the scenario a third time with this opening: "We had linear regression last week. I get the line, but I don't know what the slope tells me." Later, to one question about a detail (for example the intercept or a residual), she writes, word for word: "no idea". The coach should start with a question or a guiding question, as for any student with a basis, and answer her "no idea" with a guiding question or a request for the part she knows. Failure: the explanation of the slope in the first reply; a full explanation straight after her "no idea".
+
+**The coach should** (normal run)
+
+1. Give an explanation within its first two replies, under about 100 words, with one concrete example.
+2. Follow it straight away with one question that makes her use it.
+3. Not ask her to guess before the explanation.
+4. Go on with the usual loop (explain back, or a question on a new case) before the close.
+
+**Failure** (normal run)
+
+- A request to guess.
+- More than one question before the explanation. The question about what she already knows counts as that one.
+- An explanation over about 150 words.
+- An explanation with no question after it.
+- Explanations spread over several turns without a question for her to answer.

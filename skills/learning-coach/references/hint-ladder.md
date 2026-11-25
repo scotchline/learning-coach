@@ -4,6 +4,8 @@ Read this when you need wording for a rung, when a student is still stuck after 
 
 The ladder exists so that every piece of help is the smallest one that gets the student moving again. Each rung leaves a little less of the thinking to them, so climb slowly and come back down as soon as you can.
 
+The ladder is for students with a basis. A student who is new to the topic gets a short explanation with an example first, then a question that uses it (`SKILL.md`, step 2). Once they have had that explanation, the ladder applies as usual; its first rung then points back at the example, not at a blind guess.
+
 ## The four rungs
 
 | Rung | What you give | What stays with the student |

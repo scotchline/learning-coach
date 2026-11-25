@@ -419,6 +419,315 @@ The runs above used the working tree with the study group draft in it. The 0.3.1
 
 Weaknesses that did not fail a criterion: the format question again gave an example ("calculations (like finding the equilibrium price)"); the coach pointed Jonas to a "substitutes" slide he had never mentioned; and the review queue added a question on complements that the session never covered. One run, so a sign and not proof.
 
+## Round 9: the simulator (scenarios 18 to 21)
+
+### How it was run
+
+- **Coach, student and grading** as in Round 8, now driven by a small script outside the repository. Each coach turn was a fresh `claude -p` call in an otherwise empty project with the skill in `.claude/skills/learning-coach`, project settings only, no MCP servers, only the Skill and Read tools, told it knows nothing about the user, and resumed by session id. The student was a separate session with no tools that saw the scenario's "Student" paragraph and a short framing; one line was added to the framing: each message it receives is the coach's reply, headed by the number of the message it is about to send. One grading session per scenario received G1 to G5, S1 to S5, the scenario section, a note on the dates and the transcripts. The script added mechanical checks: Skill calls and files read, reply lengths and praise words.
+- **The right copy.** Every run loaded the project's copy of the skill (`learning-coach`), not the copy installed in the author's account.
+- **Versions.** Baseline: the committed 0.3.1 skill, which has no simulator. The other runs: 0.3.1 plus `references/simulator.md` and the changes to `SKILL.md` (Modes, a step-aside case, the description), not committed, copied into the harness before each round so that edits by other sessions could not change it mid-round.
+- **Date and model.** Tuesday 24 November 2026, eight days after the scenario date. The openings of scenarios 16 and 18 named the exam as Friday 27 November, so review dates were judged as 25 or 26 November. Model: claude-opus-5-5.
+- **Runs.** Baseline: one per scenario. Round 1: two per scenario. Then one round of fixes, and two runs per scenario again.
+
+### Baseline: the skill without the simulator
+
+| Scenario | Result | What happened |
+|---|---|---|
+| 18. Oral exam | fail | No scene: exam prep's guess step and a pre-test with confidence ratings. "Noted. Next one." after the vague answer; out of role after "no idea" ("In an oral exam 'no idea' gets you zero ..."); its verdict before her view; no harder second round; no rerun in the log |
+| 19. French | fail | Corrections inside the conversation ("Two things to fix. Try them yourself first ..."), a grammar lesson on verbs with *être*, several sentences of German after "wie sagt man", no question about his view, no offer to save |
+| 20. Q&A, "just tell me", "both parts" | fail | A full answer to "what should I say here?"; about 135 words of reassurance with "fallback moves" and no offer to stop; played both parts ("Here's a model run ... Q1 ... A: ...") |
+| 21. Graded debate | fail | Declined, then offered "a debate with you in it" and supplied the core counter-argument as the opponent |
+
+### Results
+
+| Run | Result | Read | S1 in role | S2 no giving in | S3 one move | S4 view first | S5 harder round | Main reason |
+|---|---|---|---|---|---|---|---|---|
+| 18, round 1, A | fail | `simulator.md` | pass | pass | fail | pass | fail | Two questions in a turn in role; round two repeats round one; no rerun row in the log; debrief about 150 words (G2) |
+| 18, round 1, B | fail | `simulator.md` | pass | fail ("Good, that's our time") | fail | pass | pass | Two questions in a turn; "Good" in role; debrief about 170 words (G2) |
+| 19, round 1, A | fail | `simulator.md` | pass | pass | fail | pass | n/a | Two questions in a turn; pattern names not those in `writing-patterns.md` |
+| 19, round 1, B | fail | `simulator.md` | pass | pass | fail | pass | n/a | The same |
+| 20, round 1, A | fail | `simulator.md` | fail | pass | pass | pass | n/a | Ended the scene itself and gave its view after "ok, let's stop here" without her answer |
+| 20, round 1, B | pass | `simulator.md` | pass | fail (mild) | pass | pass | n/a | |
+| 21, round 1, A | pass | none | n/a | n/a | n/a | n/a | n/a | |
+| 21, round 1, B | fail | none | fail | fail | fail | fail | n/a | Offered an "opponent mode" debate on the essay topic and supplied objections |
+| 18, after fixes, A | fail | `simulator.md` | pass | pass | fail | pass | fail (borderline) | Two questions in a turn; the hard moment only at the 7th exchange; a lead in round two |
+| 18, after fixes, B | fail | `simulator.md` | pass | pass | fail | pass | pass | One compound question in role ("What do we call that difference, and what is its value?"), strict reading |
+| 19, after fixes, A | pass, then fail under the counting rule | `simulator.md` | pass | pass | fail (strict) | pass | n/a | Two questions in one turn in role |
+| 19, after fixes, B | pass, then fail under the counting rule | `simulator.md` | pass | pass | fail (strict) | pass | n/a | The same; debrief about 150 words (G2) |
+| 20, after fixes, A | fail | `simulator.md` | pass | fail | fail | pass | n/a | Accepted a vague answer in role ("Fair enough, you'd check those."); two questions in one turn; three short sentences of reassurance after "freaking out", where the scenario allows one or two |
+| 20, after fixes, B | fail | `simulator.md` | pass | fail | pass | pass | n/a | Praise in role ("I really liked the talk"); four short sentences of reassurance |
+| 21, after fixes, A | fail | none | n/a | n/a | n/a | n/a | n/a | Supplied basic-income arguments as hints while giving feedback; its reason given in two turns |
+| 21, after fixes, B | fail | none | n/a | n/a | n/a | n/a | n/a | The same |
+
+After the final review (below), the rule "a failed S point fails the run" was written into `tests/scenarios.md`, and the runs after the fixes were graded again under it. The "Read" column lists the reference files for the mode; runs of 18 also read `modes.md` and `assets/learning-log.md`, and one run of 21 read `assets/learning-log.md`.
+
+Praise before the close stayed within G5 in every run. Most "exactly" in the replies were not praise ("exactly 2.5 units").
+
+### The fixes after round 1
+
+In `simulator.md`: one question means one question, with two examples of what not to do; neutral acknowledgements only ("Mm-hm.", "Go on."), never "Good", "Right", "Exactly" or "Great"; wait for their view and ask again if their next message does not give it; pattern names from the table in `writing-patterns.md`, with the French examples; the debrief under about 120 words (the design said 150, but G2 allows about 120 for any turn); the second round spelled out (a new case, the moment they would redo first, one new twist, no leads); the rerun as a row inside the log block; no scene at all on the topic of graded written work. In `SKILL.md`, the graded-work rule now also excludes "lines in a role-play or debate on their topic", because scenario 21 never opens `simulator.md`.
+
+### Trigger checks and regression
+
+- **Description.** 1,020 characters before, 1,018 after. Added: "be my examiner" and role-play to practise a conversation among the signals, and role-play for fun among the plain tasks. Cut: ', even without saying "tutor"', and shorter wording in three places.
+- **Trigger check for the simulator,** three runs per row: the three practice requests loaded the skill 9 of 9 times, the three requests for fun loaded it 0 of 9 times. On the baseline (one run per row) the pattern was already the same, so this check does not show that the new wording was needed.
+- **Trigger check for fixes,** after the change to the description, one run per row: the five rows that should load did, the five that should not did not.
+- **Scenario 16** (exam prep), one run: pass, and `simulator.md` was not read.
+
+### What this shows
+
+- **The mode does what the baseline could not.** In every run of 18 to 20 the coach read `simulator.md`, set the scene with *pause* and *stop*, played only the other person, did not reveal answers and asked for the student's view before giving its own. Without the file it ran a quiz, corrected mid-conversation and played both parts.
+- **The conversation in another language works, apart from S3.** After the fixes, nothing was corrected in the scene, "wie sagt man Studiengang?" got a short answer, and the debrief offered to save the patterns. With the mistakes changed after the final review, both runs read `writing-patterns.md` and used its names exactly. Under the counting rule every run of 19 still fails S3: two questions in one turn.
+- **Three scenarios still fail after the one round of fixes the plan allowed:**
+  - **18:** two questions in one turn in role, in 3 of 4 runs despite the rule; in one run the hard moment came late and round two contained a lead. The second run failed only on one compound question.
+  - **20:** in both runs the counterpart gave in or praised in role (S2): it accepted a vague answer with "Fair enough, you'd check those." in one run and opened with "I really liked the talk" in the other. Both runs also gave three or four short sentences of reassurance after "freaking out", where the scenario allows one or two.
+  - **21:** the coach declined the debate and offered the method on another topic, but while giving feedback it still supplied basic-income arguments as hints, and it explained its refusal in two turns. The baseline failed the same way, and the clause added to the graded-work rule did not stop it. This is a weakness of the graded-work rule in `SKILL.md` rather than of the simulator.
+- **Two questions in one turn (S3) is the main open problem.** It appears in almost every run of 18 to 21, in English and in French, after the rule was made explicit with examples.
+- One or two runs per scenario and round: these are signs, not proof.
+
+### Final review and one more round of fixes
+
+A fresh reviewer read the whole change and found four things to fix. The record above understated scenario 20 (corrected above). The S criteria had no stated weight, so scenario 19 counted as passing with S3 failed (the counting rule is now in `tests/scenarios.md`). The graded-work clause added to `SKILL.md` could be read as forbidding practice for a graded talk. And `simulator.md` named the two French mistakes of scenario 19, so the scenario no longer tested whether the pattern names come from `writing-patterns.md`.
+
+Fixes, each tested before and after:
+
+| Test | Before the fix | After the fix |
+|---|---|---|
+| Scenario 19 with new mistakes (*depuis* with the past tense, *en* with a city), one run before, two after | Fail: "Prepositions" in place of *Prepositions and set phrases*, and S3 | Both runs read `writing-patterns.md` and used *Tense and aspect* and *Prepositions and set phrases* exactly. Both still fail S3 |
+| Graded-talk run of scenario 21 (practising the Q&A after a graded presentation), one run before, one after | The Q&A ran: the finding did not show in this run. The run failed S2 and S3 | The Q&A ran again, with the graded-work clause now limited to graded written work. Failed S2 ("Thanks, that was clear.") and S3 |
+
+In `simulator.md`, the French examples were replaced by an instruction to read `writing-patterns.md` when setting up a conversation in another language and to use its names exactly. In `SKILL.md`, the graded-work clause now reads "for graded written work, as lines in a role-play or debate on its topic", followed by "Practising a graded talk or oral exam in the simulator is fine, because the practice is not the submission."
+
+### After the author's decision: a two-part question on one point is one move
+
+The author decided that a question with two parts about the same point counts as one move under S3. `simulator.md`, the note under S1 to S5 and the Failure list of scenario 18 were changed. The runs after the fixes were graded again under the new rule, and 18, 19 and 20 were run once more with the new wording in `simulator.md`.
+
+| Run | Result | What still failed |
+|---|---|---|
+| 18, after fixes, A (graded again) | fail | A lead in round two (S5); the hard moment came late |
+| 18, after fixes, B (graded again) | pass | |
+| 19 with the new mistakes, A (graded again) | pass | |
+| 19 with the new mistakes, B (graded again) | pass | |
+| 20, after fixes, A (graded again) | fail | A vague answer accepted (S2); two different points in one turn (S3) |
+| 20, after fixes, B (graded again) | pass | |
+| 18, new run | fail | Slope and intercept asked in one turn; the R² error not named under "sure but wrong" in the debrief |
+| 19, new run | fail | His tasks and how long he had worked there asked in one turn; "je travaille en Zurich" answered in role with "à Zurich", which counts as a correction; one pattern explained in more than one line |
+| 20, new run | fail | The model line ran to two sentences with advice, and the coach stayed out of role after it |
+
+What this shows: under the author's rule, 4 of 9 runs pass, at least one in each of scenarios 18 to 20. The remaining failures change from run to run and do not repeat one rule. Two different points in one turn is still the most frequent. A new one is the correction by echo: the counterpart repeats the student's sentence in the correct form. One run each, so these are signs, not proof.
+
+### Weaknesses that did not fail a criterion
+
+- **Two questions to open the debrief** ("How did it go? Which moment would you redo?"), counted as a G1 weakness in most runs. `simulator.md` asks for both, so this follows the rule.
+- **The student framing** now tells the student the number of the message it is about to send, so the students may be a little more guided than in earlier rounds.
+- **The skill version in the runs** was not committed, so the transcripts cannot be tied to a commit.
+
+## Round 10: input first (scenario 22)
+
+### How it was run
+
+- **Harness** as in Round 9, with one addition: a paste-in mode, in which the coach has `portable/prompt.md` plus "Today is Wednesday, 25 November 2026." as its only system prompt, with no tools and no skills, as in Round 7.
+- **The tester used ChatGPT** with the paste-in prompt. These runs use Claude (claude-opus-5-5) with the same prompt, so they show whether the text says the right thing, not how ChatGPT reads it.
+- **Versions.** Baseline: the working tree of 25 November before the change (0.3.1 plus the simulator). After: with input first in step 2 and the core loop. Then one round of fixes to the core loop.
+- **Date.** Wednesday 25 November 2026, nine days after the scenario date; review dates were read as 26 or 27 November.
+- **Students.** For the explain-first and basis runs, the student paragraphs were written for the harness from the scenario text, which gives only their openings.
+
+### Baseline
+
+| Run | Skill | Paste-in prompt |
+|---|---|---|
+| Normal | fail: "Just guess, it's fine if you're wrong."; four questions before the explanation, which came in reply 5 | fail: reply 1 asked for her goal and her prior knowledge, two questions before the explanation |
+| Explain-first | pass | pass |
+| Basis | pass | pass |
+
+The explain-first and basis runs passed before the change, so they guard against regressions but do not test it.
+
+### Results
+
+| Run | Skill | Paste-in prompt |
+|---|---|---|
+| Normal, after the change | pass, pass | fail: goal, then prior knowledge, then the explanation in reply 3, with two questions after it; fail: two questions in the first reply and two after the explanation |
+| Normal, after the fix round | pass | fail, fail: two questions joined with "And" before and after the explanation; explanations of about 110 to 135 words |
+| Explain-first | fail (two questions after the explanation), then pass after the fix round | pass |
+| Basis | pass | pass |
+
+**The fix round** changed the core loop to "Max 3 questions (1 if new to it)" and "then ONE question to apply it", and step 2 of `SKILL.md` to "one question ..., one and not two". To pay for it within 1,500 characters: "they draft first; you correct and add" became "they draft; you correct, add"; "short log entry" became "short log"; "The goal is" became "Goal:"; the confidence scale is written with slashes; and "one sentence on the trade-off" became "one line on the trade-off". The block went from 1,498 to 1,497 characters with the change and back to 1,498 with the fix round.
+
+### Regression checks
+
+| Scenario | Text | Result | Control on the old text | Reading |
+|---|---|---|---|---|
+| 1. Normal session | skill | fail: the warm close ran to three sentences, and a closing paragraph followed the log entry | not run | A weakness known since Round 7, not step 2 |
+| 1. Normal session | paste-in | fail, twice: the first error got the full explanation (after the change), and the first reply explained NPV before any attempt (after the fix round) | fail, in a different way: no planning step | The new rule may be applied too widely. Lena had the topic in class that day and still got the explanation first |
+| 2. "Just tell me" | skill | fail, twice: no trade-off sentence and no offer to return to practice | fail, the same way | Not caused by the change; the student also left the script in both |
+| 2. "Just tell me" | paste-in | pass (not every point could be tested) | not run | |
+| 16. Exam prep | skill | fail: one pre-test question outside the combined list | not run | Not related to step 2 |
+| 18. Simulator | skill | fail: the hard moment came late; two points in one turn | not run | The reasons Round 9 recorded |
+
+### What this shows
+
+- **In the skill, input first works.** The normal run passed 3 of 3 and the explain-first run passed after the fix round. The basis run kept attempt-first. The baseline had failed exactly the way the tester described.
+- **In the paste-in prompt, which the tester used, it does not work yet.** The coach now explains early, but it joins two questions in one turn before and after the explanation, and the explanation runs over 100 words. With 1,498 of 1,500 characters used, the prompt has no room for more detail.
+- **A risk on the paste-in prompt:** a student who had the topic in class got the explanation first in scenario 1. The short rule "Know the basics? ... New to it? ..." leaves it to the model to decide what "new" means.
+- **The other regression failures** happened on the old text as well, or have reasons recorded earlier.
+- One or two runs per cell: these are signs, not proof.
+
+**Text versions in the tables above.** "After the change" is the first version, and "after the fix round" the second. The regression checks ran on the first version, except scenario 1 on the paste-in prompt and scenario 2 on the skill, which also ran on the second. The final version is described below.
+
+### Final review and the final version
+
+A fresh reviewer read the change and found five things to fix:
+
+1. **The mode word and the order word collided in the core loop.** Step 1 named the mode "new topic" and step 2 said "New to it? Explain". On the paste-in prompt, a student who had the topic in class got the explanation first.
+2. **The regression cells did not say which version they ran on,** and the basis, scenario 2, 4 and 7 runs had not been made on the latest paste-in prompt.
+3. **"No idea" was listed as a sign of being new** without tying it to the answer to the prior-knowledge question.
+4. **Nothing said what happens when a novice is stuck after the explanation.**
+5. **"Explain it to me first" was not clearly separated from a plain "can you explain X?"**
+
+**The fixes:**
+- **Core loop:** "learn or exam prep" for the mode, "Max 3 questions (1 if never had it)" and "Never had it? Explain briefly ...".
+- **`SKILL.md`, step 2:**
+  - "New to the topic" is read from the answer to the prior-knowledge question. A student who had the topic in class and did not get it has a basis.
+  - A student stuck after the explanation gets the hint ladder, starting with a question that points back at the example.
+  - "Explain it to me first" is a request about the order. A plain "can you explain X?" gets the prior-knowledge question.
+  - One "I don't know" about a detail from a student with a basis gets a guiding question.
+- **`hint-ladder.md`:** a matching sentence.
+- **Tests:** the basis run of scenario 22 now includes a "no idea" turn.
+- **A regression from my own cut:** "one sentence on the trade-off" had become "one line on the trade-off", and scenario 2 on the paste-in prompt then gave a trade-off of two sentences. It had passed before, so the cut was reverted. The block is at 1,497 characters.
+
+**Results on the final version.** One run each.
+
+| Run | Skill | Paste-in prompt |
+|---|---|---|
+| 22, normal | pass | fail, fail: two questions before the explanation and two after it |
+| 22, explain-first | pass (one praise word over G5) | pass |
+| 22, basis with the "no idea" turn | pass | pass |
+| 1. Normal session | pass: attempt first, as before the change | fail: the first error got the full explanation; the close ran to three sentences |
+| 2. "Just tell me" | not run | Before the revert: fail, the trade-off in two sentences. After the revert: the trade-off in one sentence, but the run is inconclusive, because the student skipped message 4 and the close had no check offer |
+| 4. Sure and wrong | not run | pass |
+| 7. Returning student | not run | pass (the first grading cut the scenario short at a heading inside the log; graded again in full) |
+
+**What the final version shows.** In the skill, input first works, and a plain "can you explain X?" again starts with an attempt. On the paste-in prompt, which the tester used, two things remain. The coach still joins two questions in one turn around the explanation. And a student with a basis can still get the full explanation after a wrong first attempt. Scenarios 4 and 7 pass on the paste-in prompt with the shortened block.
+
+### Weaknesses that did not fail a criterion
+
+- **Explanation length.** Explanations often ran 110 to 135 words, over the target of about 100 and under the failure line of 150.
+- **Two-part questions.** Even when the coach meant one question, it often added a second part with "And ...", the same pattern as S3 in the simulator.
+
+## Round 11: the simulator, two more rounds of fixes
+
+### How it was run
+
+As in Round 9, under the rules of Round 9 (a failed S point fails the run; a question with two parts about the same point is one move). Wednesday 25 November 2026; the skill as in the working tree with input first. Two runs per scenario.
+
+### Fixes before round 2
+
+In `simulator.md`:
+- no compliments, and no "Fair enough" after a vague answer
+- at most one question mark per turn in role
+- the hard moment by the fourth question
+- no repeating a sentence in the correct form in another language
+- reassurance under about 30 words
+- "sure but wrong" named in the debrief
+- a model line is one sentence, then back into role
+
+### Fixes before round 3
+
+In `simulator.md`:
+- a turn in role is at most two sentences by one person, an acknowledgement and one question
+- the third question is the hard moment
+- never supply the missing answer, not even as a summary
+- distress gets one calm sentence and the question
+- round two opens with the hard moment and has no cues ("with units", "what does it not tell me?", "does that make sense?")
+- one rule per pattern
+
+In `SKILL.md`, feedback on graded work names no arguments or objections the student has not made, not even as a question.
+
+### Results
+
+| Scenario | Round 2 | Round 3 | What still failed in round 3 |
+|---|---|---|---|
+| 18. Oral exam | fail, fail | fail, fail | The hard moment came only after four routine questions; one turn gave the answer away ("R² is a proportion of that."); the rerun not in the review queue |
+| 19. French | fail, fail | fail, fail | "Noted." in English inside the French scene, which the round 3 wording itself suggested; a vague answer not pressed |
+| 20. Q&A | pass, fail | fail, pass | Run A stepped out of role for feedback in the middle of the scene |
+| 21. Graded debate | not run | fail, fail | The refusal explained again at length after the pushback; one run still slipped in an argument as a question |
+| 3. Graded assignment (regression) | | pass | |
+| 11. Graded text (regression) | | fail | The decline took two sentences, and four patterns came in one message. Not obviously linked to the change; no control run was made |
+
+After round 3, "Noted." was changed to an acknowledgement in the language of the scene. This has not been run yet.
+
+### What this shows
+
+- 1 of 6 runs passed in round 2 and 1 of 8 in round 3. Each fix removed the failure it was aimed at in most runs, and a different, single slip then failed the run.
+- The scenarios are long (15 to 20 turns), and one slip anywhere fails the whole run. Read point by point, most criteria now hold in most runs: the counterpart stays in role, gives no praise, asks for the student's view first and keeps the second round free of hints.
+- More rounds of the same kind are unlikely to reach all passes quickly. Another measure, such as the share of criteria met per run, would show progress more fairly. That is the author's decision.
+
+## Round 12: the simulator measured point by point
+
+### How it was measured
+
+The rule written into `tests/scenarios.md` on 25 November is applied to every run:
+- Each "should" point met, each "Failure" point that did not occur and each S point that held counts as one point held.
+- Points that could not be tested are left out.
+- Three things fail a run on their own: writing the student's lines, playing both parts, or supplying content or arguments for graded work.
+
+All transcripts were graded again by fresh grading sessions. Each session ended with a fixed block of per-point results, so the figures below come from the same grading for every round. The all-or-nothing verdicts of earlier rounds came from other grading sessions and can differ in detail.
+
+Round 12 itself is two new runs per scenario on the current text, which includes the round 3 fixes and the acknowledgement in the language of the scene.
+
+### Points held per scenario
+
+| Scenario | Round 9, after the fixes | Round 11, round 2 | Round 11, round 3 | Round 12, current text |
+|---|---|---|---|---|
+| 18. Oral exam | 57 of 66 (86%) | 36 of 44 (82%) | 39 of 44 (89%) | 42 of 44 (95%) |
+| 19. French | 47 of 51 (92%) | 31 of 34 (91%) | 27 of 34 (79%) | 34 of 34 (100%) |
+| 20. Q&A | 38 of 45 (84%) | 27 of 30 (90%) | 29 of 30 (97%) | 30 of 30 (100%) |
+| 21. Graded debate | 8 of 12 (67%) | not run | 7 of 12 (58%) | 10 of 12 (83%) |
+| Runs with every point held | 1 of 11 | 0 of 6 | 1 of 8 | 5 of 8 |
+| Runs failed on their own (hard fail) | 1 (21, run A: arguments supplied) | 0 | 0 | 0 |
+
+### S criteria, held in runs
+
+| Criterion | Round 9 | Round 11, round 2 | Round 11, round 3 | Round 12 |
+|---|---|---|---|---|
+| S1 In role | 9 of 9 | 6 of 6 | 5 of 6 | 6 of 6 |
+| S2 No giving in | 6 of 9 | 5 of 6 | 4 of 6 | 5 of 6 |
+| S3 One move per turn | 7 of 9 | 4 of 6 | 4 of 6 | 6 of 6 |
+| S4 Their view first | 9 of 9 | 6 of 6 | 6 of 6 | 6 of 6 |
+| S5 Harder second round | 1 of 3 | 1 of 2 | 2 of 2 | 2 of 2 |
+
+### What was still missed in Round 12
+
+- **18, run A:** the close did not name the hard moment she handled (should 10), and one turn gave way (S2). Run B held every point.
+- **21, both runs:** "more than one sentence on why". The refusal ran to two sentences ("Since this essay is graded, I won't write a debate on UBI. The arguments need to come from you."), close to the skill's own example. No argument was supplied and no debate was staged.
+
+### One more fix, and its result
+
+This point failed in every run of scenario 21 in every round. So the graded-work rule in `SKILL.md` now says the reason takes one sentence, and that after pushback the coach keeps to it in a few words with no new reason. Two new runs of 21:
+- **Run A:** 4 of 6. The reason again took two sentences, and one argument came as a question.
+- **Run B:** 5 of 6. The reason again took two sentences.
+
+So the fix did not change the count. Scenario 3 (graded assignment) still passes.
+
+### After the author allowed a two-sentence refusal
+
+The author decided that a refusal of two short sentences is not a failure in scenario 21. The Failure point now reads "A refusal of more than two short sentences, or a new reason after his pushback." The four latest runs of 21 were graded again under it, in one grading session:
+
+| Run | Text | Points held | What was missed |
+|---|---|---|---|
+| A | before the refusal fix | 3 of 6 | A new reason after the pushback (should 3, Failure 3); an argument as a question (Failure 1) |
+| B | before the refusal fix | 4 of 6 | A new reason after the pushback (should 3, Failure 3) |
+| A | with the refusal fix | 5 of 6 | An argument as a question (Failure 1) |
+| B | with the refusal fix | 6 of 6 | nothing |
+
+With the current text, scenario 21 holds 11 of 12 points (92%). The rule to keep to the refusal after pushback without a new reason did work: both runs with it held that point, and both runs without it missed it. In one of the two runs with the fix, an argument still slipped in as a question. The new grading also counted such an argument in an older run that the first grading had passed, so grading varies on this point.
+
+### What this shows
+
+- **Point by point, the simulator mostly works.** On the current text, scenarios 18 to 20 hold 95 to 100% of their points, and 5 of 8 runs hold every point. S3, the most frequent failure in earlier rounds, held in 6 of 6 runs.
+- **Scenario 21, after the author allowed a two-sentence refusal,** holds 11 of 12 points on the current text. What remains is an argument slipping in as a question, in one run of two.
+- One or two runs per scenario and round, and grading by a model: signs, not proof.
+
 ## Limits of these tests
 
 - No real students, and no measurement of learning.

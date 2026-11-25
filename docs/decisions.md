@@ -6,7 +6,105 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ---
 
+## 25 November 2026
+
+### A two-sentence refusal is allowed in scenario 21
+
+- **Decided:** at the author's request, a refusal of two short sentences is not a failure in scenario 21. The Failure point now reads "A refusal of more than two short sentences, or a new reason after his pushback."
+- **Why:** the coach's refusal ("Since this essay is graded, I won't write a debate on UBI. The arguments need to come from you.") reads like the skill's own example, and it failed every run under "more than one sentence on why".
+- **Result:** graded again, the two runs with the rule to keep to the refusal after pushback hold 11 of 12 points, and the two runs without it miss exactly that point. Still open: an argument slipping in as a question, in one of the two runs.
+- **Where:** `tests/scenarios.md`, scenario 21; `tests/results.md`, Round 12.
+
+### The simulator is measured point by point
+
+- **Decided:** at the author's request, simulator runs are measured point by point. Each "should" point met, each "Failure" point that did not occur and each S point that held counts as one point held. The main figure is the share of points held, per run, per scenario and per criterion across runs. Three points still fail a run on their own: the coach writes the student's lines, plays both parts, or supplies content or arguments for graded work (proposed in the parent session and accepted there by the author). The all-or-nothing verdict stays as a second figure. Points that could not be tested are left out of the count.
+- **Why:** the runs are long, and one slip anywhere failed a whole run. After two more rounds of fixes, 1 of 6 and then 1 of 8 runs passed all-or-nothing, although most points held in most runs. The all-or-nothing figure hid both the progress and where the remaining problems are.
+- **Not chosen:** more rounds of fixes judged all-or-nothing only.
+- **Where:** `tests/scenarios.md`, the note under S1 to S5; `tests/results.md`, Round 12. The grading sessions now end with a fixed block of per-point results.
+- **Result:** Round 12. On the current text, scenarios 18 to 20 hold 95 to 100% of their points, and 5 of 8 runs hold every point. By criterion: S1 6 of 6, S2 5 of 6, S3 6 of 6, S4 6 of 6, S5 2 of 2. No run failed on its own. Scenario 21 holds 83%. Its one failing point, "more than one sentence on why", failed in every run. A one-sentence-reason rule added to the graded-work rule in `SKILL.md` did not change that, because the refusal still runs to two short sentences, close to the skill's own example.
+- **Open, for the author:** whether scenario 21 should count a two-sentence refusal as a failure.
+
+### Two more rounds of fixes to the simulator
+
+- **Decided:** at the author's request ("Weiter nachbessern"), `simulator.md` got two more rounds of fixes aimed at the failures of Round 9, and the graded-work rule in `SKILL.md` got one more sentence. The fixes, in `simulator.md`:
+  - no compliments and no "Fair enough"
+  - a turn in role is at most two sentences by one person
+  - the third question is the hard moment
+  - never supply the missing answer
+  - one calm sentence for distress
+  - round two opens with the hard moment, without cues
+  - no correction by repeating the sentence correctly
+  - "sure but wrong" is named in the debrief
+  - acknowledgements in the language of the scene
+
+  In `SKILL.md`: feedback on graded work names no arguments the student has not made, not even as a question.
+- **Why:** Round 9 left scenarios 18, 20 and 21 failing, mostly on two points in one turn, on giving in or praising in role, and on hints in graded feedback.
+- **Result:** Round 11. 1 of 6 runs passed in round 2 and 1 of 8 in round 3. Each fix removed its target in most runs, but a different single slip then failed the run. Scenario 3 still passes. Scenario 11 failed once, with no obvious link to the change.
+- **Open, for the author:** keep going round by round, or measure the simulator by the share of criteria met per run, which shows the progress that the all-or-nothing rule hides. The last fix (acknowledgements in the language of the scene) has not been run yet. Nothing is committed or released.
+
+### Input first is built: it works in the skill, not yet in the paste-in prompt
+
+- **Decided:** input first is built as designed on 24 November (`docs/specs/2026-11-24-input-first-design.md`, plan `docs/plans/2026-11-25-input-first.md`).
+  - In `SKILL.md`, step 2 is now "Attempt first, or input first". A student who is new to the topic gets a short explanation with an example, then one question, one and not two, that makes them use it. "Explain it to me first" is treated the same way. A student with a basis keeps attempt-first.
+  - Step 1 asks only what they know, one question, when the request already shows the goal. "I don't know" counts as not yet stuck only for a student with a basis.
+  - `hint-ladder.md` says the ladder is for students with a basis.
+  - The core loop and `portable/prompt.md` say: "Max 3 questions (1 if new to it)" and "Know the basics? They try first. New to it? Explain briefly with an example, then ONE question to apply it."
+  - `evidence.md` and `docs/references.md` add Kalyuga et al. (2003), confirmed on APA PsycNet.
+- **Why:** the tester's feedback (too many questions, too little input on linear regression). The baseline reproduced it: on the skill, a request to guess and four questions before the explanation in reply 5.
+- **Choices made while building:** to stay within 1,500 characters, the core loop lost "one at a time" in step 4, "a question on" in step 3 and "first" after "test case". In the fix round it also lost "first" in "they draft first", "entry" in "short log entry", "The goal is" (now "Goal:"), the commas in the confidence scale, and "sentence" in "one sentence on the trade-off" (now "one line"). The block is at 1,498.
+- **Not chosen:** more rounds of fixes; the plan allowed one.
+- **Result:** Round 10. In the skill, scenario 22 passes: the normal run 3 of 3, explain-first after the fix round, and the basis run. The paste-in prompt, which the tester used, still fails both normal runs: two questions joined with "And" before and after the explanation, and explanations of 110 to 135 words. Scenario 1 on the paste-in prompt suggests the rule is applied too widely: a student who had the topic in class got the explanation first. The scenario 2 failure on the skill happens on the old text too.
+- **Final review:** a fresh reviewer found five things to fix, all done.
+  - The core loop now separates the mode ("learn or exam prep") from the order ("1 if never had it", "Never had it? Explain ...").
+  - Step 2 reads "new" from the answer to the prior-knowledge question. Someone who had the topic in class counts as having a basis.
+  - A plain "can you explain X?" gets the prior-knowledge question, and a novice who is stuck after the explanation gets the hint ladder.
+  - One "I don't know" about a detail gets a guiding question.
+  - My cut "one line on the trade-off" was reverted to "one sentence", because scenario 2 on the paste-in prompt regressed with it. The block is at 1,497.
+  - On the final version, the skill passes scenario 22 in all three runs and scenario 1. The paste-in prompt passes the basis and explain-first runs and scenarios 4 and 7. It still fails the tester's case (two questions joined around the explanation), and in scenario 1 a student with a basis still got the full explanation after her first error.
+- **Open, for the author:**
+  - **The paste-in prompt has no room left.** Options: accept the shorter behaviour; use a longer prompt where the tool allows one, such as a ChatGPT project or custom GPT with room for more instructions; or rewrite the block from scratch.
+  - **"New to the topic" on the paste-in prompt:** sharpen it so that someone who had the topic in class is not treated as new.
+  - **Release:** not released, nothing committed.
+
 ## 24 November 2026
+
+### Input first when the student is new to a topic
+
+- **Decided:** at the author's request, the student's prior knowledge decides the order in step 2. A student who is new to the topic gets a short explanation with an example first, then one question that makes them use it. A student with a basis keeps attempt-first and the hint ladder. "Explain it to me first" is honoured at once, followed by a question. Not built yet.
+- **Why:** a tester asked about regression and, early on, got question after question when she wanted an explanation ("too many questions, too little input"). Under today's rules, "I don't know" is not yet stuck, so a student with no basis is asked to guess and then climbs the hint ladder before any input. Novices learn more from an explanation or a worked example first (the expertise-reversal effect, to be verified).
+- **Not chosen:**
+  - A switch "explain first" alone. The tester would not have known to use it.
+  - Complexity levels per question. What matters is the distance between the question and this student's prior knowledge, and the coach rarely knows the course.
+- **Later:** a "Who I am" line in the learning log (programme, semester, prior knowledge), so the coach need not ask again.
+- **Where:** the design is in `docs/specs/2026-11-24-input-first-design.md`.
+
+### A two-part question on one point counts as one move
+
+- **Decided:** at the author's request, a question with two parts about the same point counts as one move in the simulator ("What is the residual, and what does its sign tell you?"). Questions about two different points still count as two, and the second waits for the next turn.
+- **Why:** an examiner asking for a value and its meaning in one breath is natural, and the turn stays short. Counted strictly, almost every run of scenarios 18 to 21 failed S3, although the counterpart did what the rule is for: one thing at a time, in a short turn.
+- **Not chosen:** tightening the rule again. It was already explicit, with examples, and the pattern persisted in English and in French.
+- **Where:** `simulator.md`, The scene, "One move per turn"; `tests/scenarios.md`, the note under S1 to S5 and the Failure list of scenario 18; `tests/results.md`, Round 9.
+- **Result:** under the new rule 4 of 9 runs of scenarios 18 to 20 pass, at least one per scenario. The remaining failures vary from run to run. A new one in scenario 19: the counterpart repeated a wrong sentence in the correct form ("à Zurich"), which counts as a correction in the scene. Open: whether that kind of echo is allowed, and how to make the runs more consistent.
+
+### The simulator is built, and three scenarios still fail
+
+- **Decided:** the simulator mode is built as `references/simulator.md`, following the design of the same day (`docs/specs/2026-11-24-simulator-mode.md`) and its plan (`docs/plans/2026-11-24-simulator-mode.md`). `SKILL.md` gains a Modes bullet, a sentence saying when to read the file, a step-aside case (a role-play for fun is a plain task) and a trigger in the description. The graded-work rule now also excludes lines in a role-play or debate on the student's topic.
+- **Why:** see the design entry below. The baseline without the file failed all four simulator scenarios: it ran a quiz in place of a scene, corrected French mid-conversation and played both parts.
+- **Choices made while building:**
+  - The description went from 1,020 to 1,018 characters. Cut: ', even without saying "tutor"', and shorter wording in three places ("or wants homework", "with no learning context, where they want a result", the sentence on what the coach does).
+  - The debrief limit is about 120 words, not the design's 150, because G2 allows about 120 for any turn and both graders failed the longer debriefs.
+  - After round 1, `simulator.md` spells out one question per turn, neutral acknowledgements, waiting for the student's view, the pattern names from `writing-patterns.md`, a harder second round and the rerun as a row inside the log.
+- **Not chosen:** more rounds of fixes. The plan allowed one, so the remaining failures come to the author.
+- **Where:** `references/simulator.md`; `SKILL.md`; `references/evidence.md`; `docs/references.md`; README; `tests/scenarios.md` (scenarios 18 to 21, criteria S1 to S5, a trigger check); `tests/results.md`, Round 9; `dist/learning-coach.zip`, rebuilt.
+- **Result:** Round 9. The mode does what the baseline could not: a scene in role, no answers given away, the student's view first, a harder second round, and in another language no corrections in the scene and the pattern names from `writing-patterns.md`. The trigger checks and scenario 16 behave as before. But under the rule that a failed S point fails the run, no simulator scenario passes yet. The main cause is two questions in one turn (S3), in almost every run. Scenario 20 also shows the counterpart giving in or praising in role (S2) and reassurance that runs to three or four sentences. In 21 basic-income arguments slipped in as hints while giving feedback.
+- **Final review:** a fresh reviewer found four things to fix, all done and tested before and after. Scenario 20 had been described too kindly. The S criteria now fail a run (`tests/scenarios.md`). The graded-work clause is limited to graded written work, so practising a graded talk stays allowed. `simulator.md` no longer names scenario 19's mistakes, and scenario 19 now uses new ones (*depuis*, *en* with a city), which the coach named exactly.
+- **Open, for the author:**
+  - **S3, two questions in one turn:** tighten the rule again, or count a two-part question on one point ("What is the residual, and what does its sign tell you?") as one move.
+  - **S2, politeness in role:** decide whether "Thanks, that was clear." from an examiner counts as praise.
+  - **20:** tighten the rule, or loosen the scenario to a word limit for the calm lines.
+  - **21:** the graded-work rule in `SKILL.md` needs a stronger fix of its own. `simulator.md` is not read in that scenario, and the baseline failed the same way.
+  - **Debrief length:** about 120 words now, against the design's 150. Either 150 with the debrief added to G2's exceptions, or the patterns moved to a second turn.
+  - **Release:** not released; the version is still 0.3.1. The skill changes are in the working tree, not committed.
 
 ### The simulator covers conversations, and each role gets its own reference file
 

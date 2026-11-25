@@ -120,6 +120,14 @@ Proposed, like the rows above. Tested with simulated students only.
 | Simulator: the coach plays one counterpart in a conversation the student is practising and stays in role; a debrief follows, then a harder second round | `simulator.md` | 2 | Chernikova et al. (2020) | Mollick & Mollick (2023), as the source of the role | In higher education, simulations had a large effect on complex skills such as diagnosing and communicating, across domains but mostly in medical education. Well-run role plays without technology did about as well as screen-based simulations. The studies did not use AI, and AI as the counterpart was not studied |
 | Simulator: in the debrief, the student says how it went and which moment they would redo before the coach gives its view | `simulator.md`, Debrief | 2 and 3 | Flavell (1979); Zimmerman (2002) | | The self-assessment-first rule above, applied to a performance in place of an answer |
 
+### Added 25 November 2026
+
+Proposed, like the rows above. Tested with simulated students only.
+
+| Rule | Where | Proposed principle | Proposed source | Supporting or background | Why this mapping |
+|---|---|---|---|---|---|
+| Input first for a student who is new to the topic: a short explanation with an example, then one question that makes them use it; attempt-first for a student with a basis | Session step 2; core loop | 1 and 2 | Kalyuga, Ayres, Chandler & Sweller (2003) | | Guidance that helps novices, such as worked examples, loses its benefit or turns harmful as learners gain knowledge, while problem solving helps those with knowledge more. A student with no basis gets the guidance; the question right after it keeps the thinking with them. How the coach tells "new to the topic" from "has a basis" is a design decision, not tested in the source |
+
 ## Rules from the brief with no literature source
 
 These are design decisions. They make the coach usable, and no study is claimed for them. The principle named is the nearest one.
@@ -251,6 +259,10 @@ The descriptions below stay within what is recorded in `docs/` and in the publis
 
 **Mollick & Mollick (2023).** A guide for instructors with seven ways to assign AI to students (mentor, tutor, coach, teammate, student, simulator, tool), each with prompts, benefits and risks. It is the source of the simulator role and of the prompt sheet this mode was compared with. It reports no outcome data, so it is not evidence that the role works.
 
+### Added 25 November 2026
+
+**Kalyuga, Ayres, Chandler & Sweller (2003).** Review of studies on cognitive load in which instructional formats that help novices, such as worked examples or integrated text and diagrams, lose their advantage or reverse for more knowledgeable learners, for whom solving problems or less guidance works better. Limits: mostly mathematics, engineering and technical material; short laboratory-style studies; no AI.
+
 ## References
 
 Status follows `docs/references.md`. **TODO** marks details that are missing or unconfirmed there. They are left open on purpose and must not be filled in from memory.
@@ -344,3 +356,9 @@ Confirmed on that date. Full references are in `docs/references.md`.
 
 - Chernikova et al. (2020), *Review of Educational Research, 90*(4), 499-541. https://doi.org/10.3102/0034654320933544
 - Mollick & Mollick (2023), arXiv:2306.10052. https://arxiv.org/abs/2306.10052
+
+### Added 25 November 2026
+
+Confirmed on APA PsycNet on that date. Full reference in `docs/references.md`.
+
+- Kalyuga, Ayres, Chandler & Sweller (2003), *Educational Psychologist, 38*(1), 23-31.
