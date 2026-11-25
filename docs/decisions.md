@@ -8,6 +8,16 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ## 25 November 2026
 
+### Release 0.4.0: the simulator and input first
+
+- **Decided:** at the author's request, version 0.4.0 is released. It ships the simulator (practising a conversation with one counterpart), input first for a student who is new to a topic, and the graded-work refusal that keeps to its reason after pushback. The paste-in prompt ships the new step 2.
+- **Why:** on the final text the simulator scenarios hold 92 to 100% of their points and no run failed on its own (Round 12). Input first passes every run in the skill (Round 10).
+- **Not chosen:**
+  - Releasing input first alone and parking the simulator on a branch, as was done with the study group draft.
+  - Keeping the old step 2 in the paste-in prompt. The new one fixes what the tester reported, although it still tends to ask two questions in one turn.
+- **Shipped with known weaknesses:** in one of two graded-debate runs an argument still slipped in as a question; in the paste-in prompt, the input-first step asks two questions in one turn and explains at more than 100 words in the tester's case.
+- **Where:** `SKILL.md`, version 0.4.0; `dist/learning-coach.zip` (checked to match the skill folder); the GitHub release v0.4.0; README, the release example.
+
 ### A two-sentence refusal is allowed in scenario 21
 
 - **Decided:** at the author's request, a refusal of two short sentences is not a failure in scenario 21. The Failure point now reads "A refusal of more than two short sentences, or a new reason after his pushback."

@@ -3,7 +3,7 @@ name: learning-coach
 description: Use this skill whenever someone wants to learn, understand, study or remember something, so they can do it later without AI. Signals are "explain this", "help me understand", "I don't get it", "I have an exam", "quiz me", "be my examiner", role-play to practise a conversation, revising notes, making flashcards, pasting a learning log or writing profile, in any language. Also use it when a student asks a course question and just wants the answer, or wants homework or graded-assignment solutions; and when someone asks to fix or check the grammar or tone of their own text and says it is not their first language, wants to improve, or it is for a course. It makes the assistant a learning coach: trying first, hints before answers, explaining back, recall checks, a dated review plan, named recurring mistakes. Do not use it for plain tasks with no learning context, where they want a result, such as writing an email, formatting a table, translating a text, proofreading a post, fixing a file or role-play for fun.
 license: MIT
 metadata:
-  version: "0.3.1"
+  version: "0.4.0"
 ---
 
 # Learning coach

@@ -184,10 +184,10 @@ After any change to the skill folder, rebuild the ZIP:
 rm -f dist/learning-coach.zip && (cd skills && zip -qrX ../dist/learning-coach.zip learning-coach)
 ```
 
-The install link points to the latest release, not to `dist/`, so students get a change only once it is released. To release, set `version` in `SKILL.md`, commit and push, write a few lines on what changed into `release-notes.md`, and publish the ZIP (here for version 0.3.1):
+The install link points to the latest release, not to `dist/`, so students get a change only once it is released. To release, set `version` in `SKILL.md`, commit and push, write a few lines on what changed into `release-notes.md`, and publish the ZIP (here for version 0.4.0):
 
 ```bash
-VERSION=0.3.1; gh release create "v$VERSION" dist/learning-coach.zip --target main --title "Learning coach $VERSION" --notes-file release-notes.md
+VERSION=0.4.0; gh release create "v$VERSION" dist/learning-coach.zip --target main --title "Learning coach $VERSION" --notes-file release-notes.md
 ```
 
 After any change to `SKILL.md` or the prompt, rerun the scenarios in `tests/scenarios.md` and update `tests/results.md`.
