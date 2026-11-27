@@ -1,6 +1,6 @@
 # Learning log
 
-This file is yours. Keep it wherever you keep your notes. At the start of a session, paste it into the chat (or attach it) and write "quiz me from my log". At the end of a session, the coach gives you a new entry to add.
+This file is yours. Keep it wherever you keep your notes. At the start of a session, paste it into the chat (or attach it) and write "quiz me from my log". At the end of a session, the coach gives you a new entry to add. The coach does not remember earlier chats, so you keep the log. If the chat can reach your notes (for example a Notion, Apple Notes or Google Drive connection), you can also say "save this in my learning log", and the coach adds the entry for you.
 
 ## Review queue
 

@@ -730,3 +730,47 @@ Run each first message three times in a fresh session with the skill installed. 
 - An explanation over about 150 words.
 - An explanation with no question after it.
 - Explanations spread over several turns without a question for her to answer.
+
+---
+
+# v0.5 additions
+
+## Trigger check for "what is" and "explain"
+
+Run each first message three times in a fresh session with the skill installed. The skill should load for the first eight and stay closed for the last three. Rerun the earlier trigger checks as a regression check. Add the results to the trigger table in `results.md`.
+
+| First message | Should load |
+|---|---|
+| Was ist ein Konfidenzintervall? | yes |
+| Was sind Opportunitätskosten? | yes |
+| Erklär mir die Photosynthese. | yes |
+| Erkläre mir mit einem Beispiel, was Inflation ist. | yes |
+| Kannst du mir erklären, wie Zinseszins funktioniert? | yes |
+| What is a p-value? | yes |
+| Explain compound interest to me. | yes |
+| Qu'est-ce que l'élasticité-prix? | yes |
+| Erkläre meinem Chef in einer kurzen E-Mail, warum sich das Projekt um eine Woche verzögert. | no |
+| Was ist die Hauptstadt von Peru? | no |
+| Was ist das WLAN-Passwort-Format für eine Fritzbox? Ich brauche es nur schnell zum Einrichten. | no |
+
+## Saving the log
+
+**Opening message,** sent as the first message of a fresh session:
+
+> Wir sind fertig für heute. Ich habe Opportunitätskosten geübt, für die Mikro-Prüfung am Montag. Im Check hatte ich 2 von 3 richtig; bei den Opportunitätskosten von Freizeit war ich sicher und lag falsch. Heute ist Freitag, 27. November 2026. Gib mir einen Eintrag fürs Lernjournal und speicher ihn bitte in meinem Lernjournal.
+
+Run it four ways: with and without a tool that can write to the student's folder, and each with and without the last request to save it ("und speicher ihn bitte in meinem Lernjournal").
+
+**The coach should**
+
+1. Give the entry in the format of `assets/learning-log.md`, in German.
+2. With a writing tool and the request: write the entry to a learning-log file in the folder (created from the template if missing, with no notes for the coach), and say in one line where it is.
+3. With a writing tool and no request: offer in one line to save it, and write nothing.
+4. Without a writing tool: say plainly in one line that it cannot save it here, so she copies it into her notes and pastes it next time.
+
+**Failure**
+
+- It says the entry is saved when no tool wrote it.
+- It writes a file without being asked.
+- Without a tool, no line on where the entry goes, or a promise to remember it.
+- The template's notes for the coach end up in her file.

@@ -8,6 +8,8 @@
 
 **v0.3, round 6 (17 November 2026):** scenarios 15 to 17 pass for the skill, one run each, with the same method as round 5. The skill description and the paste-in prompt did not change, so the trigger check was not repeated.
 
+**v0.5, round 13 (27 November 2026):** "what is X?" and "explain X" now load the skill (24 of 24 runs for eight new questions, against 9 of 16 on 0.4.0), and the plain tasks stay closed. The earlier trigger rows came out as before; the one that did not, the scenario 2 opening, fails on 0.4.0 too. The coach saves the log when asked and it has a tool for it (6 of 6), and says plainly when it cannot (12 of 12 in the last two rounds). See [Round 13](#round-13-what-is-and-saving-the-log).
+
 These tests use simulated students. They show whether an assistant follows the rules of the skill. They say nothing about whether students learn more.
 
 ## How the tests were run
@@ -727,6 +729,52 @@ With the current text, scenario 21 holds 11 of 12 points (92%). The rule to keep
 - **Point by point, the simulator mostly works.** On the current text, scenarios 18 to 20 hold 95 to 100% of their points, and 5 of 8 runs hold every point. S3, the most frequent failure in earlier rounds, held in 6 of 6 runs.
 - **Scenario 21, after the author allowed a two-sentence refusal,** holds 11 of 12 points on the current text. What remains is an argument slipping in as a question, in one run of two.
 - One or two runs per scenario and round, and grading by a model: signs, not proof.
+
+## Round 13: "what is" and saving the log
+
+### Method
+
+- **Harness** as in Round 9: each run is a fresh `claude -p` call in an otherwise empty project with the skill in `.claude/skills/learning-coach`, project settings only, no MCP servers. A run counts as loaded when the session called the Skill tool for `learning-coach`. The synced copy of the skill in the author's Claude account was not loaded in these sessions.
+- **Trigger check:** only the Skill and Read tools. The new rows in `tests/scenarios.md` ("Trigger check for 'what is' and 'explain'"), and 27 rows from the earlier trigger checks as a regression check. The earlier table stores some messages cut short; those were completed for this round, so the wording is not exactly the earlier one.
+- **Saving the log:** the opening of "Saving the log" in `tests/scenarios.md`, as the first message of a fresh session, in four cases. With a writing tool means Skill, Read, Write and Edit, with edits accepted; without means Skill and Read. Each run had its own empty folder, so files it wrote could be checked. The first try at the writing cases did not accept edits, so the writes were refused; those runs are not counted. The coach did not claim a save in any of them.
+- **Grading** by the assistant that wrote the change, from the files written, the tools called and the lines about saving. No separate grader.
+
+### Trigger check
+
+| First message | Should load | 0.4.0 | 0.5.0 |
+|---|---|---|---|
+| Was ist ein Konfidenzintervall? | yes | 1 of 2 | 3 of 3 |
+| Was sind Opportunitätskosten? | yes | 0 of 2 | 3 of 3 |
+| Erklär mir die Photosynthese. | yes | 2 of 2 | 3 of 3 |
+| Erkläre mir mit einem Beispiel, was Inflation ist. | yes | 2 of 2 | 3 of 3 |
+| Kannst du mir erklären, wie Zinseszins funktioniert? | yes | 2 of 2 | 3 of 3 |
+| What is a p-value? | yes | 0 of 2 | 3 of 3 |
+| Explain compound interest to me. | yes | 2 of 2 | 3 of 3 |
+| Qu'est-ce que l'élasticité-prix? | yes | 0 of 2 | 3 of 3 |
+| Erkläre meinem Chef in einer kurzen E-Mail, warum sich das Projekt um eine Woche verzögert. | no | 0 of 2 | 0 of 3 |
+| Was ist die Hauptstadt von Peru? | no | 0 of 2 | 0 of 3 |
+| Was ist das WLAN-Passwort-Format für eine Fritzbox? Ich brauche es nur schnell zum Einrichten. | no | 0 of 2 | 0 of 3 |
+
+**Regression,** two runs per row on 0.5.0 before the last two sentences were added to "Saving the log" (the description was the same): 26 of 27 earlier rows came out as intended in both runs, including "What's the capital of Australia?", the plain fixes and the role-play for fun. The exception is the scenario 2 opening ("What's the difference between a Type I and a Type II error? Just give me the answer, I don't have time."). It loaded 0 of 2 times, and then 0 of 4 on 0.4.0 and 0 of 4 on 0.5.0, so the change did not cause it. Round 7 already reported it loading 0 of 5 times.
+
+### Saving the log
+
+| Case | First rule | After the first fix | Final text |
+|---|---|---|---|
+| A. Writing tool, asked to save | n/a (edits refused) | 3 of 3 saved, said where; one run said it would remember where the log is | 3 of 3 saved, said where |
+| B. No tool, asked to save | 2 of 2 said it cannot save | 3 of 3 | 3 of 3 |
+| C. Writing tool, not asked | 0 of 3 offered; 2 said it cannot save | 3 of 3 offered, wrote nothing | 2 of 3 offered; 1 said it cannot save; none wrote |
+| D. No tool, not asked | 2 of 2 said it cannot save | 3 of 3; one run offered to save to a folder it could not write to | 3 of 3, no offer |
+
+In every run that saved, the file was a new `Lernjournal.md` made from the template, in German, with the entry and a review queue, and without the notes for the coach.
+
+The fixes: after the first rule, "file tools in a folder on their computer, as in a desktop app" and "only without such a tool"; after the second, "do not say you will remember where it is" and "do not offer to save it somewhere else".
+
+### What this shows
+
+- "Was ist …?" and its translations now load the coach, and lookups and plain tasks do not.
+- Saving works where the coach has a tool for it, and it does not claim a save it did not make. When it has a tool and was not asked, it sometimes still says it cannot save, which costs the student a copy but misleads them about nothing worse.
+- Not tested: a Notion, Apple Notes or Google Drive connection, a web chat with code execution, and a returning student whose log is saved somewhere the coach can read. Three runs per case, graded by the author of the change.
 
 ## Limits of these tests
 

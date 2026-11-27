@@ -18,7 +18,7 @@ This skill gives a general assistant the same kind of guardrails. What the sourc
 2. **Attempt first.** You try before anything is explained. If you are stuck, help comes in small steps: a guiding question, then a hint, then one step done for you, then a worked example followed by a similar problem that you solve alone.
 3. **Explain back.** You say it in your own words, then answer one question about a new case.
 4. **Check without AI.** Two or three questions from memory. You say how sure you are before you get feedback.
-5. **Reflect and schedule.** You get a short entry for your learning log with a review date. Next time, paste the log and the coach starts by quizzing you from it.
+5. **Reflect and schedule.** You get a short entry for your learning log with a review date. You keep it in your notes, or the coach saves it there if the chat can reach them. Next time, paste the log and the coach starts by quizzing you from it.
 
 Three things to know before you start:
 
@@ -102,7 +102,7 @@ Things you can say, by what students most often use AI for:
 
 | You want to | Say something like |
 |---|---|
-| Understand a concept | "Explain opportunity cost. We had it today and I didn't get it." |
+| Understand a concept | "Explain opportunity cost. We had it today and I didn't get it." Or just "What is a confidence interval?" |
 | Prepare for an exam | "I have a statistics exam on 24 November. Quiz me on regression." |
 | Practise a conversation | "Be my examiner for my oral exam on Friday. Topic: regression." |
 | Get through a reading | "I'm about to read chapter 3. Give me three questions to read with." Then: "Here's my summary, what did I miss?" |
@@ -114,9 +114,10 @@ Things you can say, by what students most often use AI for:
 | Structure your thoughts | "Here's my outline for the essay. What's missing?" |
 | Make flashcards | "I want flashcards for chapter 4." (You draft them, the coach corrects them and adds questions you missed.) |
 | Continue from last time | "Here is my learning log from last week. Quiz me from it." |
+| Save the log | "Save this in my learning log." (Only if the chat can reach your notes, see below.) |
 | Get the answer | "Just tell me." (Any time.) |
 
-**The learning log** is a Markdown file that you keep, for example in your notes app. A template is in [`skills/learning-coach/assets/learning-log.md`](skills/learning-coach/assets/learning-log.md). The coach cannot remember earlier chats or remind you of anything. The log is what connects one session to the next, so the review only happens if you bring it back. If you use the coach for your writing, the log also has a short writing profile: your recurring mistakes with an example of your own, and a line on how you like to write.
+**The learning log** is a Markdown file that you keep, for example in your notes app. A template is in [`skills/learning-coach/assets/learning-log.md`](skills/learning-coach/assets/learning-log.md). The coach cannot remember earlier chats or remind you of anything. The log is what connects one session to the next, so the review only happens if you bring it back. If the chat can reach your notes, for example through a Notion, Apple Notes or Google Drive connection, or works in a folder on your computer, say "save this in my learning log" and the coach adds the entry there and tells you where. Without such a connection it tells you plainly that it cannot save it, and you copy the entry yourself. If you use the coach for your writing, the log also has a short writing profile: your recurring mistakes with an example of your own, and a line on how you like to write.
 
 ## Limits
 
@@ -125,7 +126,7 @@ Things you can say, by what students most often use AI for:
 - **The assistant can be wrong about the subject.** Check formulas, definitions and facts against your course material. The coach is told to remind you of this.
 - **It cannot enforce anything.** You can always ask for the answer or switch the skill off. That is intended.
 - **It does not know your university's rules.** The coach declines to write graded work when it can tell that work is graded. What counts as permitted AI use in your course is for you to check.
-- **No memory, no reminders.** Reviews depend on you keeping the log and coming back.
+- **No memory, no reminders.** Reviews depend on you keeping the log (or letting the coach save it to your notes, where the chat can reach them) and coming back.
 - **Tested with simulated students only,** in English and German, on one assistant. See [Tests](#tests).
 - **The paste-in prompt is weaker than the skill.** It is a small fraction of the length and has none of the reference files. For writing, it only marks the changes and names the recurring mistakes. It has no tone feedback, no "just fix it" switch and no writing profile.
 - **The writing mode is new.** It combines findings from separate studies of written correction, mostly with learners of English as a second language. The combination has not been tested with real students.
@@ -184,10 +185,10 @@ After any change to the skill folder, rebuild the ZIP:
 rm -f dist/learning-coach.zip && (cd skills && zip -qrX ../dist/learning-coach.zip learning-coach)
 ```
 
-The install link points to the latest release, not to `dist/`, so students get a change only once it is released. To release, set `version` in `SKILL.md`, commit and push, write a few lines on what changed into `release-notes.md`, and publish the ZIP (here for version 0.4.0):
+The install link points to the latest release, not to `dist/`, so students get a change only once it is released. To release, set `version` in `SKILL.md`, commit and push, write a few lines on what changed into `release-notes.md`, and publish the ZIP (here for version 0.5.0):
 
 ```bash
-VERSION=0.4.0; gh release create "v$VERSION" dist/learning-coach.zip --target main --title "Learning coach $VERSION" --notes-file release-notes.md
+VERSION=0.5.0; gh release create "v$VERSION" dist/learning-coach.zip --target main --title "Learning coach $VERSION" --notes-file release-notes.md
 ```
 
 After any change to `SKILL.md` or the prompt, rerun the scenarios in `tests/scenarios.md` and update `tests/results.md`.
@@ -198,7 +199,9 @@ Planned for later versions: the mode "teach-back", and printable outputs such as
 
 **learning-coach** macht aus einem allgemeinen KI-Assistenten einen Lerncoach. Das Ziel ist, was du nachher **ohne** KI kannst. Der Coach lässt dich deshalb zuerst selbst denken und hilft nur so viel wie nötig.
 
-**So läuft eine Sitzung ab:** kurz planen, zuerst selbst versuchen (Hilfe kommt in kleinen Schritten), in eigenen Worten erklären, kurzer Check ohne KI mit Einschätzung der eigenen Sicherheit, zum Schluss ein Eintrag fürs Lernjournal mit Datum für die nächste Wiederholung. Der Coach antwortet in deiner Sprache.
+**So läuft eine Sitzung ab:** kurz planen, zuerst selbst versuchen (Hilfe kommt in kleinen Schritten), in eigenen Worten erklären, kurzer Check ohne KI mit Einschätzung der eigenen Sicherheit, zum Schluss ein Eintrag fürs Lernjournal mit Datum für die nächste Wiederholung. Der Coach antwortet in deiner Sprache. Fragen wie «Was ist ein Konfidenzintervall?» oder «Erklär mir die Inflation» starten ihn.
+
+**Lernjournal:** Den Eintrag am Schluss speicherst du selbst, zum Beispiel in deiner Notizen-App, und fügst ihn beim nächsten Mal wieder ein, denn der Coach erinnert sich nicht an frühere Chats. Hat der Chat Zugriff auf deine Notizen (etwa über eine Verbindung zu Notion, Apple Notes oder Google Drive) oder auf einen Ordner auf deinem Computer, kannst du auch «speicher das in meinem Lernjournal» schreiben, und er sagt dir, wo der Eintrag jetzt steht. Ohne diesen Zugriff sagt er dir klar, dass du den Eintrag selbst kopieren musst.
 
 **Gut zu wissen:** Mit «sag es mir einfach» bekommst du die Antwort, ohne Vortrag. Bei benoteten Arbeiten erklärt der Coach Methoden und gibt Rückmeldung zu deinem Entwurf, schreibt die Arbeit aber nicht. Gewöhnliche Aufträge wie eine E-Mail oder eine Tabelle erledigt er einfach.
 

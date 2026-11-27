@@ -6,6 +6,32 @@ Each entry says what was decided, why, what was considered and not chosen, and w
 
 ---
 
+## 27 November 2026
+
+### Release 0.5.0: "what is" questions, and saving the log
+
+- **Decided:** at the author's request, the two changes below are released as version 0.5.0.
+- **Shipped with known weaknesses:** the scenario 2 opening ("… Just give me the answer, I don't have time.") still does not load the skill, as on 0.4.0; with a writing tool and no request to save, the coach said in one of three runs that it could not save the log; saving through a Notion, Apple Notes or Google Drive connection is untested.
+- **Where:** `SKILL.md`, version 0.5.0; `dist/learning-coach.zip` (checked to match the skill folder); the GitHub release v0.5.0; README, the release example.
+
+### "What is X?" and "explain X" load the coach
+
+- **Decided:** at the author's request, a question like "what is X?" or "explain X" about a concept now loads the skill, in any language. The description names them as signals, with "was ist" and "erklär mir" as examples, and lists "a fact lookup" among the plain tasks. To stay under 1,024 characters (now 1,019), the sentence on what the coach does is shorter ("It coaches with attempts first, hints before answers, recall checks and a review plan."). The description no longer contains a colon followed by a space, which a strict YAML parser rejects in an unquoted value.
+- **Why:** on 0.4.0, "Erklär mir …" already loaded the skill (8 of 8 runs), but "Was ist …?", "What is …?" and "Qu'est-ce que …?" loaded it in 1 of 8.
+- **Not chosen:** loading on every "was ist", including lookups. A quick fact still gets a direct answer, as the step-aside rule already said, and "Was ist die Hauptstadt von Peru?" stays closed.
+- **Result:** Round 13. The 8 new questions loaded the skill 24 of 24 times, and the 3 plain ones 0 of 9. All rows of the earlier trigger checks came out as before, except the scenario 2 opening ("… Just give me the answer, I don't have time."). It loaded 0 of 4 times on 0.4.0 as well, so that weakness is older than this change and still open.
+- **Where:** `SKILL.md`, description; `tests/scenarios.md`, "Trigger check for 'what is' and 'explain'"; `tests/results.md`, Round 13; README.
+
+### The coach saves the log where it can
+
+- **Decided:** at the author's request (choice "save where possible"), the line after the log entry now says where the entry goes. If the coach has a tool that writes to a place the student can open again (a Notion, Apple Notes or Google Drive connection, or file tools in a folder on their computer), it offers to save the entry there, and saves it after a yes or when asked ("speicher das in meinem Lernjournal"). It uses the page or file they name, or creates one from the template without the notes for the coach, says where it is, and claims a save only when the tool confirmed it. Without such a tool it says plainly that it cannot save the entry, and that they copy it into their notes. A sandbox that is wiped after the chat, and the assistant's memory, do not count as the log.
+- **Why:** the author found it unclear whether the student has to save the entry, and asked whether the coach could do it. Before, the coach only gave a block to copy, and did not say that nothing was saved.
+- **Not chosen:**
+  - Only a clearer line, with no saving.
+  - The whole log as a file to download each time. A download is still allowed as an offer where the coach can make one.
+  - Changing the paste-in prompt, which has 2 characters left.
+- **Where:** `SKILL.md`, step 5, "Saving the log"; `assets/learning-log.md`, the opening paragraph; README; `tests/scenarios.md`, "Saving the log"; `tests/results.md`, Round 13.
+
 ## 25 November 2026
 
 ### Release 0.4.0: the simulator and input first
